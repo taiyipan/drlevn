@@ -127,3 +127,17 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+*__pycache__
+*swp
+*env
+*.pt
+*.jpg
+*.png
+*.mp4
+*logs*
+data
+*idea
+src
+*output_files*
+*downloaded_data
