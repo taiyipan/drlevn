@@ -13,7 +13,7 @@ New York University
       <a href="#About-the-project">About This Project</a>
       <ul>
         <li><a href="#Built-with">Built With</a></li>
-        <li><a href="#Paper-Reference">Paper Reference</a></li>
+        <li><a href="#References">References</a></li>
         <li><a href="#Tools-used">Tools used</a></li>
       </ul>
     </li>
@@ -74,7 +74,7 @@ This project is built with the below given major frameworks and libraries. Some 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-### Paper Reference
+### References
 
 This project is based on the paper `SplitNet: Sim2Sim and Task2Task Transfer for Embodied Visual Navigation`. Which was published on 18 May 2019. This paper shows a method for decoupling visual perception and policy learning. By incorporating auxiliary tasks and selective learning of portions of the model, we explicitly decompose the learning objectives for visual navigation into perceiving the world and acting on that perception.  Additionally, SplitNet generalizes better to unseen environments from the same simulator and transfers faster and more effectively to novel embodied navigation tasks. Further, given only a small sample from a target domain, SplitNet can match the performance of traditional end-to-end pipelines which receive the entire dataset.
 
