@@ -13,8 +13,8 @@ New York University
       <a href="#About-the-project">About This Project</a>
       <ul>
         <li><a href="#Built-with">Built With</a></li>
-        <li><a href="#Paper Reference">Paper Reference</a></li>
-        <li><a href="#Tools used">Tools used</a></li>
+        <li><a href="#Paper-Reference">Paper Reference</a></li>
+        <li><a href="#Tools-used">Tools used</a></li>
       </ul>
     </li>
     <li><a href="#prerequisites">Prerequisites</a></li>
