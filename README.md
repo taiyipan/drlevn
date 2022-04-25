@@ -18,9 +18,9 @@ New York University
       </ul>
     </li>
     <li><a href="#prerequisites">Prerequisites</a></li>
-    <li><a href="#Step-by-Step-Installation">Step-by-Step Installation</a></li>
+    <li><a href="#Step-by-Step Installation">Step-by-Step Installation</a></li>
       <ul>       
-          <li><a href="#Install-Anaconda-and-pip">Install Anaconda</a></li>
+          <li><a href="#Install Anaconda and pip">Install Anaconda</a></li>
           <li><a href="#Create-conda-environment">Create conda environment</a></li>
           <li><a href="#Install-basic-packages-in-environment">Install basic packages in environment</a></li>
           <li><a href="#Install-Habitat-sim-and-test">Install Habitat-sim and test</a></li>
