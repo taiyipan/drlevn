@@ -18,15 +18,15 @@ New York University
       </ul>
     </li>
     <li><a href="#prerequisites">Prerequisites</a></li>
-    <li><a href="#Step-by-Step Installation">Step-by-Step Installation</a></li>
+    <li><a href="#Step-by-Step-Installation">Step-by-Step Installation</a></li>
       <ul>       
-          <li><a href="#Install Anaconda and pip">Install Anaconda</a></li>
-          <li><a href="#Create conda environment">Create conda environment</a></li>
-          <li><a href="#Install basic packages in environment">Install basic packages in environment</a></li>
-          <li><a href="#Install Habitat-sim and test">Install Habitat-sim and test</a></li>
-          <li><a href="#Install Habitat Lab and Test">Install Habitat Lab and Test</a></li>
-          <li><a href="#Clone SplitNet repo">Clone SplitNet repo</a></li>
-          <li><a href="#Run Test">Run Test</a></li>
+          <li><a href="#Install-Anaconda-and-pip">Install Anaconda</a></li>
+          <li><a href="#Create-conda-environment">Create conda environment</a></li>
+          <li><a href="#Install-basic-packages-in-environment">Install basic packages in environment</a></li>
+          <li><a href="#Install-Habitat-sim-and-test">Install Habitat-sim and test</a></li>
+          <li><a href="#Install-Habitat-Lab-and-Test">Install Habitat Lab and Test</a></li>
+          <li><a href="#Clone-SplitNet-repo">Clone SplitNet repo</a></li>
+          <li><a href="#Run-Test">Run Test</a></li>
       </ul>
     </li>
     <li><a href="#experiments">Experiments</a></li>
@@ -131,6 +131,7 @@ This project is not supported in windows. Habitat sim is not available for Windo
 
 Also please note that these results cannot be performed in a virtual machine. The dependencies and the path conflicts and will not work in a virtual machine with any verison of Ubuntu or Linux distributions. 
 
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Step-by-Step Installation (for native Ubuntu 20.04LTS)
 
@@ -280,14 +281,7 @@ To reproduce the results and to run the experiment follow the instructions in th
     ```sh
     python train_splitnet.py
     ```
-
-
-<!--
-To Reproduce the accuracy of TPSNet(model), run `test.py` and ensure the model is on the right folder. This script will normalise the images to right value.
-   ```sh
-   python3 test.py
-   ```
--->
+ 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Methodology
@@ -355,6 +349,7 @@ The proposed framework is validated by utilizing the Habitat scene renderer on s
 
 The above table illustrates the performance on unseen environments and comparision of our method to the baseline method. While the performance of our proposed framework is considerably lower than that of the baseline, we hope to improve its performance in the next phase of the project.
 
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- LICENSE -->
 ## License
