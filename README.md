@@ -18,7 +18,7 @@ New York University
       </ul>
     </li>
     <li><a href="#prerequisites">Prerequisites</a></li>
-    <li><a href="#step-by-step-installation-for-native-ubuntu-2004lts)">Step-by-Step Installation (for native Ubuntu 20.04LTS)</a></li>
+    <li><a href="##step-by-step-installation-for-native-ubuntu-2004lts">Step-by-Step Installation</a></li>
       <ul>       
           <li><a href="#Install Anaconda and pip">Install Anaconda</a></li>
           <li><a href="#Create-conda-environment">Create conda environment</a></li>
