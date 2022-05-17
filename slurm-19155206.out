@@ -1,0 +1,2098 @@
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I0506 14:05:58.991722 420761 ManagedFileBasedContainer.h:210] <Dataset>::convertFilenameToPassedExt : Filename : default changed to proposed scene_dataset_config.json filename : default.scene_dataset_config.json
+I0506 14:05:58.992283 420761 AttributesManagerBase.h:365] <Dataset>::createFromJsonOrDefaultInternal : Proposing JSON name : default.scene_dataset_config.json from original name : default | This file  does not exist.
+I0506 14:05:58.992354 420761 AssetAttributesManager.cpp:120] Asset attributes (capsule3DSolid : capsule3DSolid_hemiRings_4_cylRings_1_segments_12_halfLen_0.75_useTexCoords_false_useTangents_false) created and registered.
+I0506 14:05:58.992399 420761 AssetAttributesManager.cpp:120] Asset attributes (capsule3DWireframe : capsule3DWireframe_hemiRings_8_cylRings_1_segments_16_halfLen_1) created and registered.
+I0506 14:05:58.992445 420761 AssetAttributesManager.cpp:120] Asset attributes (coneSolid : coneSolid_segments_12_halfLen_1.25_rings_1_useTexCoords_false_useTangents_false_capEnd_true) created and registered.
+I0506 14:05:58.992475 420761 AssetAttributesManager.cpp:120] Asset attributes (coneWireframe : coneWireframe_segments_32_halfLen_1.25) created and registered.
+I0506 14:05:58.992491 420761 AssetAttributesManager.cpp:120] Asset attributes (cubeSolid : cubeSolid) created and registered.
+I0506 14:05:58.992506 420761 AssetAttributesManager.cpp:120] Asset attributes (cubeWireframe : cubeWireframe) created and registered.
+I0506 14:05:58.992544 420761 AssetAttributesManager.cpp:120] Asset attributes (cylinderSolid : cylinderSolid_rings_1_segments_12_halfLen_1_useTexCoords_false_useTangents_false_capEnds_true) created and registered.
+I0506 14:05:58.992576 420761 AssetAttributesManager.cpp:120] Asset attributes (cylinderWireframe : cylinderWireframe_rings_1_segments_32_halfLen_1) created and registered.
+I0506 14:05:58.992595 420761 AssetAttributesManager.cpp:120] Asset attributes (icosphereSolid : icosphereSolid_subdivs_1) created and registered.
+I0506 14:05:58.992612 420761 AssetAttributesManager.cpp:120] Asset attributes (icosphereWireframe : icosphereWireframe_subdivs_1) created and registered.
+I0506 14:05:58.992637 420761 AssetAttributesManager.cpp:120] Asset attributes (uvSphereSolid : uvSphereSolid_rings_8_segments_16_useTexCoords_false_useTangents_false) created and registered.
+I0506 14:05:58.992660 420761 AssetAttributesManager.cpp:120] Asset attributes (uvSphereWireframe : uvSphereWireframe_rings_16_segments_32) created and registered.
+I0506 14:05:58.992671 420761 AssetAttributesManager.cpp:108] ::constructor : Built default primitive asset templates : 12
+I0506 14:05:58.993386 420761 SceneDatasetAttributesManager.cpp:36] File (default) not found, so new default dataset attributes created and registered.
+I0506 14:05:58.993396 420761 MetadataMediator.cpp:127] ::createSceneDataset : Dataset default successfully created.
+I0506 14:05:58.993777 420761 AttributesManagerBase.h:365] <Physics Manager>::createFromJsonOrDefaultInternal : Proposing JSON name : ./data/default.physics_config.json from original name : ./data/default.physics_config.json | This file  exists.
+I0506 14:05:58.993973 420761 PhysicsAttributesManager.cpp:26] JSON Configuration File (./data/default.physics_config.json) based physics manager attributes created and registered.
+I0506 14:05:58.993981 420761 MetadataMediator.cpp:212] ::setActiveSceneDatasetName : Previous active dataset  changed to default successfully.
+I0506 14:05:58.993986 420761 MetadataMediator.cpp:183] ::setCurrPhysicsAttributesHandle : Old physics manager attributes  changed to ./data/default.physics_config.json successfully.
+I0506 14:05:58.993993 420761 MetadataMediator.cpp:68] ::setSimulatorConfiguration : Set new simulator config for scene/stage : /scratch/pr2257/deep-learning/project-2/habitat-sim/data/scene_datasets/habitat-test-scenes/skokloster-castle.glb and dataset : default which is currently active dataset.
+Renderer: Quadro RTX 8000/PCIe/SSE2 by NVIDIA Corporation
+OpenGL version: 4.6.0 NVIDIA 470.57.02
+Using optional features:
+    GL_ARB_vertex_array_object
+    GL_ARB_ES2_compatibility
+    GL_ARB_separate_shader_objects
+    GL_ARB_robustness
+    GL_ARB_texture_storage
+    GL_ARB_invalidate_subdata
+    GL_ARB_texture_storage_multisample
+    GL_ARB_multi_bind
+    GL_ARB_direct_state_access
+    GL_ARB_get_texture_sub_image
+    GL_ARB_texture_filter_anisotropic
+    GL_KHR_debug
+Using driver workarounds:
+    no-forward-compatible-core-context
+    nv-egl-incorrect-gl11-function-pointers
+    no-layout-qualifiers-on-old-glsl
+    nv-zero-context-profile-mask
+    nv-implementation-color-read-format-dsa-broken
+    nv-cubemap-inconsistent-compressed-image-size
+    nv-cubemap-broken-full-compressed-image-query
+    nv-compressed-block-size-in-bits
+I0506 14:05:59.443408 420761 ManagedFileBasedContainer.h:210] <Scene Instance>::convertFilenameToPassedExt : Filename : /scratch/pr2257/deep-learning/project-2/habitat-sim/data/scene_datasets/habitat-test-scenes/skokloster-castle.glb changed to proposed scene_instance.json filename : /scratch/pr2257/deep-learning/project-2/habitat-sim/data/scene_datasets/habitat-test-scenes/skokloster-castle.scene_instance.json
+I0506 14:05:59.443475 420761 MetadataMediator.cpp:311] ::getSceneAttributesByName : Dataset : default has no preloaded SceneAttributes or StageAttributes named : /scratch/pr2257/deep-learning/project-2/habitat-sim/data/scene_datasets/habitat-test-scenes/skokloster-castle.glb so loading/creating a new StageAttributes with this name, and then creating a SceneAttributes with the same name that references this stage.
+I0506 14:05:59.443486 420761 ManagedFileBasedContainer.h:210] <Stage Template>::convertFilenameToPassedExt : Filename : /scratch/pr2257/deep-learning/project-2/habitat-sim/data/scene_datasets/habitat-test-scenes/skokloster-castle.glb changed to proposed stage_config.json filename : /scratch/pr2257/deep-learning/project-2/habitat-sim/data/scene_datasets/habitat-test-scenes/skokloster-castle.stage_config.json
+I0506 14:05:59.443508 420761 AttributesManagerBase.h:365] <Stage Template>::createFromJsonOrDefaultInternal : Proposing JSON name : /scratch/pr2257/deep-learning/project-2/habitat-sim/data/scene_datasets/habitat-test-scenes/skokloster-castle.stage_config.json from original name : /scratch/pr2257/deep-learning/project-2/habitat-sim/data/scene_datasets/habitat-test-scenes/skokloster-castle.glb | This file  does not exist.
+I0506 14:05:59.443929 420761 AbstractObjectAttributesManagerBase.h:183] File (/scratch/pr2257/deep-learning/project-2/habitat-sim/data/scene_datasets/habitat-test-scenes/skokloster-castle.glb) exists but is not a recognized config filename extension, so new default Stage Template attributes created and registered.
+I0506 14:05:59.443969 420761 SceneDatasetAttributes.cpp:45] ::addNewSceneInstanceToDataset : Dataset : 'default' : Stage Attributes '/scratch/pr2257/deep-learning/project-2/habitat-sim/data/scene_datasets/habitat-test-scenes/skokloster-castle.glb' specified in Scene Attributes exists in dataset library.
+I0506 14:05:59.443976 420761 SceneDatasetAttributes.cpp:79] ::addNewSceneInstanceToDataset : Dataset : 'default' : Lighting Layout Attributes 'no_lights' specified in Scene Attributes but does not exist in dataset, so creating.
+I0506 14:05:59.443982 420761 ManagedFileBasedContainer.h:210] <Lighting Layout>::convertFilenameToPassedExt : Filename : no_lights changed to proposed lighting_config.json filename : no_lights.lighting_config.json
+I0506 14:05:59.443996 420761 ManagedFileBasedContainer.h:210] <Lighting Layout>::convertFilenameToPassedExt : Filename : no_lights changed to proposed lighting_config.json filename : no_lights.lighting_config.json
+I0506 14:05:59.444002 420761 AttributesManagerBase.h:365] <Lighting Layout>::createFromJsonOrDefaultInternal : Proposing JSON name : no_lights.lighting_config.json from original name : no_lights | This file  does not exist.
+I0506 14:05:59.444022 420761 LightLayoutAttributesManager.cpp:34] File (no_lights) not found, so new default light layout attributes created and registered.
+I0506 14:05:59.444031 420761 Simulator.cpp:206] ::setSceneInstanceAttributes : Navmesh file location in scene instance : /scratch/pr2257/deep-learning/project-2/habitat-sim/data/scene_datasets/habitat-test-scenes/skokloster-castle.navmesh
+I0506 14:05:59.444051 420761 Simulator.cpp:213] ::setSceneInstanceAttributes : Loading navmesh from /scratch/pr2257/deep-learning/project-2/habitat-sim/data/scene_datasets/habitat-test-scenes/skokloster-castle.navmesh
+I0506 14:05:59.482245 420761 Simulator.cpp:216] ::setSceneInstanceAttributes : Navmesh Loaded.
+I0506 14:05:59.482282 420761 SceneGraph.h:85] Created DrawableGroup: 
+I0506 14:05:59.482293 420761 Simulator.cpp:251] ::setSceneInstanceAttributes : SceneInstance : /scratch/pr2257/deep-learning/project-2/habitat-sim/data/scene_datasets/habitat-test-scenes/skokloster-castle.glb proposed Semantic Scene Descriptor filename : /scratch/pr2257/deep-learning/project-2/habitat-sim/data/scene_datasets/habitat-test-scenes/skokloster-castle.scn
+E0506 14:05:59.482334 420761 SemanticScene.h:155] ::loadSemanticSceneDescriptor : File /scratch/pr2257/deep-learning/project-2/habitat-sim/data/scene_datasets/habitat-test-scenes/skokloster-castle.scn does not exist.  Aborting load.
+W0506 14:05:59.482370 420761 Simulator.cpp:275] ::setSceneInstanceAttributes : All attempts to load SSD with SceneAttributes-provided name /scratch/pr2257/deep-learning/project-2/habitat-sim/data/scene_datasets/habitat-test-scenes/skokloster-castle.scn : exist : 0 : loaded as expected type : 0
+I0506 14:05:59.482614 420761 Simulator.cpp:324] ::createSceneInstance : Using scene instance-specified Light key : -no_lights-
+I0506 14:05:59.482627 420761 MetadataMediator.cpp:68] ::setSimulatorConfiguration : Set new simulator config for scene/stage : /scratch/pr2257/deep-learning/project-2/habitat-sim/data/scene_datasets/habitat-test-scenes/skokloster-castle.glb and dataset : default which is currently active dataset.
+I0506 14:05:59.482654 420761 Simulator.cpp:382] ::createSceneInstance : Start to load stage named : /scratch/pr2257/deep-learning/project-2/habitat-sim/data/scene_datasets/habitat-test-scenes/skokloster-castle.glb with render asset : /scratch/pr2257/deep-learning/project-2/habitat-sim/data/scene_datasets/habitat-test-scenes/skokloster-castle.glb and collision asset : /scratch/pr2257/deep-learning/project-2/habitat-sim/data/scene_datasets/habitat-test-scenes/skokloster-castle.glb
+I0506 14:05:59.482673 420761 ResourceManager.cpp:257] ::loadStage : Not loading semantic mesh
+I0506 14:05:59.482679 420761 ResourceManager.cpp:285] ::loadStage : start load render asset /scratch/pr2257/deep-learning/project-2/habitat-sim/data/scene_datasets/habitat-test-scenes/skokloster-castle.glb.
+I0506 14:05:59.482684 420761 ResourceManager.cpp:699] ::loadStageInternal : Attempting to load stage /scratch/pr2257/deep-learning/project-2/habitat-sim/data/scene_datasets/habitat-test-scenes/skokloster-castle.glb 
+I0506 14:05:59.482717 420761 ResourceManager.cpp:1280] Importing Basis files as BC7 for skokloster-castle.glb
+I0506 14:06:00.918996 420761 Simulator.cpp:400] ::createSceneInstance : Successfully loaded stage named : /scratch/pr2257/deep-learning/project-2/habitat-sim/data/scene_datasets/habitat-test-scenes/skokloster-castle.glb
+W0506 14:06:00.919055 420761 Simulator.cpp:435] 
+---
+Simulator::createSceneInstance : The active scene does not contain semantic annotations. 
+---
+I0506 14:06:00.919067 420761 MetadataMediator.cpp:262] ::getSceneAttributesByName : Query dataset : default for SceneAttributes named : /scratch/pr2257/deep-learning/project-2/habitat-sim/data/scene_datasets/habitat-test-scenes/skokloster-castle.glb yields 1 candidates.  Using /scratch/pr2257/deep-learning/project-2/habitat-sim/data/scene_datasets/habitat-test-scenes/skokloster-castle.glb.
+I0506 14:06:00.919080 420761 SceneDatasetAttributes.cpp:45] ::addNewSceneInstanceToDataset : Dataset : 'default' : Stage Attributes '/scratch/pr2257/deep-learning/project-2/habitat-sim/data/scene_datasets/habitat-test-scenes/skokloster-castle.glb' specified in Scene Attributes exists in dataset library.
+I0506 14:06:00.919087 420761 SceneDatasetAttributes.cpp:85] ::addNewSceneInstanceToDataset : Dataset : 'default' : Lighting Layout Attributes no_lights specified in Scene Attributes exists in dataset library.
+I0506 14:06:00.919096 420761 MetadataMediator.cpp:262] ::getSceneAttributesByName : Query dataset : default for SceneAttributes named : /scratch/pr2257/deep-learning/project-2/habitat-sim/data/scene_datasets/habitat-test-scenes/skokloster-castle.glb yields 1 candidates.  Using /scratch/pr2257/deep-learning/project-2/habitat-sim/data/scene_datasets/habitat-test-scenes/skokloster-castle.glb.
+I0506 14:06:00.919103 420761 SceneDatasetAttributes.cpp:45] ::addNewSceneInstanceToDataset : Dataset : 'default' : Stage Attributes '/scratch/pr2257/deep-learning/project-2/habitat-sim/data/scene_datasets/habitat-test-scenes/skokloster-castle.glb' specified in Scene Attributes exists in dataset library.
+I0506 14:06:00.919108 420761 SceneDatasetAttributes.cpp:85] ::addNewSceneInstanceToDataset : Dataset : 'default' : Lighting Layout Attributes no_lights specified in Scene Attributes exists in dataset library.
+I0506 14:06:00.919121 420761 Simulator.cpp:182] Simulator::reconfigure() : createSceneInstance success == true for active scene name : /scratch/pr2257/deep-learning/project-2/habitat-sim/data/scene_datasets/habitat-test-scenes/skokloster-castle.glb with renderer.
+I0506 14:06:00.919580 420761 simulator.py:221] Loaded navmesh /scratch/pr2257/deep-learning/project-2/habitat-sim/data/scene_datasets/habitat-test-scenes/skokloster-castle.navmesh
+I0506 14:06:01.829514 420761 PhysicsManager.cpp:50] Deconstructing PhysicsManager
+I0506 14:06:01.829874 420761 SemanticScene.h:43] Deconstructing SemanticScene
+I0506 14:06:01.829882 420761 SceneManager.h:25] Deconstructing SceneManager
+I0506 14:06:01.829887 420761 SceneGraph.h:25] Deconstructing SceneGraph
+I0506 14:06:01.830106 420761 Sensor.cpp:69] Deconstructing Sensor
+I0506 14:06:01.850541 420761 Renderer.cpp:71] Deconstructing Renderer
+I0506 14:06:01.850586 420761 WindowlessContext.h:17] Deconstructing WindowlessContext
+I0506 14:06:01.854182 420761 Simulator.cpp:54] Deconstructing Simulator
+sim_cfg.physics_config_file = ./data/default.physics_config.json
+start_state.position	 [-1.7926959   0.11083889 19.255245  ] start_state.rotation	 quaternion(1, 0, 2.45858027483337e-05, 0)
+action move_forward
+position	 [-1.7927082   0.11965936 19.005245  ] 	 rotation	 quaternion(1, 0, 2.45858027483337e-05, 0)
+action turn_right
+position	 [-1.7927082   0.11965936 19.005245  ] 	 rotation	 quaternion(0.996196866035461, 0, -0.0871312469244003, 0)
+action move_forward
+position	 [-1.7493082   0.12510616 18.75904   ] 	 rotation	 quaternion(0.996196866035461, 0, -0.0871312469244003, 0)
+action turn_left
+position	 [-1.7493082   0.12510616 18.75904   ] 	 rotation	 quaternion(1, 0, 2.45869159698486e-05, 0)
+action move_forward
+position	 [-1.7493205   0.13392666 18.50904   ] 	 rotation	 quaternion(1, 0, 2.45869159698486e-05, 0)
+action turn_left
+position	 [-1.7493205   0.13392666 18.50904   ] 	 rotation	 quaternion(0.996192574501038, 0, 0.0871802270412445, 0)
+action turn_left
+position	 [-1.7493205   0.13392666 18.50904   ] 	 rotation	 quaternion(0.98480349779129, 0, 0.173672378063202, 0)
+action turn_left
+position	 [-1.7493205   0.13392666 18.50904   ] 	 rotation	 quaternion(0.965919494628906, 0, 0.258842796087265, 0)
+action turn_right
+position	 [-1.7493205   0.13392666 18.50904   ] 	 rotation	 quaternion(0.984803557395935, 0, 0.173672407865524, 0)
+action turn_left
+position	 [-1.7493205   0.13392666 18.50904   ] 	 rotation	 quaternion(0.965919554233551, 0, 0.258842825889587, 0)
+action move_forward
+position	 [-1.8743312   0.15089378 18.292542  ] 	 rotation	 quaternion(0.965919554233551, 0, 0.258842825889587, 0)
+action move_forward
+position	 [-1.999342    0.16786088 18.076042  ] 	 rotation	 quaternion(0.965919554233551, 0, 0.258842825889587, 0)
+action turn_left
+position	 [-1.999342    0.16786088 18.076042  ] 	 rotation	 quaternion(0.939684212207794, 0, 0.342043250799179, 0)
+action move_forward
+position	 [-2.1600482   0.18661009 17.884539  ] 	 rotation	 quaternion(0.939684212207794, 0, 0.342043250799179, 0)
+action turn_left
+position	 [-2.1600482   0.18661009 17.884539  ] 	 rotation	 quaternion(0.906297445297241, 0, 0.422640562057495, 0)
+action turn_left
+position	 [-2.1600482   0.18661009 17.884539  ] 	 rotation	 quaternion(0.866013169288635, 0, 0.50002133846283, 0)
+action turn_right
+position	 [-2.1600482   0.18661009 17.884539  ] 	 rotation	 quaternion(0.906297445297241, 0, 0.422640591859818, 0)
+action move_forward
+position	 [-2.3515673   0.20657168 17.72385   ] 	 rotation	 quaternion(0.906297445297241, 0, 0.422640591859818, 0)
+action turn_right
+position	 [-2.3515673   0.20657168 17.72385   ] 	 rotation	 quaternion(0.939684271812439, 0, 0.342043310403824, 0)
+action turn_left
+position	 [-2.3515673   0.20657168 17.72385   ] 	 rotation	 quaternion(0.906297385692596, 0, 0.422640562057495, 0)
+action turn_left
+position	 [-2.3515673   0.20657168 17.72385   ] 	 rotation	 quaternion(0.86601310968399, 0, 0.50002133846283, 0)
+action turn_right
+position	 [-2.3515673   0.20657168 17.72385   ] 	 rotation	 quaternion(0.906297445297241, 0, 0.422640591859818, 0)
+action move_forward
+position	 [-2.5430863   0.22653328 17.563162  ] 	 rotation	 quaternion(0.906297445297241, 0, 0.422640591859818, 0)
+action turn_right
+position	 [-2.5430863   0.22653328 17.563162  ] 	 rotation	 quaternion(0.939684271812439, 0, 0.342043310403824, 0)
+action move_forward
+position	 [-2.7037926  0.2452825 17.371658 ] 	 rotation	 quaternion(0.939684271812439, 0, 0.342043310403824, 0)
+action turn_left
+position	 [-2.7037926  0.2452825 17.371658 ] 	 rotation	 quaternion(0.906297385692596, 0, 0.422640562057495, 0)
+action move_forward
+position	 [-2.8953116   0.26524407 17.21097   ] 	 rotation	 quaternion(0.906297385692596, 0, 0.422640562057495, 0)
+action move_forward
+position	 [-3.0868306  0.2852057 17.050282 ] 	 rotation	 quaternion(0.906297385692596, 0, 0.422640562057495, 0)
+action move_forward
+position	 [-3.2783496  0.3051673 16.889593 ] 	 rotation	 quaternion(0.906297385692596, 0, 0.422640562057495, 0)
+action turn_right
+position	 [-3.2783496  0.3051673 16.889593 ] 	 rotation	 quaternion(0.939684212207794, 0, 0.342043280601501, 0)
+action turn_right
+position	 [-3.2783496  0.3051673 16.889593 ] 	 rotation	 quaternion(0.965919494628906, 0, 0.25884285569191, 0)
+action move_forward
+position	 [-3.4033604   0.32213438 16.673094  ] 	 rotation	 quaternion(0.965919494628906, 0, 0.25884285569191, 0)
+action turn_left
+position	 [-3.4033604   0.32213438 16.673094  ] 	 rotation	 quaternion(0.939684271812439, 0, 0.342043310403824, 0)
+action turn_right
+position	 [-3.4033604   0.32213438 16.673094  ] 	 rotation	 quaternion(0.965919435024261, 0, 0.25884285569191, 0)
+action move_forward
+position	 [-3.528371   0.2403926 16.456594 ] 	 rotation	 quaternion(0.965919435024261, 0, 0.25884285569191, 0)
+action turn_left
+position	 [-3.528371   0.2403926 16.456594 ] 	 rotation	 quaternion(0.939684212207794, 0, 0.342043310403824, 0)
+action turn_right
+position	 [-3.528371   0.2403926 16.456594 ] 	 rotation	 quaternion(0.965919494628906, 0, 0.258842885494232, 0)
+action move_forward
+position	 [-3.6533818  0.2099186 16.240095 ] 	 rotation	 quaternion(0.965919494628906, 0, 0.258842885494232, 0)
+action turn_right
+position	 [-3.6533818  0.2099186 16.240095 ] 	 rotation	 quaternion(0.984803557395935, 0, 0.173672497272491, 0)
+action move_forward
+position	 [-3.7388985   0.20991862 16.005177  ] 	 rotation	 quaternion(0.984803557395935, 0, 0.173672497272491, 0)
+action turn_left
+position	 [-3.7388985   0.20991862 16.005177  ] 	 rotation	 quaternion(0.965919435024261, 0, 0.258842885494232, 0)
+action turn_left
+position	 [-3.7388985   0.20991862 16.005177  ] 	 rotation	 quaternion(0.939684212207794, 0, 0.342043340206146, 0)
+action turn_right
+position	 [-3.7388985   0.20991862 16.005177  ] 	 rotation	 quaternion(0.965919494628906, 0, 0.258842915296555, 0)
+action move_forward
+position	 [-3.8639092   0.20991862 15.788676  ] 	 rotation	 quaternion(0.965919494628906, 0, 0.258842915296555, 0)
+action turn_left
+position	 [-3.8639092   0.20991862 15.788676  ] 	 rotation	 quaternion(0.939684152603149, 0, 0.342043340206146, 0)
+action move_forward
+position	 [-4.024616    0.20991862 15.597173  ] 	 rotation	 quaternion(0.939684152603149, 0, 0.342043340206146, 0)
+action turn_right
+position	 [-4.024616    0.20991862 15.597173  ] 	 rotation	 quaternion(0.965919435024261, 0, 0.258842915296555, 0)
+action move_forward
+position	 [-4.1496263   0.20991862 15.380672  ] 	 rotation	 quaternion(0.965919435024261, 0, 0.258842915296555, 0)
+action turn_left
+position	 [-4.1496263   0.20991862 15.380672  ] 	 rotation	 quaternion(0.939684212207794, 0, 0.342043370008469, 0)
+action turn_left
+position	 [-4.1496263   0.20991862 15.380672  ] 	 rotation	 quaternion(0.906297326087952, 0, 0.42264062166214, 0)
+action move_forward
+position	 [-4.3411455   0.20991862 15.219985  ] 	 rotation	 quaternion(0.906297326087952, 0, 0.42264062166214, 0)
+action turn_left
+position	 [-4.3411455   0.20991862 15.219985  ] 	 rotation	 quaternion(0.866013050079346, 0, 0.500021398067474, 0)
+action turn_right
+position	 [-4.3411455   0.20991862 15.219985  ] 	 rotation	 quaternion(0.906297385692596, 0, 0.422640681266785, 0)
+action turn_right
+position	 [-4.3411455   0.20991862 15.219985  ] 	 rotation	 quaternion(0.939684212207794, 0, 0.342043399810791, 0)
+action move_forward
+position	 [-4.501852    0.20991862 15.0284815 ] 	 rotation	 quaternion(0.939684212207794, 0, 0.342043399810791, 0)
+action move_forward
+position	 [-4.6625586   0.20991862 14.836978  ] 	 rotation	 quaternion(0.939684212207794, 0, 0.342043399810791, 0)
+action turn_right
+position	 [-4.6625586   0.20991862 14.836978  ] 	 rotation	 quaternion(0.965919494628906, 0, 0.258842974901199, 0)
+action turn_right
+position	 [-4.6625586   0.20991862 14.836978  ] 	 rotation	 quaternion(0.984803438186646, 0, 0.173672571778297, 0)
+action turn_left
+position	 [-4.6625586   0.20991862 14.836978  ] 	 rotation	 quaternion(0.965919435024261, 0, 0.258842974901199, 0)
+action move_forward
+position	 [-4.787569    0.20991862 14.620478  ] 	 rotation	 quaternion(0.965919435024261, 0, 0.258842974901199, 0)
+action turn_right
+position	 [-4.787569    0.20991862 14.620478  ] 	 rotation	 quaternion(0.98480349779129, 0, 0.173672586679459, 0)
+action turn_left
+position	 [-4.787569    0.20991862 14.620478  ] 	 rotation	 quaternion(0.965919494628906, 0, 0.258843004703522, 0)
+action turn_right
+position	 [-4.787569    0.20991862 14.620478  ] 	 rotation	 quaternion(0.984803438186646, 0, 0.17367260158062, 0)
+action turn_right
+position	 [-4.787569    0.20991862 14.620478  ] 	 rotation	 quaternion(0.996192574501038, 0, 0.0871804729104042, 0)
+action turn_right
+position	 [-4.787569    0.20991862 14.620478  ] 	 rotation	 quaternion(1, 0, 2.48327851295471e-05, 0)
+action turn_left
+position	 [-4.787569    0.20991862 14.620478  ] 	 rotation	 quaternion(0.996192574501038, 0, 0.0871804729104042, 0)
+action turn_right
+position	 [-4.787569    0.20991862 14.620478  ] 	 rotation	 quaternion(1, 0, 2.48327851295471e-05, 0)
+action turn_right
+position	 [-4.787569    0.20991862 14.620478  ] 	 rotation	 quaternion(0.996196866035461, 0, -0.0871310010552406, 0)
+action move_forward
+position	 [-4.744169    0.20991862 14.374273  ] 	 rotation	 quaternion(0.996196866035461, 0, -0.0871310010552406, 0)
+action turn_left
+position	 [-4.744169    0.20991862 14.374273  ] 	 rotation	 quaternion(1, 0, 2.48327851295471e-05, 0)
+action turn_left
+position	 [-4.744169    0.20991862 14.374273  ] 	 rotation	 quaternion(0.996192574501038, 0, 0.0871804729104042, 0)
+action turn_right
+position	 [-4.744169    0.20991862 14.374273  ] 	 rotation	 quaternion(1, 0, 2.48327851295471e-05, 0)
+action turn_left
+position	 [-4.744169    0.20991862 14.374273  ] 	 rotation	 quaternion(0.996192574501038, 0, 0.0871804729104042, 0)
+action turn_right
+position	 [-4.744169    0.20991862 14.374273  ] 	 rotation	 quaternion(1, 0, 2.48327851295471e-05, 0)
+action turn_left
+position	 [-4.744169    0.20991862 14.374273  ] 	 rotation	 quaternion(0.996192574501038, 0, 0.0871804729104042, 0)
+action turn_right
+position	 [-4.744169    0.20991862 14.374273  ] 	 rotation	 quaternion(1, 0, 2.48327851295471e-05, 0)
+action move_forward
+position	 [-4.7441816   0.20991862 14.124273  ] 	 rotation	 quaternion(1, 0, 2.48327851295471e-05, 0)
+action turn_left
+position	 [-4.7441816   0.20991862 14.124273  ] 	 rotation	 quaternion(0.996192574501038, 0, 0.0871804729104042, 0)
+action move_forward
+position	 [-4.787606    0.20991862 13.878074  ] 	 rotation	 quaternion(0.996192574501038, 0, 0.0871804729104042, 0)
+action turn_right
+position	 [-4.787606    0.20991862 13.878074  ] 	 rotation	 quaternion(1, 0, 2.48327851295471e-05, 0)
+action turn_left
+position	 [-4.787606    0.20991862 13.878074  ] 	 rotation	 quaternion(0.996192574501038, 0, 0.0871804729104042, 0)
+action turn_left
+position	 [-4.787606    0.20991862 13.878074  ] 	 rotation	 quaternion(0.98480349779129, 0, 0.173672616481781, 0)
+action turn_right
+position	 [-4.787606    0.20991862 13.878074  ] 	 rotation	 quaternion(0.996192574501038, 0, 0.0871804729104042, 0)
+action move_forward
+position	 [-4.83103     0.20991862 13.631874  ] 	 rotation	 quaternion(0.996192574501038, 0, 0.0871804729104042, 0)
+action turn_left
+position	 [-4.83103     0.20991862 13.631874  ] 	 rotation	 quaternion(0.98480349779129, 0, 0.173672616481781, 0)
+action turn_right
+position	 [-4.83103     0.20991862 13.631874  ] 	 rotation	 quaternion(0.996192574501038, 0, 0.0871804729104042, 0)
+action turn_right
+position	 [-4.83103     0.20991862 13.631874  ] 	 rotation	 quaternion(1, 0, 2.48327851295471e-05, 0)
+action turn_right
+position	 [-4.83103     0.20991862 13.631874  ] 	 rotation	 quaternion(0.996196866035461, 0, -0.0871310010552406, 0)
+action turn_right
+position	 [-4.83103     0.20991862 13.631874  ] 	 rotation	 quaternion(0.984812080860138, 0, -0.173623710870743, 0)
+action turn_left
+position	 [-4.83103     0.20991862 13.631874  ] 	 rotation	 quaternion(0.996196925640106, 0, -0.0871310010552406, 0)
+action move_forward
+position	 [-4.78763     0.20991862 13.38567   ] 	 rotation	 quaternion(0.996196925640106, 0, -0.0871310010552406, 0)
+action turn_left
+position	 [-4.78763     0.20991862 13.38567   ] 	 rotation	 quaternion(1, 0, 2.48327814915683e-05, 0)
+action turn_right
+position	 [-4.78763     0.20991862 13.38567   ] 	 rotation	 quaternion(0.996196866035461, 0, -0.0871310010552406, 0)
+action turn_right
+position	 [-4.78763     0.20991862 13.38567   ] 	 rotation	 quaternion(0.984812080860138, 0, -0.173623710870743, 0)
+action move_forward
+position	 [-4.7021365   0.20571026 13.150743  ] 	 rotation	 quaternion(0.984812080860138, 0, -0.173623710870743, 0)
+action move_forward
+position	 [-4.616643  0.199305 12.915815] 	 rotation	 quaternion(0.984812080860138, 0, -0.173623710870743, 0)
+action turn_right
+position	 [-4.616643  0.199305 12.915815] 	 rotation	 quaternion(0.965932309627533, 0, -0.2587950527668, 0)
+action turn_left
+position	 [-4.616643  0.199305 12.915815] 	 rotation	 quaternion(0.984812140464783, 0, -0.173623725771904, 0)
+action turn_left
+position	 [-4.616643  0.199305 12.915815] 	 rotation	 quaternion(0.996196866035461, 0, -0.0871310010552406, 0)
+action turn_left
+position	 [-4.616643  0.199305 12.915815] 	 rotation	 quaternion(1, 0, 2.48327851295471e-05, 0)
+action turn_right
+position	 [-4.616643  0.199305 12.915815] 	 rotation	 quaternion(0.996196866035461, 0, -0.0871310010552406, 0)
+action move_forward
+position	 [-4.573243   0.1925779 12.669611 ] 	 rotation	 quaternion(0.996196866035461, 0, -0.0871310010552406, 0)
+action turn_left
+position	 [-4.573243   0.1925779 12.669611 ] 	 rotation	 quaternion(1, 0, 2.48327851295471e-05, 0)
+action move_forward
+position	 [-4.5732555   0.18573338 12.419611  ] 	 rotation	 quaternion(1, 0, 2.48327851295471e-05, 0)
+action turn_left
+position	 [-4.5732555   0.18573338 12.419611  ] 	 rotation	 quaternion(0.996192574501038, 0, 0.0871804729104042, 0)
+action turn_right
+position	 [-4.5732555   0.18573338 12.419611  ] 	 rotation	 quaternion(1, 0, 2.48327851295471e-05, 0)
+action turn_right
+position	 [-4.5732555   0.18573338 12.419611  ] 	 rotation	 quaternion(0.996196866035461, 0, -0.0871310010552406, 0)
+action turn_right
+position	 [-4.5732555   0.18573338 12.419611  ] 	 rotation	 quaternion(0.984812080860138, 0, -0.173623710870743, 0)
+action turn_right
+position	 [-4.5732555   0.18573338 12.419611  ] 	 rotation	 quaternion(0.965932309627533, 0, -0.2587950527668, 0)
+action turn_left
+position	 [-4.5732555   0.18573338 12.419611  ] 	 rotation	 quaternion(0.984812140464783, 0, -0.173623725771904, 0)
+action turn_right
+position	 [-4.5732555   0.18573338 12.419611  ] 	 rotation	 quaternion(0.965932250022888, 0, -0.2587950527668, 0)
+action move_forward
+position	 [-4.4482665   0.17984456 12.203098  ] 	 rotation	 quaternion(0.965932250022888, 0, -0.2587950527668, 0)
+action move_forward
+position	 [-4.3232775   0.17395574 11.986586  ] 	 rotation	 quaternion(0.965932250022888, 0, -0.2587950527668, 0)
+action turn_right
+position	 [-4.3232775   0.17395574 11.986586  ] 	 rotation	 quaternion(0.93970113992691, 0, -0.341996788978577, 0)
+action move_forward
+position	 [-4.16259     0.16876231 11.795067  ] 	 rotation	 quaternion(0.93970113992691, 0, -0.341996788978577, 0)
+action move_forward
+position	 [-4.0019026   0.16356888 11.603548  ] 	 rotation	 quaternion(0.93970113992691, 0, -0.341996788978577, 0)
+action move_forward
+position	 [-3.8412151   0.15837547 11.412029  ] 	 rotation	 quaternion(0.93970113992691, 0, -0.341996788978577, 0)
+action turn_right
+position	 [-3.8412151   0.15837547 11.412029  ] 	 rotation	 quaternion(0.906318366527557, 0, -0.422595739364624, 0)
+action turn_right
+position	 [-3.8412151   0.15837547 11.412029  ] 	 rotation	 quaternion(0.866037845611572, 0, -0.499978423118591, 0)
+action move_forward
+position	 [-3.624715    0.15502027 11.287019  ] 	 rotation	 quaternion(0.866037845611572, 0, -0.499978423118591, 0)
+action turn_left
+position	 [-3.624715    0.15502027 11.287019  ] 	 rotation	 quaternion(0.906318306922913, 0, -0.422595709562302, 0)
+action turn_right
+position	 [-3.624715    0.15502027 11.287019  ] 	 rotation	 quaternion(0.866037905216217, 0, -0.499978452920914, 0)
+action turn_left
+position	 [-3.624715    0.15502027 11.287019  ] 	 rotation	 quaternion(0.906318366527557, 0, -0.422595739364624, 0)
+action turn_right
+position	 [-3.624715    0.15502027 11.287019  ] 	 rotation	 quaternion(0.866037845611572, 0, -0.499978423118591, 0)
+action turn_left
+position	 [-3.624715    0.15502027 11.287019  ] 	 rotation	 quaternion(0.906318306922913, 0, -0.422595709562302, 0)
+action turn_left
+position	 [-3.624715    0.15502027 11.287019  ] 	 rotation	 quaternion(0.93970113992691, 0, -0.341996759176254, 0)
+action turn_left
+position	 [-3.624715    0.15502027 11.287019  ] 	 rotation	 quaternion(0.965932309627533, 0, -0.258795022964478, 0)
+action turn_right
+position	 [-3.624715    0.15502027 11.287019  ] 	 rotation	 quaternion(0.939701199531555, 0, -0.341996788978577, 0)
+action turn_right
+position	 [-3.624715    0.15502027 11.287019  ] 	 rotation	 quaternion(0.906318306922913, 0, -0.422595679759979, 0)
+action turn_right
+position	 [-3.624715    0.15502027 11.287019  ] 	 rotation	 quaternion(0.866037905216217, 0, -0.499978423118591, 0)
+action turn_right
+position	 [-3.624715    0.15502027 11.287019  ] 	 rotation	 quaternion(0.819166362285614, 0, -0.573556065559387, 0)
+action move_forward
+position	 [-3.3897963   0.15275207 11.201502  ] 	 rotation	 quaternion(0.819166362285614, 0, -0.573556065559387, 0)
+action turn_left
+position	 [-3.3897963   0.15275207 11.201502  ] 	 rotation	 quaternion(0.866037905216217, 0, -0.499978482723236, 0)
+action turn_right
+position	 [-3.3897963   0.15275207 11.201502  ] 	 rotation	 quaternion(0.819166362285614, 0, -0.573556125164032, 0)
+action turn_right
+position	 [-3.3897963   0.15275207 11.201502  ] 	 rotation	 quaternion(0.766060411930084, 0, -0.642768561840057, 0)
+action move_forward
+position	 [-3.1435964   0.15163977 11.158077  ] 	 rotation	 quaternion(0.766060411930084, 0, -0.642768561840057, 0)
+action turn_right
+position	 [-3.1435964   0.15163977 11.158077  ] 	 rotation	 quaternion(0.707124352455139, 0, -0.707089185714722, 0)
+action turn_right
+position	 [-3.1435964   0.15163977 11.158077  ] 	 rotation	 quaternion(0.642806708812714, 0, -0.766028463840485, 0)
+action move_forward
+position	 [-2.8973923   0.15290459 11.201477  ] 	 rotation	 quaternion(0.642806708812714, 0, -0.766028463840485, 0)
+action turn_left
+position	 [-2.8973923   0.15290459 11.201477  ] 	 rotation	 quaternion(0.707124412059784, 0, -0.707089185714722, 0)
+action move_forward
+position	 [-2.6473923   0.15298203 11.201465  ] 	 rotation	 quaternion(0.707124412059784, 0, -0.707089185714722, 0)
+action turn_left
+position	 [-2.6473923   0.15298203 11.201465  ] 	 rotation	 quaternion(0.766060471534729, 0, -0.642768561840057, 0)
+action turn_left
+position	 [-2.6473923   0.15298203 11.201465  ] 	 rotation	 quaternion(0.819166362285614, 0, -0.573556065559387, 0)
+action turn_right
+position	 [-2.6473923   0.15298203 11.201465  ] 	 rotation	 quaternion(0.766060531139374, 0, -0.642768561840057, 0)
+action turn_right
+position	 [-2.6473923   0.15298203 11.201465  ] 	 rotation	 quaternion(0.707124471664429, 0, -0.707089185714722, 0)
+action move_forward
+position	 [-2.3973923   0.15305945 11.201452  ] 	 rotation	 quaternion(0.707124471664429, 0, -0.707089185714722, 0)
+action turn_right
+position	 [-2.3973923   0.15305945 11.201452  ] 	 rotation	 quaternion(0.642806768417358, 0, -0.766028344631195, 0)
+action turn_left
+position	 [-2.3973923   0.15305945 11.201452  ] 	 rotation	 quaternion(0.707124471664429, 0, -0.707089066505432, 0)
+action turn_left
+position	 [-2.3973923   0.15305945 11.201452  ] 	 rotation	 quaternion(0.766060531139374, 0, -0.642768442630768, 0)
+action turn_left
+position	 [-2.3973923   0.15305945 11.201452  ] 	 rotation	 quaternion(0.819166421890259, 0, -0.573555946350098, 0)
+action turn_left
+position	 [-2.3973923   0.15305945 11.201452  ] 	 rotation	 quaternion(0.866037964820862, 0, -0.499978363513947, 0)
+action turn_left
+position	 [-2.3973923   0.15305945 11.201452  ] 	 rotation	 quaternion(0.906318426132202, 0, -0.422595620155334, 0)
+action move_forward
+position	 [-2.2058892  0.1487192 11.040746 ] 	 rotation	 quaternion(0.906318426132202, 0, -0.422595620155334, 0)
+action turn_right
+position	 [-2.2058892  0.1487192 11.040746 ] 	 rotation	 quaternion(0.866037905216217, 0, -0.499978303909302, 0)
+action turn_right
+position	 [-2.2058892  0.1487192 11.040746 ] 	 rotation	 quaternion(0.819166421890259, 0, -0.573556005954742, 0)
+action turn_right
+position	 [-2.2058892  0.1487192 11.040746 ] 	 rotation	 quaternion(0.766060471534729, 0, -0.642768442630768, 0)
+action turn_right
+position	 [-2.2058892  0.1487192 11.040746 ] 	 rotation	 quaternion(0.707124471664429, 0, -0.707089126110077, 0)
+action turn_left
+position	 [-2.2058892  0.1487192 11.040746 ] 	 rotation	 quaternion(0.766060531139374, 0, -0.642768502235413, 0)
+action turn_left
+position	 [-2.2058892  0.1487192 11.040746 ] 	 rotation	 quaternion(0.819166421890259, 0, -0.573556005954742, 0)
+action turn_right
+position	 [-2.2058892  0.1487192 11.040746 ] 	 rotation	 quaternion(0.766060471534729, 0, -0.642768442630768, 0)
+action move_forward
+position	 [-1.9596895   0.14904028 10.997321  ] 	 rotation	 quaternion(0.766060471534729, 0, -0.642768442630768, 0)
+action move_forward
+position	 [-1.7134898  0.1492943 10.9538965] 	 rotation	 quaternion(0.766060471534729, 0, -0.642768442630768, 0)
+action turn_right
+position	 [-1.7134898  0.1492943 10.9538965] 	 rotation	 quaternion(0.707124471664429, 0, -0.707089126110077, 0)
+action move_forward
+position	 [-1.4634898   0.15420794 10.953884  ] 	 rotation	 quaternion(0.707124471664429, 0, -0.707089126110077, 0)
+action turn_right
+position	 [-1.4634898   0.15420794 10.953884  ] 	 rotation	 quaternion(0.642806828022003, 0, -0.76602840423584, 0)
+action turn_right
+position	 [-1.4634898   0.15420794 10.953884  ] 	 rotation	 quaternion(0.573596954345703, 0, -0.819137632846832, 0)
+action move_forward
+position	 [-1.2285624  0.1574451 11.039377 ] 	 rotation	 quaternion(0.573596954345703, 0, -0.819137632846832, 0)
+action move_forward
+position	 [-0.99363494  0.16084974 11.12487   ] 	 rotation	 quaternion(0.573596954345703, 0, -0.819137632846832, 0)
+action turn_right
+position	 [-0.99363494  0.16084974 11.12487   ] 	 rotation	 quaternion(0.500021696090698, 0, -0.866012871265411, 0)
+action turn_left
+position	 [-0.99363494  0.16084974 11.12487   ] 	 rotation	 quaternion(0.573596954345703, 0, -0.819137692451477, 0)
+action move_forward
+position	 [-0.7587075   0.16370519 11.210363  ] 	 rotation	 quaternion(0.573596954345703, 0, -0.819137692451477, 0)
+action turn_right
+position	 [-0.7587075   0.16370519 11.210363  ] 	 rotation	 quaternion(0.500021696090698, 0, -0.866012930870056, 0)
+action move_forward
+position	 [-0.5421949   0.16752166 11.335353  ] 	 rotation	 quaternion(0.500021696090698, 0, -0.866012930870056, 0)
+action move_forward
+position	 [-0.32568228  0.17159191 11.460342  ] 	 rotation	 quaternion(0.500021696090698, 0, -0.866012930870056, 0)
+action move_forward
+position	 [-0.10916966  0.17541797 11.585332  ] 	 rotation	 quaternion(0.500021696090698, 0, -0.866012930870056, 0)
+action turn_left
+position	 [-0.10916966  0.17541797 11.585332  ] 	 rotation	 quaternion(0.573596954345703, 0, -0.819137752056122, 0)
+action move_forward
+position	 [ 0.1257578  0.1779329 11.670825 ] 	 rotation	 quaternion(0.573596954345703, 0, -0.819137752056122, 0)
+action turn_left
+position	 [ 0.1257578  0.1779329 11.670825 ] 	 rotation	 quaternion(0.642806768417358, 0, -0.766028463840485, 0)
+action move_forward
+position	 [ 0.37196195  0.17892309 11.714225  ] 	 rotation	 quaternion(0.642806768417358, 0, -0.766028463840485, 0)
+action turn_left
+position	 [ 0.37196195  0.17892309 11.714225  ] 	 rotation	 quaternion(0.707124471664429, 0, -0.707089185714722, 0)
+action move_forward
+position	 [ 0.62196195  0.17858867 11.714212  ] 	 rotation	 quaternion(0.707124471664429, 0, -0.707089185714722, 0)
+action turn_right
+position	 [ 0.62196195  0.17858867 11.714212  ] 	 rotation	 quaternion(0.642806768417358, 0, -0.766028344631195, 0)
+action move_forward
+position	 [ 0.8681661   0.17957886 11.757612  ] 	 rotation	 quaternion(0.642806768417358, 0, -0.766028344631195, 0)
+action turn_left
+position	 [ 0.8681661   0.17957886 11.757612  ] 	 rotation	 quaternion(0.707124471664429, 0, -0.707089066505432, 0)
+action turn_left
+position	 [ 0.8681661   0.17957886 11.757612  ] 	 rotation	 quaternion(0.766060531139374, 0, -0.642768442630768, 0)
+action move_forward
+position	 [ 1.1143658   0.17793007 11.714188  ] 	 rotation	 quaternion(0.766060531139374, 0, -0.642768442630768, 0)
+action move_forward
+position	 [ 1.3605655  0.1762813 11.670763 ] 	 rotation	 quaternion(0.766060531139374, 0, -0.642768442630768, 0)
+action move_forward
+position	 [ 1.6067653   0.17463252 11.627338  ] 	 rotation	 quaternion(0.766060531139374, 0, -0.642768442630768, 0)
+action turn_left
+position	 [ 1.6067653   0.17463252 11.627338  ] 	 rotation	 quaternion(0.819166421890259, 0, -0.573555946350098, 0)
+action turn_right
+position	 [ 1.6067653   0.17463252 11.627338  ] 	 rotation	 quaternion(0.766060590744019, 0, -0.642768442630768, 0)
+action move_forward
+position	 [ 1.8529651   0.17298375 11.583914  ] 	 rotation	 quaternion(0.766060590744019, 0, -0.642768442630768, 0)
+action turn_right
+position	 [ 1.8529651   0.17298375 11.583914  ] 	 rotation	 quaternion(0.707124531269073, 0, -0.707089066505432, 0)
+action turn_left
+position	 [ 1.8529651   0.17298375 11.583914  ] 	 rotation	 quaternion(0.766060590744019, 0, -0.642768442630768, 0)
+action turn_right
+position	 [ 1.8529651   0.17298375 11.583914  ] 	 rotation	 quaternion(0.707124531269073, 0, -0.707089066505432, 0)
+action turn_right
+position	 [ 1.8529651   0.17298375 11.583914  ] 	 rotation	 quaternion(0.642806887626648, 0, -0.766028344631195, 0)
+action turn_left
+position	 [ 1.8529651   0.17298375 11.583914  ] 	 rotation	 quaternion(0.707124590873718, 0, -0.707089066505432, 0)
+action turn_left
+position	 [ 1.8529651   0.17298375 11.583914  ] 	 rotation	 quaternion(0.766060531139374, 0, -0.642768383026123, 0)
+action turn_right
+position	 [ 1.8529651   0.17298375 11.583914  ] 	 rotation	 quaternion(0.707124531269073, 0, -0.707089066505432, 0)
+action turn_left
+position	 [ 1.8529651   0.17298375 11.583914  ] 	 rotation	 quaternion(0.766060590744019, 0, -0.642768442630768, 0)
+action turn_left
+position	 [ 1.8529651   0.17298375 11.583914  ] 	 rotation	 quaternion(0.819166481494904, 0, -0.573555946350098, 0)
+action turn_left
+position	 [ 1.8529651   0.17298375 11.583914  ] 	 rotation	 quaternion(0.866037905216217, 0, -0.499978274106979, 0)
+action move_forward
+position	 [ 2.0694652   0.16889493 11.458903  ] 	 rotation	 quaternion(0.866037905216217, 0, -0.499978274106979, 0)
+action move_forward
+position	 [ 2.2859652   0.16480608 11.333893  ] 	 rotation	 quaternion(0.866037905216217, 0, -0.499978274106979, 0)
+action turn_left
+position	 [ 2.2859652   0.16480608 11.333893  ] 	 rotation	 quaternion(0.906318366527557, 0, -0.42259556055069, 0)
+action turn_left
+position	 [ 2.2859652   0.16480608 11.333893  ] 	 rotation	 quaternion(0.939701199531555, 0, -0.341996610164642, 0)
+action turn_left
+position	 [ 2.2859652   0.16480608 11.333893  ] 	 rotation	 quaternion(0.965932369232178, 0, -0.258794873952866, 0)
+action turn_left
+position	 [ 2.2859652   0.16480608 11.333893  ] 	 rotation	 quaternion(0.984812080860138, 0, -0.173623517155647, 0)
+action move_forward
+position	 [ 2.3714585   0.15755148 11.098966  ] 	 rotation	 quaternion(0.984812080860138, 0, -0.173623517155647, 0)
+action turn_left
+position	 [ 2.3714585   0.15755148 11.098966  ] 	 rotation	 quaternion(0.996196925640106, 0, -0.0871308073401451, 0)
+action move_forward
+position	 [ 2.4148583   0.15001032 10.852761  ] 	 rotation	 quaternion(0.996196925640106, 0, -0.0871308073401451, 0)
+action turn_left
+position	 [ 2.4148583   0.15001032 10.852761  ] 	 rotation	 quaternion(1, 0, 2.50264965870883e-05, 0)
+action turn_right
+position	 [ 2.4148583   0.15001032 10.852761  ] 	 rotation	 quaternion(0.996196925640106, 0, -0.0871308073401451, 0)
+action turn_right
+position	 [ 2.4148583   0.15001032 10.852761  ] 	 rotation	 quaternion(0.984812080860138, 0, -0.173623517155647, 0)
+action move_forward
+position	 [ 2.5003517   0.14275569 10.617834  ] 	 rotation	 quaternion(0.984812080860138, 0, -0.173623517155647, 0)
+action turn_right
+position	 [ 2.5003517   0.14275569 10.617834  ] 	 rotation	 quaternion(0.965932309627533, 0, -0.258794844150543, 0)
+action turn_left
+position	 [ 2.5003517   0.14275569 10.617834  ] 	 rotation	 quaternion(0.984812140464783, 0, -0.173623517155647, 0)
+action move_forward
+position	 [ 2.585845    0.13550106 10.382907  ] 	 rotation	 quaternion(0.984812140464783, 0, -0.173623517155647, 0)
+action move_forward
+position	 [ 2.6713383   0.12881544 10.14798   ] 	 rotation	 quaternion(0.984812140464783, 0, -0.173623517155647, 0)
+action move_forward
+position	 [2.7568316  0.12836811 9.913053  ] 	 rotation	 quaternion(0.984812140464783, 0, -0.173623517155647, 0)
+action turn_left
+position	 [2.7568316  0.12836811 9.913053  ] 	 rotation	 quaternion(0.996196866035461, 0, -0.0871307924389839, 0)
+action move_forward
+position	 [2.8002315  0.12674324 9.666848  ] 	 rotation	 quaternion(0.996196866035461, 0, -0.0871307924389839, 0)
+action move_forward
+position	 [2.8436313  0.12511837 9.420644  ] 	 rotation	 quaternion(0.996196866035461, 0, -0.0871307924389839, 0)
+action turn_right
+position	 [2.8436313  0.12511837 9.420644  ] 	 rotation	 quaternion(0.984812140464783, 0, -0.173623502254486, 0)
+action move_forward
+position	 [2.9291246  0.12467106 9.185717  ] 	 rotation	 quaternion(0.984812140464783, 0, -0.173623502254486, 0)
+action turn_left
+position	 [2.9291246  0.12467106 9.185717  ] 	 rotation	 quaternion(0.996196866035461, 0, -0.0871307775378227, 0)
+action turn_right
+position	 [2.9291246  0.12467106 9.185717  ] 	 rotation	 quaternion(0.984812140464783, 0, -0.173623502254486, 0)
+action turn_right
+position	 [2.9291246  0.12467106 9.185717  ] 	 rotation	 quaternion(0.965932369232178, 0, -0.258794844150543, 0)
+action turn_right
+position	 [2.9291246  0.12467106 9.185717  ] 	 rotation	 quaternion(0.9397012591362, 0, -0.341996610164642, 0)
+action turn_left
+position	 [2.9291246  0.12467106 9.185717  ] 	 rotation	 quaternion(0.965932309627533, 0, -0.258794844150543, 0)
+action turn_right
+position	 [2.9291246  0.12467106 9.185717  ] 	 rotation	 quaternion(0.939701199531555, 0, -0.341996610164642, 0)
+action move_forward
+position	 [3.0898118  0.12658343 8.994198  ] 	 rotation	 quaternion(0.939701199531555, 0, -0.341996610164642, 0)
+action turn_right
+position	 [3.0898118  0.12658343 8.994198  ] 	 rotation	 quaternion(0.906318426132202, 0, -0.422595590353012, 0)
+action turn_right
+position	 [3.0898118  0.12658343 8.994198  ] 	 rotation	 quaternion(0.866037905216217, 0, -0.499978274106979, 0)
+action turn_right
+position	 [3.0898118  0.12658343 8.994198  ] 	 rotation	 quaternion(0.819166421890259, 0, -0.573555946350098, 0)
+action turn_left
+position	 [3.0898118  0.12658343 8.994198  ] 	 rotation	 quaternion(0.866037964820862, 0, -0.499978363513947, 0)
+action move_forward
+position	 [3.3063118  0.13062486 8.869187  ] 	 rotation	 quaternion(0.866037964820862, 0, -0.499978363513947, 0)
+action turn_right
+position	 [3.3063118  0.13062486 8.869187  ] 	 rotation	 quaternion(0.819166421890259, 0, -0.573556005954742, 0)
+action turn_right
+position	 [3.3063118  0.13062486 8.869187  ] 	 rotation	 quaternion(0.766060471534729, 0, -0.642768442630768, 0)
+action move_forward
+position	 [3.5525117  0.13662629 8.825763  ] 	 rotation	 quaternion(0.766060471534729, 0, -0.642768442630768, 0)
+action turn_left
+position	 [3.5525117  0.13662629 8.825763  ] 	 rotation	 quaternion(0.819166421890259, 0, -0.573556005954742, 0)
+action turn_right
+position	 [3.5525117  0.13662629 8.825763  ] 	 rotation	 quaternion(0.766060471534729, 0, -0.642768442630768, 0)
+action turn_right
+position	 [3.5525117  0.13662629 8.825763  ] 	 rotation	 quaternion(0.707124471664429, 0, -0.707089126110077, 0)
+action turn_left
+position	 [3.5525117  0.13662629 8.825763  ] 	 rotation	 quaternion(0.766060531139374, 0, -0.642768502235413, 0)
+action turn_right
+position	 [3.5525117  0.13662629 8.825763  ] 	 rotation	 quaternion(0.707124471664429, 0, -0.707089126110077, 0)
+action turn_right
+position	 [3.5525117  0.13662629 8.825763  ] 	 rotation	 quaternion(0.642806828022003, 0, -0.76602840423584, 0)
+action turn_left
+position	 [3.5525117  0.13662629 8.825763  ] 	 rotation	 quaternion(0.707124531269073, 0, -0.707089126110077, 0)
+action move_forward
+position	 [3.8025117  0.14565305 8.82575   ] 	 rotation	 quaternion(0.707124531269073, 0, -0.707089126110077, 0)
+action turn_right
+position	 [3.8025117  0.14565305 8.82575   ] 	 rotation	 quaternion(0.642806828022003, 0, -0.76602828502655, 0)
+action turn_left
+position	 [3.8025117  0.14565305 8.82575   ] 	 rotation	 quaternion(0.707124531269073, 0, -0.707089006900787, 0)
+action move_forward
+position	 [4.0525117  0.15467978 8.825738  ] 	 rotation	 quaternion(0.707124531269073, 0, -0.707089006900787, 0)
+action move_forward
+position	 [4.3025117  0.16370653 8.825726  ] 	 rotation	 quaternion(0.707124531269073, 0, -0.707089006900787, 0)
+action move_forward
+position	 [4.5525117  0.17273328 8.825713  ] 	 rotation	 quaternion(0.707124531269073, 0, -0.707089006900787, 0)
+action turn_left
+position	 [4.5525117  0.17273328 8.825713  ] 	 rotation	 quaternion(0.766060590744019, 0, -0.642768383026123, 0)
+action move_forward
+position	 [4.7987113  0.18182723 8.782289  ] 	 rotation	 quaternion(0.766060590744019, 0, -0.642768383026123, 0)
+action move_forward
+position	 [5.044911   0.19092122 8.738864  ] 	 rotation	 quaternion(0.766060590744019, 0, -0.642768383026123, 0)
+action turn_left
+position	 [5.044911   0.19092122 8.738864  ] 	 rotation	 quaternion(0.819166481494904, 0, -0.573555886745453, 0)
+action turn_left
+position	 [5.044911   0.19092122 8.738864  ] 	 rotation	 quaternion(0.866038024425507, 0, -0.499978274106979, 0)
+action turn_right
+position	 [5.044911   0.19092122 8.738864  ] 	 rotation	 quaternion(0.819166481494904, 0, -0.573555886745453, 0)
+action move_forward
+position	 [5.27983    0.19980612 8.653347  ] 	 rotation	 quaternion(0.819166481494904, 0, -0.573555886745453, 0)
+action turn_left
+position	 [5.27983    0.19980612 8.653347  ] 	 rotation	 quaternion(0.866038024425507, 0, -0.499978274106979, 0)
+action turn_right
+position	 [5.27983    0.19980612 8.653347  ] 	 rotation	 quaternion(0.819166481494904, 0, -0.573555886745453, 0)
+action turn_left
+position	 [5.27983    0.19980612 8.653347  ] 	 rotation	 quaternion(0.866038024425507, 0, -0.499978274106979, 0)
+action move_forward
+position	 [5.4963303 0.208212  8.528337 ] 	 rotation	 quaternion(0.866038024425507, 0, -0.499978274106979, 0)
+action move_forward
+position	 [5.7128305  0.20991862 8.403326  ] 	 rotation	 quaternion(0.866038024425507, 0, -0.499978274106979, 0)
+action turn_right
+position	 [5.7128305  0.20991862 8.403326  ] 	 rotation	 quaternion(0.819166481494904, 0, -0.573555886745453, 0)
+action move_forward
+position	 [5.9477496  0.20991862 8.317809  ] 	 rotation	 quaternion(0.819166481494904, 0, -0.573555886745453, 0)
+action turn_right
+position	 [5.9477496  0.20991862 8.317809  ] 	 rotation	 quaternion(0.766060650348663, 0, -0.642768383026123, 0)
+action move_forward
+position	 [6.193949   0.20991862 8.2743845 ] 	 rotation	 quaternion(0.766060650348663, 0, -0.642768383026123, 0)
+action turn_right
+position	 [6.193949   0.20991862 8.2743845 ] 	 rotation	 quaternion(0.707124590873718, 0, -0.707089006900787, 0)
+action turn_left
+position	 [6.193949   0.20991862 8.2743845 ] 	 rotation	 quaternion(0.766060650348663, 0, -0.642768383026123, 0)
+action move_forward
+position	 [6.440149   0.20991862 8.23096   ] 	 rotation	 quaternion(0.766060650348663, 0, -0.642768383026123, 0)
+action turn_right
+position	 [6.440149   0.20991862 8.23096   ] 	 rotation	 quaternion(0.707124590873718, 0, -0.707089006900787, 0)
+action turn_right
+position	 [6.440149   0.20991862 8.23096   ] 	 rotation	 quaternion(0.642806947231293, 0, -0.76602828502655, 0)
+action turn_right
+position	 [6.440149   0.20991862 8.23096   ] 	 rotation	 quaternion(0.573597133159637, 0, -0.819137632846832, 0)
+action move_forward
+position	 [6.6750765  0.20991862 8.316453  ] 	 rotation	 quaternion(0.573597133159637, 0, -0.819137632846832, 0)
+action turn_left
+position	 [6.6750765  0.20991862 8.316453  ] 	 rotation	 quaternion(0.642806887626648, 0, -0.766028225421906, 0)
+action move_forward
+position	 [6.9212804  0.20991862 8.359853  ] 	 rotation	 quaternion(0.642806887626648, 0, -0.766028225421906, 0)
+action turn_left
+position	 [6.9212804  0.20991862 8.359853  ] 	 rotation	 quaternion(0.707124590873718, 0, -0.707088947296143, 0)
+action move_forward
+position	 [7.1712804  0.20991862 8.35984   ] 	 rotation	 quaternion(0.707124590873718, 0, -0.707088947296143, 0)
+action move_forward
+position	 [7.213682   0.20991862 8.367812  ] 	 rotation	 quaternion(0.707124590873718, 0, -0.707088947296143, 0)
+action turn_right
+position	 [7.213682   0.20991862 8.367812  ] 	 rotation	 quaternion(0.642806947231293, 0, -0.766028225421906, 0)
+action turn_right
+position	 [7.213682   0.20991862 8.367812  ] 	 rotation	 quaternion(0.573597133159637, 0, -0.819137573242188, 0)
+action turn_left
+position	 [7.213682   0.20991862 8.367812  ] 	 rotation	 quaternion(0.642806947231293, 0, -0.76602828502655, 0)
+action turn_right
+position	 [7.213682   0.20991862 8.367812  ] 	 rotation	 quaternion(0.573597133159637, 0, -0.819137632846832, 0)
+action move_forward
+position	 [7.2173123  0.20991862 8.462201  ] 	 rotation	 quaternion(0.573597133159637, 0, -0.819137632846832, 0)
+action turn_left
+position	 [7.2173123  0.20991862 8.462201  ] 	 rotation	 quaternion(0.642806887626648, 0, -0.766028225421906, 0)
+action move_forward
+position	 [7.2193427  0.20991862 8.514992  ] 	 rotation	 quaternion(0.642806887626648, 0, -0.766028225421906, 0)
+action turn_right
+position	 [7.2193427  0.20991862 8.514992  ] 	 rotation	 quaternion(0.573597073554993, 0, -0.819137573242188, 0)
+action turn_left
+position	 [7.2193427  0.20991862 8.514992  ] 	 rotation	 quaternion(0.642806887626648, 0, -0.76602828502655, 0)
+action turn_left
+position	 [7.2193427  0.20991862 8.514992  ] 	 rotation	 quaternion(0.707124590873718, 0, -0.707089006900787, 0)
+action turn_right
+position	 [7.2193427  0.20991862 8.514992  ] 	 rotation	 quaternion(0.642806947231293, 0, -0.76602828502655, 0)
+action turn_left
+position	 [7.2193427  0.20991862 8.514992  ] 	 rotation	 quaternion(0.707124650478363, 0, -0.707089006900787, 0)
+action move_forward
+position	 [7.2197113  0.20991862 8.52458   ] 	 rotation	 quaternion(0.707124650478363, 0, -0.707089006900787, 0)
+action turn_left
+position	 [7.2197113  0.20991862 8.52458   ] 	 rotation	 quaternion(0.766060590744019, 0, -0.642768323421478, 0)
+action turn_right
+position	 [7.2197113  0.20991862 8.52458   ] 	 rotation	 quaternion(0.707124590873718, 0, -0.707088947296143, 0)
+action turn_left
+position	 [7.2197113  0.20991862 8.52458   ] 	 rotation	 quaternion(0.766060650348663, 0, -0.642768323421478, 0)
+action turn_left
+position	 [7.2197113  0.20991862 8.52458   ] 	 rotation	 quaternion(0.819166541099548, 0, -0.573555827140808, 0)
+action move_forward
+position	 [7.2167745  0.20991862 8.448212  ] 	 rotation	 quaternion(0.819166541099548, 0, -0.573555827140808, 0)
+action move_forward
+position	 [7.213837   0.20991862 8.371843  ] 	 rotation	 quaternion(0.819166541099548, 0, -0.573555827140808, 0)
+action move_forward
+position	 [7.2109     0.20991862 8.295475  ] 	 rotation	 quaternion(0.819166541099548, 0, -0.573555827140808, 0)
+action turn_left
+position	 [7.2109     0.20991862 8.295475  ] 	 rotation	 quaternion(0.866038084030151, 0, -0.499978214502335, 0)
+action turn_right
+position	 [7.2109     0.20991862 8.295475  ] 	 rotation	 quaternion(0.819166481494904, 0, -0.573555767536163, 0)
+action move_forward
+position	 [7.2079625  0.20991862 8.219107  ] 	 rotation	 quaternion(0.819166481494904, 0, -0.573555767536163, 0)
+action turn_left
+position	 [7.2079625  0.20991862 8.219107  ] 	 rotation	 quaternion(0.866038024425507, 0, -0.49997815489769, 0)
+action turn_left
+position	 [7.2079625  0.20991862 8.219107  ] 	 rotation	 quaternion(0.906318426132202, 0, -0.422595411539078, 0)
+action move_forward
+position	 [7.2020736  0.20991862 8.065992  ] 	 rotation	 quaternion(0.906318426132202, 0, -0.422595411539078, 0)
+action turn_left
+position	 [7.2020736  0.20991862 8.065992  ] 	 rotation	 quaternion(0.9397012591362, 0, -0.34199646115303, 0)
+action turn_right
+position	 [7.2020736  0.20991862 8.065992  ] 	 rotation	 quaternion(0.906318485736847, 0, -0.4225954413414, 0)
+action move_forward
+position	 [7.196185   0.20991862 7.912878  ] 	 rotation	 quaternion(0.906318485736847, 0, -0.4225954413414, 0)
+action turn_left
+position	 [7.196185   0.20991862 7.912878  ] 	 rotation	 quaternion(0.939701199531555, 0, -0.34199646115303, 0)
+action turn_right
+position	 [7.196185   0.20991862 7.912878  ] 	 rotation	 quaternion(0.906318426132202, 0, -0.4225954413414, 0)
+action turn_left
+position	 [7.196185   0.20991862 7.912878  ] 	 rotation	 quaternion(0.9397012591362, 0, -0.341996490955353, 0)
+action turn_right
+position	 [7.196185   0.20991862 7.912878  ] 	 rotation	 quaternion(0.906318485736847, 0, -0.422595471143723, 0)
+action turn_right
+position	 [7.196185   0.20991862 7.912878  ] 	 rotation	 quaternion(0.866038084030151, 0, -0.499978214502335, 0)
+action turn_left
+position	 [7.196185   0.20991862 7.912878  ] 	 rotation	 quaternion(0.906318485736847, 0, -0.422595471143723, 0)
+action turn_right
+position	 [7.196185   0.20991862 7.912878  ] 	 rotation	 quaternion(0.866038084030151, 0, -0.499978214502335, 0)
+action move_forward
+position	 [7.191704   0.20991862 7.796366  ] 	 rotation	 quaternion(0.866038084030151, 0, -0.499978214502335, 0)
+action move_forward
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.866038084030151, 0, -0.499978214502335, 0)
+action turn_right
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.819166481494904, 0, -0.573555767536163, 0)
+action move_forward
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.819166481494904, 0, -0.573555767536163, 0)
+action move_forward
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.819166481494904, 0, -0.573555767536163, 0)
+action move_forward
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.819166481494904, 0, -0.573555767536163, 0)
+action move_forward
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.819166481494904, 0, -0.573555767536163, 0)
+action move_forward
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.819166481494904, 0, -0.573555767536163, 0)
+action turn_right
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.766060650348663, 0, -0.642768263816833, 0)
+action move_forward
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.766060650348663, 0, -0.642768263816833, 0)
+action turn_left
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.819166481494904, 0, -0.573555767536163, 0)
+action turn_left
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.866038024425507, 0, -0.49997815489769, 0)
+action turn_right
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.819166541099548, 0, -0.573555767536163, 0)
+action turn_right
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.766060709953308, 0, -0.642768263816833, 0)
+action turn_left
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.819166541099548, 0, -0.573555767536163, 0)
+action turn_left
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.866038084030151, 0, -0.49997815489769, 0)
+action turn_left
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.906318485736847, 0, -0.422595411539078, 0)
+action turn_left
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.939701318740845, 0, -0.34199646115303, 0)
+action move_forward
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.939701318740845, 0, -0.34199646115303, 0)
+action turn_left
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.965932369232178, 0, -0.258794695138931, 0)
+action move_forward
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.965932369232178, 0, -0.258794695138931, 0)
+action turn_right
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.9397012591362, 0, -0.34199646115303, 0)
+action turn_right
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.906318485736847, 0, -0.4225954413414, 0)
+action turn_left
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.939701199531555, 0, -0.34199646115303, 0)
+action move_forward
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.939701199531555, 0, -0.34199646115303, 0)
+action turn_right
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.906318426132202, 0, -0.4225954413414, 0)
+action turn_right
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.866038024425507, 0, -0.499978184700012, 0)
+action move_forward
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.866038024425507, 0, -0.499978184700012, 0)
+action turn_left
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.906318426132202, 0, -0.4225954413414, 0)
+action move_forward
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.906318426132202, 0, -0.4225954413414, 0)
+action turn_left
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.9397012591362, 0, -0.341996490955353, 0)
+action move_forward
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.9397012591362, 0, -0.341996490955353, 0)
+action turn_left
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.965932309627533, 0, -0.258794724941254, 0)
+action move_forward
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.965932309627533, 0, -0.258794724941254, 0)
+action move_forward
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.965932309627533, 0, -0.258794724941254, 0)
+action turn_left
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.984812140464783, 0, -0.173623397946358, 0)
+action move_forward
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.984812140464783, 0, -0.173623397946358, 0)
+action turn_right
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.965932309627533, 0, -0.258794695138931, 0)
+action turn_right
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.9397012591362, 0, -0.34199646115303, 0)
+action turn_left
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.965932309627533, 0, -0.258794695138931, 0)
+action move_forward
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.965932309627533, 0, -0.258794695138931, 0)
+action turn_right
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.9397012591362, 0, -0.34199646115303, 0)
+action turn_right
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.906318485736847, 0, -0.4225954413414, 0)
+action move_forward
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.906318485736847, 0, -0.4225954413414, 0)
+action turn_right
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.866038084030151, 0, -0.499978184700012, 0)
+action move_forward
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.866038084030151, 0, -0.499978184700012, 0)
+action turn_left
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.906318485736847, 0, -0.4225954413414, 0)
+action turn_left
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.939701199531555, 0, -0.34199646115303, 0)
+action turn_left
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.965932369232178, 0, -0.258794724941254, 0)
+action turn_right
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.9397012591362, 0, -0.341996490955353, 0)
+action turn_right
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.906318485736847, 0, -0.422595471143723, 0)
+action move_forward
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.906318485736847, 0, -0.422595471143723, 0)
+action turn_left
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.939701199531555, 0, -0.341996490955353, 0)
+action turn_left
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.965932369232178, 0, -0.258794754743576, 0)
+action move_forward
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.965932369232178, 0, -0.258794754743576, 0)
+action move_forward
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.965932369232178, 0, -0.258794754743576, 0)
+action turn_left
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.984812200069427, 0, -0.173623412847519, 0)
+action move_forward
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.984812200069427, 0, -0.173623412847519, 0)
+action turn_right
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.965932369232178, 0, -0.258794724941254, 0)
+action turn_right
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.9397012591362, 0, -0.341996490955353, 0)
+action move_forward
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.9397012591362, 0, -0.341996490955353, 0)
+action move_forward
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.9397012591362, 0, -0.341996490955353, 0)
+action turn_left
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.965932309627533, 0, -0.258794724941254, 0)
+action move_forward
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.965932309627533, 0, -0.258794724941254, 0)
+action move_forward
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.965932309627533, 0, -0.258794724941254, 0)
+action move_forward
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.965932309627533, 0, -0.258794724941254, 0)
+action move_forward
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.965932309627533, 0, -0.258794724941254, 0)
+action turn_right
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.9397012591362, 0, -0.341996520757675, 0)
+action turn_left
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.965932309627533, 0, -0.258794754743576, 0)
+action move_forward
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.965932309627533, 0, -0.258794754743576, 0)
+action move_forward
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.965932309627533, 0, -0.258794754743576, 0)
+action turn_left
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.984812140464783, 0, -0.17362342774868, 0)
+action move_forward
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.984812140464783, 0, -0.17362342774868, 0)
+action turn_right
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.965932369232178, 0, -0.258794784545898, 0)
+action move_forward
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.965932369232178, 0, -0.258794784545898, 0)
+action move_forward
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.965932369232178, 0, -0.258794784545898, 0)
+action turn_right
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.9397012591362, 0, -0.341996550559998, 0)
+action move_forward
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.9397012591362, 0, -0.341996550559998, 0)
+action turn_left
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.965932309627533, 0, -0.258794784545898, 0)
+action turn_left
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.984812140464783, 0, -0.173623457551003, 0)
+action turn_right
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.965932369232178, 0, -0.258794784545898, 0)
+action turn_left
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.984812200069427, 0, -0.173623442649841, 0)
+action turn_right
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.965932309627533, 0, -0.258794754743576, 0)
+action turn_left
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.984812140464783, 0, -0.17362342774868, 0)
+action turn_right
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.965932369232178, 0, -0.258794784545898, 0)
+action turn_left
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.984812200069427, 0, -0.173623442649841, 0)
+action turn_left
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.996196925640106, 0, -0.0871307179331779, 0)
+action move_forward
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.996196925640106, 0, -0.0871307179331779, 0)
+action move_forward
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.996196925640106, 0, -0.0871307179331779, 0)
+action turn_right
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.984812200069427, 0, -0.173623442649841, 0)
+action turn_left
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.996196925640106, 0, -0.0871307179331779, 0)
+action move_forward
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.996196925640106, 0, -0.0871307179331779, 0)
+action move_forward
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.996196925640106, 0, -0.0871307179331779, 0)
+action move_forward
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.996196925640106, 0, -0.0871307179331779, 0)
+action turn_left
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(1, 0, 2.51159035542514e-05, 0)
+action turn_right
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.996196925640106, 0, -0.0871307179331779, 0)
+action turn_right
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.984812200069427, 0, -0.173623442649841, 0)
+action turn_left
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.996196925640106, 0, -0.0871307179331779, 0)
+action turn_left
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(1, 0, 2.51159035542514e-05, 0)
+action turn_left
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.996192514896393, 0, 0.0871807560324669, 0)
+action turn_left
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.984803438186646, 0, 0.173672914505005, 0)
+action turn_left
+position	 [7.190838   0.20991862 7.7738533 ] 	 rotation	 quaternion(0.965919375419617, 0, 0.258843302726746, 0)
+action move_forward
+position	 [7.081847   0.20991862 7.781638  ] 	 rotation	 quaternion(0.965919375419617, 0, 0.258843302726746, 0)
+action move_forward
+position	 [6.9728565  0.20991862 7.7894235 ] 	 rotation	 quaternion(0.965919375419617, 0, 0.258843302726746, 0)
+action turn_left
+position	 [6.9728565  0.20991862 7.7894235 ] 	 rotation	 quaternion(0.939684092998505, 0, 0.34204375743866, 0)
+action turn_right
+position	 [6.9728565  0.20991862 7.7894235 ] 	 rotation	 quaternion(0.965919315814972, 0, 0.258843272924423, 0)
+action turn_left
+position	 [6.9728565  0.20991862 7.7894235 ] 	 rotation	 quaternion(0.93968403339386, 0, 0.342043697834015, 0)
+action move_forward
+position	 [6.8265753  0.20991862 7.799872  ] 	 rotation	 quaternion(0.93968403339386, 0, 0.342043697834015, 0)
+action turn_left
+position	 [6.8265753  0.20991862 7.799872  ] 	 rotation	 quaternion(0.906297206878662, 0, 0.422640979290009, 0)
+action move_forward
+position	 [6.6474476  0.20991862 7.8126664 ] 	 rotation	 quaternion(0.906297206878662, 0, 0.422640979290009, 0)
+action turn_right
+position	 [6.6474476  0.20991862 7.8126664 ] 	 rotation	 quaternion(0.939684092998505, 0, 0.342043727636337, 0)
+action turn_right
+position	 [6.6474476  0.20991862 7.8126664 ] 	 rotation	 quaternion(0.965919435024261, 0, 0.258843272924423, 0)
+action turn_right
+position	 [6.6474476  0.20991862 7.8126664 ] 	 rotation	 quaternion(0.984803438186646, 0, 0.173672869801521, 0)
+action turn_left
+position	 [6.6474476  0.20991862 7.8126664 ] 	 rotation	 quaternion(0.965919375419617, 0, 0.258843272924423, 0)
+action turn_right
+position	 [6.6474476  0.20991862 7.8126664 ] 	 rotation	 quaternion(0.98480349779129, 0, 0.173672884702682, 0)
+action turn_left
+position	 [6.6474476  0.20991862 7.8126664 ] 	 rotation	 quaternion(0.965919315814972, 0, 0.258843272924423, 0)
+action turn_left
+position	 [6.6474476  0.20991862 7.8126664 ] 	 rotation	 quaternion(0.93968403339386, 0, 0.342043697834015, 0)
+action move_forward
+position	 [6.5011663  0.20991862 7.8231153 ] 	 rotation	 quaternion(0.93968403339386, 0, 0.342043697834015, 0)
+action turn_right
+position	 [6.5011663  0.20991862 7.8231153 ] 	 rotation	 quaternion(0.965919375419617, 0, 0.258843243122101, 0)
+action move_forward
+position	 [6.3493457  0.20991862 7.625765  ] 	 rotation	 quaternion(0.965919375419617, 0, 0.258843243122101, 0)
+action turn_left
+position	 [6.3493457  0.20991862 7.625765  ] 	 rotation	 quaternion(0.939684092998505, 0, 0.342043697834015, 0)
+action move_forward
+position	 [6.188639   0.20991862 7.434262  ] 	 rotation	 quaternion(0.939684092998505, 0, 0.342043697834015, 0)
+action move_forward
+position	 [6.0279326  0.20991862 7.2427588 ] 	 rotation	 quaternion(0.939684092998505, 0, 0.342043697834015, 0)
+action turn_left
+position	 [6.0279326  0.20991862 7.2427588 ] 	 rotation	 quaternion(0.906297266483307, 0, 0.422640979290009, 0)
+action move_forward
+position	 [5.8364134  0.20991862 7.0820713 ] 	 rotation	 quaternion(0.906297266483307, 0, 0.422640979290009, 0)
+action turn_left
+position	 [5.8364134  0.20991862 7.0820713 ] 	 rotation	 quaternion(0.866012811660767, 0, 0.500021696090698, 0)
+action move_forward
+position	 [5.6199007  0.20991862 6.973853  ] 	 rotation	 quaternion(0.866012811660767, 0, 0.500021696090698, 0)
+action turn_left
+position	 [5.6199007  0.20991862 6.973853  ] 	 rotation	 quaternion(0.819137692451477, 0, 0.573597013950348, 0)
+action move_forward
+position	 [5.384973   0.20991862 6.973853  ] 	 rotation	 quaternion(0.819137692451477, 0, 0.573597013950348, 0)
+action turn_right
+position	 [5.384973   0.20991862 6.973853  ] 	 rotation	 quaternion(0.866012811660767, 0, 0.500021696090698, 0)
+action turn_right
+position	 [5.384973   0.20991862 6.973853  ] 	 rotation	 quaternion(0.906297206878662, 0, 0.422641009092331, 0)
+action turn_right
+position	 [5.384973   0.20991862 6.973853  ] 	 rotation	 quaternion(0.939684092998505, 0, 0.34204375743866, 0)
+action turn_left
+position	 [5.384973   0.20991862 6.973853  ] 	 rotation	 quaternion(0.906297266483307, 0, 0.422641038894653, 0)
+action move_forward
+position	 [5.193454  0.1998116 6.8131657] 	 rotation	 quaternion(0.906297266483307, 0, 0.422641038894653, 0)
+action turn_left
+position	 [5.193454  0.1998116 6.8131657] 	 rotation	 quaternion(0.866012811660767, 0, 0.500021755695343, 0)
+action turn_left
+position	 [5.193454  0.1998116 6.8131657] 	 rotation	 quaternion(0.819137632846832, 0, 0.573597013950348, 0)
+action move_forward
+position	 [4.958526   0.18296553 6.7276726 ] 	 rotation	 quaternion(0.819137632846832, 0, 0.573597013950348, 0)
+action turn_left
+position	 [4.958526   0.18296553 6.7276726 ] 	 rotation	 quaternion(0.766028344631195, 0, 0.642806828022003, 0)
+action move_forward
+position	 [4.712322   0.16511181 6.684273  ] 	 rotation	 quaternion(0.766028344631195, 0, 0.642806828022003, 0)
+action turn_left
+position	 [4.712322   0.16511181 6.684273  ] 	 rotation	 quaternion(0.707089066505432, 0, 0.707124531269073, 0)
+action turn_right
+position	 [4.712322   0.16511181 6.684273  ] 	 rotation	 quaternion(0.766028344631195, 0, 0.642806887626648, 0)
+action turn_left
+position	 [4.712322   0.16511181 6.684273  ] 	 rotation	 quaternion(0.707089066505432, 0, 0.707124590873718, 0)
+action move_forward
+position	 [4.462322   0.15803485 6.684285  ] 	 rotation	 quaternion(0.707089066505432, 0, 0.707124590873718, 0)
+action turn_left
+position	 [4.462322   0.15803485 6.684285  ] 	 rotation	 quaternion(0.642768383026123, 0, 0.766060531139374, 0)
+action move_forward
+position	 [4.2161226 0.1590665 6.72771  ] 	 rotation	 quaternion(0.642768383026123, 0, 0.766060531139374, 0)
+action turn_right
+position	 [4.2161226 0.1590665 6.72771  ] 	 rotation	 quaternion(0.707089066505432, 0, 0.707124531269073, 0)
+action turn_right
+position	 [4.2161226 0.1590665 6.72771  ] 	 rotation	 quaternion(0.766028344631195, 0, 0.642806887626648, 0)
+action turn_right
+position	 [4.2161226 0.1590665 6.72771  ] 	 rotation	 quaternion(0.819137692451477, 0, 0.573597073554993, 0)
+action turn_right
+position	 [4.2161226 0.1590665 6.72771  ] 	 rotation	 quaternion(0.866012811660767, 0, 0.500021755695343, 0)
+action move_forward
+position	 [3.99961    0.13957658 6.6027207 ] 	 rotation	 quaternion(0.866012811660767, 0, 0.500021755695343, 0)
+action move_forward
+position	 [3.7830973  0.12008663 6.4777317 ] 	 rotation	 quaternion(0.866012811660767, 0, 0.500021755695343, 0)
+action move_forward
+position	 [3.5665846  0.10059671 6.3527427 ] 	 rotation	 quaternion(0.866012811660767, 0, 0.500021755695343, 0)
+action move_forward
+position	 [3.350072   0.08110677 6.2277536 ] 	 rotation	 quaternion(0.866012811660767, 0, 0.500021755695343, 0)
+action move_forward
+position	 [3.1335592  0.06161685 6.1027646 ] 	 rotation	 quaternion(0.866012811660767, 0, 0.500021755695343, 0)
+action turn_left
+position	 [3.1335592  0.06161685 6.1027646 ] 	 rotation	 quaternion(0.819137632846832, 0, 0.573597013950348, 0)
+action move_forward
+position	 [2.8986318  0.04673507 6.0172715 ] 	 rotation	 quaternion(0.819137632846832, 0, 0.573597013950348, 0)
+action turn_left
+position	 [2.8986318  0.04673507 6.0172715 ] 	 rotation	 quaternion(0.766028344631195, 0, 0.642806828022003, 0)
+action turn_right
+position	 [2.8986318  0.04673507 6.0172715 ] 	 rotation	 quaternion(0.819137692451477, 0, 0.573597013950348, 0)
+action move_forward
+position	 [2.6637044 0.0318533 5.9317784] 	 rotation	 quaternion(0.819137692451477, 0, 0.573597013950348, 0)
+action turn_right
+position	 [2.6637044 0.0318533 5.9317784] 	 rotation	 quaternion(0.866012811660767, 0, 0.500021696090698, 0)
+action move_forward
+position	 [2.4471917  0.01236337 5.8067894 ] 	 rotation	 quaternion(0.866012811660767, 0, 0.500021696090698, 0)
+action move_forward
+position	 [2.230679  0.0099186 5.7738533] 	 rotation	 quaternion(0.866012811660767, 0, 0.500021696090698, 0)
+action turn_right
+position	 [2.230679  0.0099186 5.7738533] 	 rotation	 quaternion(0.906297206878662, 0, 0.422641009092331, 0)
+action move_forward
+position	 [2.0391598 0.0099186 5.7738533] 	 rotation	 quaternion(0.906297206878662, 0, 0.422641009092331, 0)
+action turn_left
+position	 [2.0391598 0.0099186 5.7738533] 	 rotation	 quaternion(0.866012871265411, 0, 0.500021755695343, 0)
+action turn_left
+position	 [2.0391598 0.0099186 5.7738533] 	 rotation	 quaternion(0.819137692451477, 0, 0.573597013950348, 0)
+action turn_left
+position	 [2.0391598 0.0099186 5.7738533] 	 rotation	 quaternion(0.76602840423584, 0, 0.642806828022003, 0)
+action turn_left
+position	 [2.0391598 0.0099186 5.7738533] 	 rotation	 quaternion(0.707089126110077, 0, 0.707124531269073, 0)
+action move_forward
+position	 [1.7891598 0.0099186 5.7738657] 	 rotation	 quaternion(0.707089126110077, 0, 0.707124531269073, 0)
+action move_forward
+position	 [1.5391598 0.0099186 5.773878 ] 	 rotation	 quaternion(0.707089126110077, 0, 0.707124531269073, 0)
+action turn_right
+position	 [1.5391598 0.0099186 5.773878 ] 	 rotation	 quaternion(0.76602828502655, 0, 0.642806828022003, 0)
+action turn_left
+position	 [1.5391598 0.0099186 5.773878 ] 	 rotation	 quaternion(0.707089006900787, 0, 0.707124531269073, 0)
+action move_forward
+position	 [1.2891598 0.0099186 5.7738905] 	 rotation	 quaternion(0.707089006900787, 0, 0.707124531269073, 0)
+action turn_right
+position	 [1.2891598 0.0099186 5.7738905] 	 rotation	 quaternion(0.76602828502655, 0, 0.642806887626648, 0)
+action turn_right
+position	 [1.2891598 0.0099186 5.7738905] 	 rotation	 quaternion(0.819137632846832, 0, 0.573597073554993, 0)
+action move_forward
+position	 [1.0542324 0.0099186 5.7738533] 	 rotation	 quaternion(0.819137632846832, 0, 0.573597073554993, 0)
+action move_forward
+position	 [0.8193049 0.0099186 5.68836  ] 	 rotation	 quaternion(0.819137632846832, 0, 0.573597073554993, 0)
+action move_forward
+position	 [0.5843774 0.0099186 5.602867 ] 	 rotation	 quaternion(0.819137632846832, 0, 0.573597073554993, 0)
+action move_forward
+position	 [0.34944993 0.0099186  5.517374  ] 	 rotation	 quaternion(0.819137632846832, 0, 0.573597073554993, 0)
+action turn_left
+position	 [0.34944993 0.0099186  5.517374  ] 	 rotation	 quaternion(0.766028344631195, 0, 0.642806887626648, 0)
+action turn_left
+position	 [0.34944993 0.0099186  5.517374  ] 	 rotation	 quaternion(0.707089066505432, 0, 0.707124590873718, 0)
+action move_forward
+position	 [0.1908369 0.0099186 5.5173864] 	 rotation	 quaternion(0.707089066505432, 0, 0.707124590873718, 0)
+action turn_right
+position	 [0.1908369 0.0099186 5.5173864] 	 rotation	 quaternion(0.766028225421906, 0, 0.642806887626648, 0)
+action turn_right
+position	 [0.1908369 0.0099186 5.5173864] 	 rotation	 quaternion(0.819137573242188, 0, 0.573597073554993, 0)
+action turn_right
+position	 [0.1908369 0.0099186 5.5173864] 	 rotation	 quaternion(0.866012811660767, 0, 0.500021815299988, 0)
+action turn_left
+position	 [0.1908369 0.0099186 5.5173864] 	 rotation	 quaternion(0.819137632846832, 0, 0.573597073554993, 0)
+action move_forward
+position	 [0.1908369 0.0099186 5.4318933] 	 rotation	 quaternion(0.819137632846832, 0, 0.573597073554993, 0)
+action move_forward
+position	 [0.1908369 0.0099186 5.3464003] 	 rotation	 quaternion(0.819137632846832, 0, 0.573597073554993, 0)
+action move_forward
+position	 [0.09083748 0.0099186  5.223853  ] 	 rotation	 quaternion(0.819137632846832, 0, 0.573597073554993, 0)
+action turn_right
+position	 [0.09083748 0.0099186  5.223853  ] 	 rotation	 quaternion(0.866012871265411, 0, 0.500021815299988, 0)
+action turn_right
+position	 [0.09083748 0.0099186  5.223853  ] 	 rotation	 quaternion(0.906297206878662, 0, 0.422641098499298, 0)
+action move_forward
+position	 [0.10950339 0.0099186  5.093192  ] 	 rotation	 quaternion(0.906297206878662, 0, 0.422641098499298, 0)
+action turn_left
+position	 [0.10950341 0.0099186  5.093192  ] 	 rotation	 quaternion(0.866012871265411, 0, 0.500021815299988, 0)
+action turn_right
+position	 [0.10950342 0.0099186  5.093192  ] 	 rotation	 quaternion(0.906297206878662, 0, 0.422641098499298, 0)
+action turn_right
+position	 [0.10950342 0.0099186  5.093192  ] 	 rotation	 quaternion(0.939683973789215, 0, 0.342043787240982, 0)
+action turn_right
+position	 [0.10950342 0.0099186  5.093192  ] 	 rotation	 quaternion(0.965919315814972, 0, 0.25884336233139, 0)
+action turn_right
+position	 [0.10950342 0.0099186  5.093192  ] 	 rotation	 quaternion(0.984803438186646, 0, 0.173672989010811, 0)
+action turn_right
+position	 [0.10950342 0.0099186  5.093192  ] 	 rotation	 quaternion(0.996192574501038, 0, 0.0871808379888535, 0)
+action move_forward
+position	 [0.06607897 0.0099186  4.8469925 ] 	 rotation	 quaternion(0.996192574501038, 0, 0.0871808379888535, 0)
+action move_forward
+position	 [0.02265452 0.0099186  4.600793  ] 	 rotation	 quaternion(0.996192574501038, 0, 0.0871808379888535, 0)
+action turn_left
+position	 [0.02265452 0.0099186  4.600793  ] 	 rotation	 quaternion(0.984803378582001, 0, 0.17367297410965, 0)
+action turn_left
+position	 [0.02265452 0.0099186  4.600793  ] 	 rotation	 quaternion(0.965919315814972, 0, 0.25884336233139, 0)
+action turn_right
+position	 [0.02265452 0.0099186  4.600793  ] 	 rotation	 quaternion(0.984803438186646, 0, 0.173672989010811, 0)
+action move_forward
+position	 [-0.06286236  0.0099186   4.365874  ] 	 rotation	 quaternion(0.984803438186646, 0, 0.173672989010811, 0)
+action move_forward
+position	 [-0.14837924  0.0099186   4.1309547 ] 	 rotation	 quaternion(0.984803438186646, 0, 0.173672989010811, 0)
+action turn_right
+position	 [-0.14837924  0.0099186   4.1309547 ] 	 rotation	 quaternion(0.996192574501038, 0, 0.0871808379888535, 0)
+action turn_right
+position	 [-0.14837924  0.0099186   4.1309547 ] 	 rotation	 quaternion(1, 0, 2.51978599408176e-05, 0)
+action move_forward
+position	 [-0.14833277  0.0099186   3.8836126 ] 	 rotation	 quaternion(1, 0, 2.51978599408176e-05, 0)
+action turn_left
+position	 [-0.14833277  0.0099186   3.8836126 ] 	 rotation	 quaternion(0.996192514896393, 0, 0.0871808379888535, 0)
+action move_forward
+position	 [-0.1862674  0.0099186  3.8844554] 	 rotation	 quaternion(0.996192514896393, 0, 0.0871808379888535, 0)
+action turn_right
+position	 [-0.1862674  0.0099186  3.8844554] 	 rotation	 quaternion(1, 0, 2.51978635787964e-05, 0)
+action turn_left
+position	 [-0.1862674  0.0099186  3.8844554] 	 rotation	 quaternion(0.996192514896393, 0, 0.0871808379888535, 0)
+action turn_left
+position	 [-0.1862674  0.0099186  3.8844554] 	 rotation	 quaternion(0.984803438186646, 0, 0.173672989010811, 0)
+action turn_right
+position	 [-0.1862674  0.0099186  3.8844554] 	 rotation	 quaternion(0.996192574501038, 0, 0.0871808379888535, 0)
+action turn_left
+position	 [-0.1862674  0.0099186  3.8844554] 	 rotation	 quaternion(0.984803378582001, 0, 0.17367297410965, 0)
+action turn_right
+position	 [-0.1862674  0.0099186  3.8844554] 	 rotation	 quaternion(0.996192514896393, 0, 0.0871808305382729, 0)
+action turn_left
+position	 [-0.1862674  0.0099186  3.8844554] 	 rotation	 quaternion(0.984803438186646, 0, 0.17367297410965, 0)
+action turn_right
+position	 [-0.1862674  0.0099186  3.8844554] 	 rotation	 quaternion(0.996192574501038, 0, 0.0871808230876923, 0)
+action turn_left
+position	 [-0.1862674  0.0099186  3.8844554] 	 rotation	 quaternion(0.984803378582001, 0, 0.173672959208488, 0)
+action move_forward
+position	 [-0.2665242  0.0099186  3.886239 ] 	 rotation	 quaternion(0.984803378582001, 0, 0.173672959208488, 0)
+action turn_left
+position	 [-0.2665242  0.0099186  3.886239 ] 	 rotation	 quaternion(0.965919315814972, 0, 0.258843332529068, 0)
+action turn_left
+position	 [-0.2665242  0.0099186  3.886239 ] 	 rotation	 quaternion(0.93968403339386, 0, 0.34204375743866, 0)
+action move_forward
+position	 [-0.42289788  0.0099186   3.889714  ] 	 rotation	 quaternion(0.93968403339386, 0, 0.34204375743866, 0)
+action turn_left
+position	 [-0.42289788  0.0099186   3.889714  ] 	 rotation	 quaternion(0.906297206878662, 0, 0.422641038894653, 0)
+action turn_left
+position	 [-0.42289788  0.0099186   3.889714  ] 	 rotation	 quaternion(0.866012871265411, 0, 0.500021815299988, 0)
+action move_forward
+position	 [-0.6365275  0.0099186  3.8944614] 	 rotation	 quaternion(0.866012871265411, 0, 0.500021815299988, 0)
+action turn_right
+position	 [-0.6365275  0.0099186  3.8944614] 	 rotation	 quaternion(0.906297206878662, 0, 0.422641098499298, 0)
+action turn_left
+position	 [-0.6365275  0.0099186  3.8944614] 	 rotation	 quaternion(0.866012871265411, 0, 0.500021815299988, 0)
+action turn_right
+position	 [-0.6365275  0.0099186  3.8944614] 	 rotation	 quaternion(0.906297206878662, 0, 0.422641098499298, 0)
+action move_forward
+position	 [-0.824383   0.0099186  3.8986359] 	 rotation	 quaternion(0.906297206878662, 0, 0.422641098499298, 0)
+action move_forward
+position	 [-1.0122387  0.0099186  3.9028103] 	 rotation	 quaternion(0.906297206878662, 0, 0.422641098499298, 0)
+action turn_right
+position	 [-1.0122387  0.0099186  3.9028103] 	 rotation	 quaternion(0.939683973789215, 0, 0.342043787240982, 0)
+action turn_left
+position	 [-1.0122387  0.0099186  3.9028103] 	 rotation	 quaternion(0.906297147274017, 0, 0.422641038894653, 0)
+action turn_right
+position	 [-1.0122387  0.0099186  3.9028103] 	 rotation	 quaternion(0.93968403339386, 0, 0.342043787240982, 0)
+action move_forward
+position	 [-1.1686125  0.0099186  3.9062853] 	 rotation	 quaternion(0.93968403339386, 0, 0.342043787240982, 0)
+action turn_right
+position	 [-1.1686125  0.0099186  3.9062853] 	 rotation	 quaternion(0.965919375419617, 0, 0.25884336233139, 0)
+action move_forward
+position	 [-1.288753   0.0099186  3.908955 ] 	 rotation	 quaternion(0.965919375419617, 0, 0.25884336233139, 0)
+action move_forward
+position	 [-1.4088936  0.0099186  3.911625 ] 	 rotation	 quaternion(0.965919375419617, 0, 0.25884336233139, 0)
+action turn_left
+position	 [-1.4088936  0.0099186  3.911625 ] 	 rotation	 quaternion(0.939683973789215, 0, 0.342043787240982, 0)
+action turn_left
+position	 [-1.4088936  0.0099186  3.911625 ] 	 rotation	 quaternion(0.906297147274017, 0, 0.422641038894653, 0)
+action turn_left
+position	 [-1.4088936  0.0099186  3.911625 ] 	 rotation	 quaternion(0.866012811660767, 0, 0.500021815299988, 0)
+action turn_right
+position	 [-1.4088936  0.0099186  3.911625 ] 	 rotation	 quaternion(0.906297147274017, 0, 0.422641098499298, 0)
+action turn_left
+position	 [-1.4088936  0.0099186  3.911625 ] 	 rotation	 quaternion(0.866012811660767, 0, 0.500021815299988, 0)
+action move_forward
+position	 [-1.6225233  0.0099186  3.9163723] 	 rotation	 quaternion(0.866012811660767, 0, 0.500021815299988, 0)
+action turn_right
+position	 [-1.6225233  0.0099186  3.9163723] 	 rotation	 quaternion(0.906297147274017, 0, 0.422641098499298, 0)
+action move_forward
+position	 [-1.8103788  0.0099186  3.9205468] 	 rotation	 quaternion(0.906297147274017, 0, 0.422641098499298, 0)
+action move_forward
+position	 [-1.9591627  0.0099186  3.9238532] 	 rotation	 quaternion(0.906297147274017, 0, 0.422641098499298, 0)
+action turn_left
+position	 [-1.9591627  0.0099186  3.9238532] 	 rotation	 quaternion(0.866012811660767, 0, 0.500021815299988, 0)
+action move_forward
+position	 [-1.9591627  0.0099186  3.9238532] 	 rotation	 quaternion(0.866012811660767, 0, 0.500021815299988, 0)
+action move_forward
+position	 [-1.9591627  0.0099186  3.9238532] 	 rotation	 quaternion(0.866012811660767, 0, 0.500021815299988, 0)
+action turn_right
+position	 [-1.9591627  0.0099186  3.9238532] 	 rotation	 quaternion(0.906297147274017, 0, 0.422641098499298, 0)
+action turn_left
+position	 [-1.9591627  0.0099186  3.9238532] 	 rotation	 quaternion(0.866012811660767, 0, 0.500021815299988, 0)
+action turn_right
+position	 [-1.9591627  0.0099186  3.9238532] 	 rotation	 quaternion(0.906297147274017, 0, 0.422641098499298, 0)
+action turn_right
+position	 [-1.9591627  0.0099186  3.9238532] 	 rotation	 quaternion(0.93968403339386, 0, 0.342043817043304, 0)
+action turn_left
+position	 [-1.9591627  0.0099186  3.9238532] 	 rotation	 quaternion(0.906297206878662, 0, 0.422641098499298, 0)
+action turn_right
+position	 [-1.9591627  0.0099186  3.9238532] 	 rotation	 quaternion(0.939683973789215, 0, 0.342043787240982, 0)
+action turn_right
+position	 [-1.9591627  0.0099186  3.9238532] 	 rotation	 quaternion(0.965919315814972, 0, 0.25884336233139, 0)
+action turn_right
+position	 [-1.9591627  0.0099186  3.9238532] 	 rotation	 quaternion(0.984803438186646, 0, 0.173672989010811, 0)
+action move_forward
+position	 [-1.9591627  0.0099186  3.9238532] 	 rotation	 quaternion(0.984803438186646, 0, 0.173672989010811, 0)
+action move_forward
+position	 [-1.9591627  0.0099186  3.9238532] 	 rotation	 quaternion(0.984803438186646, 0, 0.173672989010811, 0)
+action turn_left
+position	 [-1.9591627  0.0099186  3.9238532] 	 rotation	 quaternion(0.965919375419617, 0, 0.25884336233139, 0)
+action turn_left
+position	 [-1.9591627  0.0099186  3.9238532] 	 rotation	 quaternion(0.939683973789215, 0, 0.342043787240982, 0)
+action turn_right
+position	 [-1.9591627  0.0099186  3.9238532] 	 rotation	 quaternion(0.965919315814972, 0, 0.25884336233139, 0)
+action turn_left
+position	 [-1.9591627  0.0099186  3.9238532] 	 rotation	 quaternion(0.93968403339386, 0, 0.342043817043304, 0)
+action move_forward
+position	 [-1.9591627  0.0099186  3.9238532] 	 rotation	 quaternion(0.93968403339386, 0, 0.342043817043304, 0)
+action turn_right
+position	 [-1.9591627  0.0099186  3.9238532] 	 rotation	 quaternion(0.965919375419617, 0, 0.25884336233139, 0)
+action turn_left
+position	 [-1.9591627  0.0099186  3.9238532] 	 rotation	 quaternion(0.939683973789215, 0, 0.342043787240982, 0)
+action turn_left
+position	 [-1.9591627  0.0099186  3.9238532] 	 rotation	 quaternion(0.906297147274017, 0, 0.422641038894653, 0)
+action turn_right
+position	 [-1.9591627  0.0099186  3.9238532] 	 rotation	 quaternion(0.93968403339386, 0, 0.342043787240982, 0)
+action turn_right
+position	 [-1.9591627  0.0099186  3.9238532] 	 rotation	 quaternion(0.965919375419617, 0, 0.25884336233139, 0)
+action turn_right
+position	 [-1.9591627  0.0099186  3.9238532] 	 rotation	 quaternion(0.984803378582001, 0, 0.173672959208488, 0)
+action turn_right
+position	 [-1.9591627  0.0099186  3.9238532] 	 rotation	 quaternion(0.996192514896393, 0, 0.0871808156371117, 0)
+action turn_left
+position	 [-1.9591627  0.0099186  3.9238532] 	 rotation	 quaternion(0.984803438186646, 0, 0.17367297410965, 0)
+action turn_right
+position	 [-1.9591627  0.0099186  3.9238532] 	 rotation	 quaternion(0.996192574501038, 0, 0.0871808230876923, 0)
+action move_forward
+position	 [-1.9591627  0.0099186  3.9238532] 	 rotation	 quaternion(0.996192574501038, 0, 0.0871808230876923, 0)
+action move_forward
+position	 [-1.9591627  0.0099186  3.9238532] 	 rotation	 quaternion(0.996192574501038, 0, 0.0871808230876923, 0)
+action move_forward
+position	 [-1.9591627  0.0099186  3.9238532] 	 rotation	 quaternion(0.996192574501038, 0, 0.0871808230876923, 0)
+action turn_right
+position	 [-1.9591627  0.0099186  3.9238532] 	 rotation	 quaternion(1, 0, 2.51829587796237e-05, 0)
+action turn_right
+position	 [-1.9591627  0.0099186  3.9238532] 	 rotation	 quaternion(0.996196925640106, 0, -0.0871306508779526, 0)
+action turn_left
+position	 [-1.9591627  0.0099186  3.9238532] 	 rotation	 quaternion(1, 0, 2.51829587796237e-05, 0)
+action move_forward
+position	 [-1.9536226  0.0099186  3.9237301] 	 rotation	 quaternion(1, 0, 2.51829587796237e-05, 0)
+action turn_right
+position	 [-1.9536226  0.0099186  3.9237301] 	 rotation	 quaternion(0.996196925640106, 0, -0.0871306508779526, 0)
+action move_forward
+position	 [-1.9047761  0.0099186  3.9226446] 	 rotation	 quaternion(0.996196925640106, 0, -0.0871306508779526, 0)
+action turn_left
+position	 [-1.9047761  0.0099186  3.9226446] 	 rotation	 quaternion(1, 0, 2.51829587796237e-05, 0)
+action turn_left
+position	 [-1.9047761  0.0099186  3.9226446] 	 rotation	 quaternion(0.996192514896393, 0, 0.0871808230876923, 0)
+action turn_right
+position	 [-1.9047761  0.0099186  3.9226446] 	 rotation	 quaternion(1, 0, 2.51829624176025e-05, 0)
+action turn_left
+position	 [-1.9047761  0.0099186  3.9226446] 	 rotation	 quaternion(0.996192514896393, 0, 0.0871808230876923, 0)
+action turn_right
+position	 [-1.9047761  0.0099186  3.9226446] 	 rotation	 quaternion(1, 0, 2.51829624176025e-05, 0)
+action turn_left
+position	 [-1.9047761  0.0099186  3.9226446] 	 rotation	 quaternion(0.996192514896393, 0, 0.0871808230876923, 0)
+action move_forward
+position	 [-1.9427109  0.0099186  3.9234877] 	 rotation	 quaternion(0.996192514896393, 0, 0.0871808230876923, 0)
+action turn_right
+position	 [-1.9427109  0.0099186  3.9234877] 	 rotation	 quaternion(1, 0, 2.51829624176025e-05, 0)
+action turn_right
+position	 [-1.9427109  0.0099186  3.9234877] 	 rotation	 quaternion(0.996196925640106, 0, -0.0871306508779526, 0)
+action turn_right
+position	 [-1.9427109  0.0099186  3.9234877] 	 rotation	 quaternion(0.984812200069427, 0, -0.173623368144035, 0)
+action turn_left
+position	 [-1.9427109  0.0099186  3.9234877] 	 rotation	 quaternion(0.996196866035461, 0, -0.087130643427372, 0)
+action turn_right
+position	 [-1.9427109  0.0099186  3.9234877] 	 rotation	 quaternion(0.984812140464783, 0, -0.173623353242874, 0)
+action move_forward
+position	 [-1.8520422  0.0099186  3.9214728] 	 rotation	 quaternion(0.984812140464783, 0, -0.173623353242874, 0)
+action move_forward
+position	 [-1.761373   0.0099186  3.919458 ] 	 rotation	 quaternion(0.984812140464783, 0, -0.173623353242874, 0)
+action turn_right
+position	 [-1.761373   0.0099186  3.919458 ] 	 rotation	 quaternion(0.965932428836823, 0, -0.258794695138931, 0)
+action turn_right
+position	 [-1.761373   0.0099186  3.919458 ] 	 rotation	 quaternion(0.939701318740845, 0, -0.34199646115303, 0)
+action turn_right
+position	 [-1.761373   0.0099186  3.919458 ] 	 rotation	 quaternion(0.906318426132202, 0, -0.422595381736755, 0)
+action turn_left
+position	 [-1.761373   0.0099186  3.919458 ] 	 rotation	 quaternion(0.9397012591362, 0, -0.341996431350708, 0)
+action move_forward
+position	 [-1.5965112  0.0099186  3.9157941] 	 rotation	 quaternion(0.9397012591362, 0, -0.341996431350708, 0)
+action move_forward
+position	 [-1.4316494  0.0099186  3.9121306] 	 rotation	 quaternion(0.9397012591362, 0, -0.341996431350708, 0)
+action turn_left
+position	 [-1.4316493  0.0099186  3.9121306] 	 rotation	 quaternion(0.965932428836823, 0, -0.258794695138931, 0)
+action turn_left
+position	 [-1.4316493  0.0099186  3.9121306] 	 rotation	 quaternion(0.984812140464783, 0, -0.173623338341713, 0)
+action move_forward
+position	 [-1.3409803  0.0099186  3.9101157] 	 rotation	 quaternion(0.984812140464783, 0, -0.173623338341713, 0)
+action turn_right
+position	 [-1.3409803  0.0099186  3.9101157] 	 rotation	 quaternion(0.965932428836823, 0, -0.258794665336609, 0)
+action turn_right
+position	 [-1.3409803  0.0099186  3.9101157] 	 rotation	 quaternion(0.939701318740845, 0, -0.341996431350708, 0)
+action move_forward
+position	 [-1.1761185  0.0099186  3.9064522] 	 rotation	 quaternion(0.939701318740845, 0, -0.341996431350708, 0)
+action turn_left
+position	 [-1.1761185  0.0099186  3.9064522] 	 rotation	 quaternion(0.965932369232178, 0, -0.258794665336609, 0)
+action turn_right
+position	 [-1.1761185  0.0099186  3.9064522] 	 rotation	 quaternion(0.939701318740845, 0, -0.341996431350708, 0)
+action turn_left
+position	 [-1.1761185  0.0099186  3.9064522] 	 rotation	 quaternion(0.965932369232178, 0, -0.258794665336609, 0)
+action turn_right
+position	 [-1.1761185  0.0099186  3.9064522] 	 rotation	 quaternion(0.939701318740845, 0, -0.341996431350708, 0)
+action turn_right
+position	 [-1.1761185  0.0099186  3.9064522] 	 rotation	 quaternion(0.906318545341492, 0, -0.422595411539078, 0)
+action turn_left
+position	 [-1.1761185  0.0099186  3.9064522] 	 rotation	 quaternion(0.9397012591362, 0, -0.341996401548386, 0)
+action turn_left
+position	 [-1.1761185  0.0099186  3.9064522] 	 rotation	 quaternion(0.965932428836823, 0, -0.258794665336609, 0)
+action turn_right
+position	 [-1.1761185  0.0099186  3.9064522] 	 rotation	 quaternion(0.939701318740845, 0, -0.341996431350708, 0)
+action move_forward
+position	 [-1.0112568  0.0099186  3.9027886] 	 rotation	 quaternion(0.939701318740845, 0, -0.341996431350708, 0)
+action turn_right
+position	 [-1.0112568  0.0099186  3.9027886] 	 rotation	 quaternion(0.906318545341492, 0, -0.422595411539078, 0)
+action turn_right
+position	 [-1.0112568  0.0099186  3.9027886] 	 rotation	 quaternion(0.866038024425507, 0, -0.499978125095367, 0)
+action move_forward
+position	 [-0.7920871  0.0099186  3.8979182] 	 rotation	 quaternion(0.866038024425507, 0, -0.499978125095367, 0)
+action turn_right
+position	 [-0.7920871  0.0099186  3.8979182] 	 rotation	 quaternion(0.819166541099548, 0, -0.573555767536163, 0)
+action move_forward
+position	 [-0.5553847  0.0099186  3.8926582] 	 rotation	 quaternion(0.819166541099548, 0, -0.573555767536163, 0)
+action turn_left
+position	 [-0.5553847  0.0099186  3.8926582] 	 rotation	 quaternion(0.866038084030151, 0, -0.49997815489769, 0)
+action turn_right
+position	 [-0.5553847  0.0099186  3.8926582] 	 rotation	 quaternion(0.819166600704193, 0, -0.573555767536163, 0)
+action move_forward
+position	 [-0.3186823  0.0099186  3.887398 ] 	 rotation	 quaternion(0.819166600704193, 0, -0.573555767536163, 0)
+action turn_left
+position	 [-0.3186823  0.0099186  3.887398 ] 	 rotation	 quaternion(0.866038024425507, 0, -0.499978095293045, 0)
+action turn_right
+position	 [-0.3186823  0.0099186  3.887398 ] 	 rotation	 quaternion(0.819166600704193, 0, -0.573555767536163, 0)
+action move_forward
+position	 [-0.08197993  0.0099186   3.882138  ] 	 rotation	 quaternion(0.819166600704193, 0, -0.573555767536163, 0)
+action move_forward
+position	 [0.15472242 0.0099186  3.876878  ] 	 rotation	 quaternion(0.819166600704193, 0, -0.573555767536163, 0)
+action turn_right
+position	 [0.15472242 0.0099186  3.876878  ] 	 rotation	 quaternion(0.766060769557953, 0, -0.642768263816833, 0)
+action turn_right
+position	 [0.15472242 0.0099186  3.876878  ] 	 rotation	 quaternion(0.707124710083008, 0, -0.707088887691498, 0)
+action turn_right
+position	 [0.15472242 0.0099186  3.876878  ] 	 rotation	 quaternion(0.642807066440582, 0, -0.766028165817261, 0)
+action turn_right
+position	 [0.15472242 0.0099186  3.876878  ] 	 rotation	 quaternion(0.573597252368927, 0, -0.819137513637543, 0)
+action move_forward
+position	 [0.32335877 0.0099186  3.9822583 ] 	 rotation	 quaternion(0.573597252368927, 0, -0.819137513637543, 0)
+action turn_left
+position	 [0.32335874 0.0099186  3.9822583 ] 	 rotation	 quaternion(0.642807066440582, 0, -0.766028165817261, 0)
+action move_forward
+position	 [0.3556322 0.0099186 4.0898366] 	 rotation	 quaternion(0.642807066440582, 0, -0.766028165817261, 0)
+action turn_left
+position	 [0.35563213 0.0099186  4.0898366 ] 	 rotation	 quaternion(0.707124769687653, 0, -0.707088887691498, 0)
+action turn_left
+position	 [0.35563213 0.0099186  4.0898366 ] 	 rotation	 quaternion(0.766060709953308, 0, -0.642768204212189, 0)
+action turn_left
+position	 [0.35563213 0.0099186  4.0898366 ] 	 rotation	 quaternion(0.819166600704193, 0, -0.573555767536163, 0)
+action move_forward
+position	 [0.3514923 0.0099186 4.076037 ] 	 rotation	 quaternion(0.819166600704193, 0, -0.573555767536163, 0)
+action turn_left
+position	 [0.35149226 0.0099186  4.076037  ] 	 rotation	 quaternion(0.866038024425507, 0, -0.499978095293045, 0)
+action turn_left
+position	 [0.35149226 0.0099186  4.076037  ] 	 rotation	 quaternion(0.906318485736847, 0, -0.422595381736755, 0)
+action move_forward
+position	 [0.3230733 0.0099186 3.9813068] 	 rotation	 quaternion(0.906318485736847, 0, -0.422595381736755, 0)
+action turn_right
+position	 [0.3230733 0.0099186 3.9813068] 	 rotation	 quaternion(0.866038084030151, 0, -0.499978125095367, 0)
+action turn_left
+position	 [0.3230733 0.0099186 3.9813068] 	 rotation	 quaternion(0.906318485736847, 0, -0.422595381736755, 0)
+action move_forward
+position	 [0.2946543 0.0099186 3.8865767] 	 rotation	 quaternion(0.906318485736847, 0, -0.422595381736755, 0)
+action move_forward
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.906318485736847, 0, -0.422595381736755, 0)
+action turn_left
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.939701318740845, 0, -0.341996431350708, 0)
+action turn_right
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.906318545341492, 0, -0.422595411539078, 0)
+action turn_right
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.866038024425507, 0, -0.499978125095367, 0)
+action turn_left
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.906318485736847, 0, -0.422595411539078, 0)
+action move_forward
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.906318485736847, 0, -0.422595411539078, 0)
+action turn_right
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.866038084030151, 0, -0.49997815489769, 0)
+action turn_left
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.906318485736847, 0, -0.422595411539078, 0)
+action turn_left
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.939701318740845, 0, -0.34199646115303, 0)
+action move_forward
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.939701318740845, 0, -0.34199646115303, 0)
+action turn_left
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.965932369232178, 0, -0.258794695138931, 0)
+action turn_right
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.9397012591362, 0, -0.34199646115303, 0)
+action turn_right
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.906318485736847, 0, -0.4225954413414, 0)
+action move_forward
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.906318485736847, 0, -0.4225954413414, 0)
+action move_forward
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.906318485736847, 0, -0.4225954413414, 0)
+action turn_right
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.866038084030151, 0, -0.499978184700012, 0)
+action turn_left
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.906318485736847, 0, -0.4225954413414, 0)
+action turn_right
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.866038084030151, 0, -0.499978184700012, 0)
+action move_forward
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.866038084030151, 0, -0.499978184700012, 0)
+action move_forward
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.866038084030151, 0, -0.499978184700012, 0)
+action turn_right
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.819166481494904, 0, -0.573555767536163, 0)
+action turn_right
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.766060650348663, 0, -0.642768263816833, 0)
+action move_forward
+position	 [0.299214  0.0099186 3.9017756] 	 rotation	 quaternion(0.766060650348663, 0, -0.642768263816833, 0)
+action turn_left
+position	 [0.299214  0.0099186 3.9017756] 	 rotation	 quaternion(0.819166481494904, 0, -0.573555767536163, 0)
+action move_forward
+position	 [0.29507416 0.0099186  3.8879762 ] 	 rotation	 quaternion(0.819166481494904, 0, -0.573555767536163, 0)
+action move_forward
+position	 [0.29093432 0.0099186  3.8741767 ] 	 rotation	 quaternion(0.819166481494904, 0, -0.573555767536163, 0)
+action turn_left
+position	 [0.29093432 0.0099186  3.8741767 ] 	 rotation	 quaternion(0.866038024425507, 0, -0.49997815489769, 0)
+action move_forward
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.866038024425507, 0, -0.49997815489769, 0)
+action turn_right
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.819166541099548, 0, -0.573555767536163, 0)
+action move_forward
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.819166541099548, 0, -0.573555767536163, 0)
+action turn_left
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.866038084030151, 0, -0.49997815489769, 0)
+action turn_left
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.906318485736847, 0, -0.422595411539078, 0)
+action turn_right
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.866038084030151, 0, -0.49997815489769, 0)
+action turn_left
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.906318485736847, 0, -0.422595411539078, 0)
+action turn_right
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.866038084030151, 0, -0.49997815489769, 0)
+action turn_left
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.906318485736847, 0, -0.422595411539078, 0)
+action move_forward
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.906318485736847, 0, -0.422595411539078, 0)
+action turn_right
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.866038084030151, 0, -0.49997815489769, 0)
+action turn_left
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.906318485736847, 0, -0.422595411539078, 0)
+action turn_left
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.939701318740845, 0, -0.34199646115303, 0)
+action turn_left
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.965932369232178, 0, -0.258794695138931, 0)
+action move_forward
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.965932369232178, 0, -0.258794695138931, 0)
+action move_forward
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.965932369232178, 0, -0.258794695138931, 0)
+action turn_right
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.9397012591362, 0, -0.34199646115303, 0)
+action turn_left
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.965932309627533, 0, -0.258794695138931, 0)
+action move_forward
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.965932309627533, 0, -0.258794695138931, 0)
+action turn_left
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.984812140464783, 0, -0.173623368144035, 0)
+action move_forward
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.984812140464783, 0, -0.173623368144035, 0)
+action move_forward
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.984812140464783, 0, -0.173623368144035, 0)
+action move_forward
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.984812140464783, 0, -0.173623368144035, 0)
+action turn_right
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.965932309627533, 0, -0.258794695138931, 0)
+action turn_right
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.9397012591362, 0, -0.34199646115303, 0)
+action move_forward
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.9397012591362, 0, -0.34199646115303, 0)
+action turn_right
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.906318485736847, 0, -0.4225954413414, 0)
+action turn_left
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.939701199531555, 0, -0.34199646115303, 0)
+action turn_right
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.906318426132202, 0, -0.4225954413414, 0)
+action turn_right
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.866038024425507, 0, -0.499978184700012, 0)
+action turn_right
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.819166541099548, 0, -0.573555827140808, 0)
+action move_forward
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.819166541099548, 0, -0.573555827140808, 0)
+action move_forward
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.819166541099548, 0, -0.573555827140808, 0)
+action turn_right
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.766060709953308, 0, -0.642768323421478, 0)
+action turn_left
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.819166541099548, 0, -0.573555827140808, 0)
+action turn_right
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.766060709953308, 0, -0.642768323421478, 0)
+action turn_left
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.819166541099548, 0, -0.573555827140808, 0)
+action turn_left
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.866038084030151, 0, -0.499978214502335, 0)
+action turn_right
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.819166481494904, 0, -0.573555767536163, 0)
+action turn_right
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.766060650348663, 0, -0.642768263816833, 0)
+action turn_left
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.819166481494904, 0, -0.573555767536163, 0)
+action turn_right
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.766060650348663, 0, -0.642768263816833, 0)
+action turn_left
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.819166481494904, 0, -0.573555767536163, 0)
+action move_forward
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.819166481494904, 0, -0.573555767536163, 0)
+action move_forward
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.819166481494904, 0, -0.573555767536163, 0)
+action turn_left
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.866038024425507, 0, -0.49997815489769, 0)
+action turn_right
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.819166541099548, 0, -0.573555767536163, 0)
+action turn_left
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.866038084030151, 0, -0.49997815489769, 0)
+action turn_left
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.906318485736847, 0, -0.422595411539078, 0)
+action turn_left
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.939701318740845, 0, -0.34199646115303, 0)
+action turn_right
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.906318426132202, 0, -0.422595381736755, 0)
+action turn_left
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.9397012591362, 0, -0.341996431350708, 0)
+action turn_left
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.965932428836823, 0, -0.258794695138931, 0)
+action turn_right
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.939701318740845, 0, -0.34199646115303, 0)
+action turn_right
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.906318426132202, 0, -0.422595381736755, 0)
+action turn_right
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.866038024425507, 0, -0.499978125095367, 0)
+action turn_left
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.906318485736847, 0, -0.422595411539078, 0)
+action move_forward
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.906318485736847, 0, -0.422595411539078, 0)
+action turn_right
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.866038084030151, 0, -0.49997815489769, 0)
+action turn_left
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.906318485736847, 0, -0.422595411539078, 0)
+action turn_left
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.939701318740845, 0, -0.34199646115303, 0)
+action move_forward
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.939701318740845, 0, -0.34199646115303, 0)
+action turn_right
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.906318426132202, 0, -0.422595381736755, 0)
+action move_forward
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.906318426132202, 0, -0.422595381736755, 0)
+action turn_left
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.9397012591362, 0, -0.341996431350708, 0)
+action turn_right
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.906318485736847, 0, -0.422595411539078, 0)
+action turn_right
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.866038084030151, 0, -0.49997815489769, 0)
+action turn_right
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.819166600704193, 0, -0.573555767536163, 0)
+action turn_right
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.766060769557953, 0, -0.642768263816833, 0)
+action turn_right
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.707124710083008, 0, -0.707088887691498, 0)
+action turn_right
+position	 [0.2908373 0.0099186 3.8738532] 	 rotation	 quaternion(0.642807066440582, 0, -0.766028165817261, 0)
+action move_forward
+position	 [0.3231108 0.0099186 3.9814317] 	 rotation	 quaternion(0.642807066440582, 0, -0.766028165817261, 0)
+action turn_left
+position	 [0.32311076 0.0099186  3.9814317 ] 	 rotation	 quaternion(0.707124769687653, 0, -0.707088887691498, 0)
+action turn_right
+position	 [0.32311076 0.0099186  3.9814317 ] 	 rotation	 quaternion(0.642807126045227, 0, -0.766028165817261, 0)
+action turn_right
+position	 [0.32311076 0.0099186  3.9814317 ] 	 rotation	 quaternion(0.573597252368927, 0, -0.819137394428253, 0)
+action turn_left
+position	 [0.32311076 0.0099186  3.9814317 ] 	 rotation	 quaternion(0.642807126045227, 0, -0.766028106212616, 0)
+action turn_right
+position	 [0.32311076 0.0099186  3.9814317 ] 	 rotation	 quaternion(0.573597311973572, 0, -0.819137454032898, 0)
+action turn_right
+position	 [0.32311076 0.0099186  3.9814317 ] 	 rotation	 quaternion(0.500022053718567, 0, -0.866012752056122, 0)
+action turn_left
+position	 [0.32311076 0.0099186  3.9814317 ] 	 rotation	 quaternion(0.573597252368927, 0, -0.819137394428253, 0)
+action turn_right
+position	 [0.32311076 0.0099186  3.9814317 ] 	 rotation	 quaternion(0.500021994113922, 0, -0.866012692451477, 0)
+action move_forward
+position	 [0.37538838 0.0099186  4.155691  ] 	 rotation	 quaternion(0.500021994113922, 0, -0.866012692451477, 0)
+action turn_left
+position	 [0.37538838 0.0099186  4.155691  ] 	 rotation	 quaternion(0.573597252368927, 0, -0.819137454032898, 0)
+action turn_right
+position	 [0.37538838 0.0099186  4.155691  ] 	 rotation	 quaternion(0.500021994113922, 0, -0.866012692451477, 0)
+action turn_right
+position	 [0.37538838 0.0099186  4.155691  ] 	 rotation	 quaternion(0.422641277313232, 0, -0.906297087669373, 0)
+action turn_right
+position	 [0.37538838 0.0099186  4.155691  ] 	 rotation	 quaternion(0.342043995857239, 0, -0.939683973789215, 0)
+action move_forward
+position	 [0.4408369 0.0099186 4.373853 ] 	 rotation	 quaternion(0.342043995857239, 0, -0.939683973789215, 0)
+action turn_left
+position	 [0.4408369 0.0099186 4.373853 ] 	 rotation	 quaternion(0.42264124751091, 0, -0.906297147274017, 0)
+action turn_right
+position	 [0.4408369 0.0099186 4.373853 ] 	 rotation	 quaternion(0.342043966054916, 0, -0.93968403339386, 0)
+action move_forward
+position	 [0.4125185 0.0099186 4.407835 ] 	 rotation	 quaternion(0.342043966054916, 0, -0.93968403339386, 0)
+action turn_right
+position	 [0.4125185 0.0099186 4.407835 ] 	 rotation	 quaternion(0.258843511343002, 0, -0.965919256210327, 0)
+action turn_left
+position	 [0.4125185 0.0099186 4.407835 ] 	 rotation	 quaternion(0.342043936252594, 0, -0.939683973789215, 0)
+action turn_right
+position	 [0.4125185 0.0099186 4.407835 ] 	 rotation	 quaternion(0.258843511343002, 0, -0.965919315814972, 0)
+action turn_left
+position	 [0.4125185 0.0099186 4.407835 ] 	 rotation	 quaternion(0.342043936252594, 0, -0.93968403339386, 0)
+action turn_left
+position	 [0.4125185 0.0099186 4.407835 ] 	 rotation	 quaternion(0.422641158103943, 0, -0.906297087669373, 0)
+action turn_left
+position	 [0.4125185 0.0099186 4.407835 ] 	 rotation	 quaternion(0.500021934509277, 0, -0.866012811660767, 0)
+action turn_right
+position	 [0.4125185 0.0099186 4.407835 ] 	 rotation	 quaternion(0.422641217708588, 0, -0.906297147274017, 0)
+action turn_right
+position	 [0.4125185 0.0099186 4.407835 ] 	 rotation	 quaternion(0.342043936252594, 0, -0.93968403339386, 0)
+action turn_right
+position	 [0.4125185 0.0099186 4.407835 ] 	 rotation	 quaternion(0.258843451738358, 0, -0.965919256210327, 0)
+action turn_right
+position	 [0.4125185 0.0099186 4.407835 ] 	 rotation	 quaternion(0.173673078417778, 0, -0.984803378582001, 0)
+action turn_right
+position	 [0.4125185 0.0099186 4.407835 ] 	 rotation	 quaternion(0.0871809348464012, 0, -0.996192514896393, 0)
+action move_forward
+position	 [0.30923378 0.0099186  4.531777  ] 	 rotation	 quaternion(0.0871809348464012, 0, -0.996192514896393, 0)
+action turn_left
+position	 [0.30923373 0.0099186  4.531777  ] 	 rotation	 quaternion(0.173673093318939, 0, -0.984803378582001, 0)
+action turn_right
+position	 [0.3092337 0.0099186 4.531777 ] 	 rotation	 quaternion(0.0871809497475624, 0, -0.996192514896393, 0)
+action move_forward
+position	 [0.20594886 0.0099186  4.655719  ] 	 rotation	 quaternion(0.0871809497475624, 0, -0.996192514896393, 0)
+action turn_right
+position	 [0.20594876 0.0099186  4.655719  ] 	 rotation	 quaternion(2.53096222877502e-05, 0, -1, 0)
+action turn_right
+position	 [0.20594871 0.0099186  4.655719  ] 	 rotation	 quaternion(-0.0871305242180824, 0, -0.996196925640106, 0)
+action turn_left
+position	 [0.2059487 0.0099186 4.655719 ] 	 rotation	 quaternion(2.53096222877502e-05, 0, -1, 0)
+action turn_right
+position	 [0.2059487 0.0099186 4.655719 ] 	 rotation	 quaternion(-0.0871305242180824, 0, -0.996196925640106, 0)
+action move_forward
+position	 [0.16254911 0.0099186  4.901923  ] 	 rotation	 quaternion(-0.0871305242180824, 0, -0.996196925640106, 0)
+action turn_left
+position	 [0.16254911 0.0099186  4.901923  ] 	 rotation	 quaternion(2.53096222877502e-05, 0, -1, 0)
+action turn_right
+position	 [0.16254911 0.0099186  4.901923  ] 	 rotation	 quaternion(-0.0871305242180824, 0, -0.996196925640106, 0)
+action turn_right
+position	 [0.16254911 0.0099186  4.901923  ] 	 rotation	 quaternion(-0.173623234033585, 0, -0.984812200069427, 0)
+action move_forward
+position	 [0.10274221 0.0099186  5.14052   ] 	 rotation	 quaternion(-0.173623234033585, 0, -0.984812200069427, 0)
+action turn_right
+position	 [0.10274224 0.0099186  5.14052   ] 	 rotation	 quaternion(-0.258794546127319, 0, -0.965932369232178, 0)
+action turn_left
+position	 [0.10274224 0.0099186  5.14052   ] 	 rotation	 quaternion(-0.173623219132423, 0, -0.984812200069427, 0)
+action turn_left
+position	 [0.10274224 0.0099186  5.14052   ] 	 rotation	 quaternion(-0.08713049441576, 0, -0.996196866035461, 0)
+action move_forward
+position	 [0.1908369 0.0099186 5.386724 ] 	 rotation	 quaternion(-0.08713049441576, 0, -0.996196866035461, 0)
+action move_forward
+position	 [0.1908369 0.0099186 5.632928 ] 	 rotation	 quaternion(-0.08713049441576, 0, -0.996196866035461, 0)
+action turn_right
+position	 [0.1908369 0.0099186 5.632928 ] 	 rotation	 quaternion(-0.173623219132423, 0, -0.984812200069427, 0)
+action move_forward
+position	 [0.1908369 0.0099186 5.8678555] 	 rotation	 quaternion(-0.173623219132423, 0, -0.984812200069427, 0)
+action turn_left
+position	 [0.1908369 0.0099186 5.8678555] 	 rotation	 quaternion(-0.08713049441576, 0, -0.996196866035461, 0)
+action turn_left
+position	 [0.1908369 0.0099186 5.8678555] 	 rotation	 quaternion(2.53394246101379e-05, 0, -1, 0)
+action turn_right
+position	 [0.1908369 0.0099186 5.8678555] 	 rotation	 quaternion(-0.08713049441576, 0, -0.996196925640106, 0)
+action turn_left
+position	 [0.1908369 0.0099186 5.8678555] 	 rotation	 quaternion(2.53394246101379e-05, 0, -1, 0)
+action turn_right
+position	 [0.1908369 0.0099186 5.8678555] 	 rotation	 quaternion(-0.08713049441576, 0, -0.996196925640106, 0)
+action turn_right
+position	 [0.1908369 0.0099186 5.8678555] 	 rotation	 quaternion(-0.173623204231262, 0, -0.984812200069427, 0)
+action turn_left
+position	 [0.1908369 0.0099186 5.8678555] 	 rotation	 quaternion(-0.0871304869651794, 0, -0.996196985244751, 0)
+action move_forward
+position	 [0.14743733 0.0099186  6.11406   ] 	 rotation	 quaternion(-0.0871304869651794, 0, -0.996196985244751, 0)
+action turn_left
+position	 [0.14743733 0.0099186  6.11406   ] 	 rotation	 quaternion(2.5354322133353e-05, 0, -1, 0)
+action turn_left
+position	 [0.14743733 0.0099186  6.11406   ] 	 rotation	 quaternion(0.087180994451046, 0, -0.996192514896393, 0)
+action turn_left
+position	 [0.14743733 0.0099186  6.11406   ] 	 rotation	 quaternion(0.173673152923584, 0, -0.984803378582001, 0)
+action move_forward
+position	 [0.2329543  0.02843245 6.348979  ] 	 rotation	 quaternion(0.173673152923584, 0, -0.984803378582001, 0)
+action turn_left
+position	 [0.2329543  0.02843245 6.348979  ] 	 rotation	 quaternion(0.258843541145325, 0, -0.965919315814972, 0)
+action turn_right
+position	 [0.2329543  0.02843245 6.348979  ] 	 rotation	 quaternion(0.173673167824745, 0, -0.984803438186646, 0)
+action move_forward
+position	 [0.31847125 0.03069073 6.583898  ] 	 rotation	 quaternion(0.173673167824745, 0, -0.984803438186646, 0)
+action turn_left
+position	 [0.31847125 0.03069073 6.583898  ] 	 rotation	 quaternion(0.258843511343002, 0, -0.965919256210327, 0)
+action turn_right
+position	 [0.31847125 0.03069073 6.583898  ] 	 rotation	 quaternion(0.173673138022423, 0, -0.984803378582001, 0)
+action move_forward
+position	 [0.40398818 0.03541749 6.818817  ] 	 rotation	 quaternion(0.173673138022423, 0, -0.984803378582001, 0)
+action turn_right
+position	 [0.40398818 0.03541749 6.818817  ] 	 rotation	 quaternion(0.087180994451046, 0, -0.996192514896393, 0)
+action turn_right
+position	 [0.40398818 0.03541749 6.818817  ] 	 rotation	 quaternion(2.53543257713318e-05, 0, -1, 0)
+action turn_left
+position	 [0.40398818 0.03541749 6.818817  ] 	 rotation	 quaternion(0.087180994451046, 0, -0.996192514896393, 0)
+action move_forward
+position	 [0.4474127 0.0392151 7.0650167] 	 rotation	 quaternion(0.087180994451046, 0, -0.996192514896393, 0)
+action turn_left
+position	 [0.4474127 0.0392151 7.0650167] 	 rotation	 quaternion(0.173673152923584, 0, -0.984803378582001, 0)
+action move_forward
+position	 [0.53292966 0.04453955 7.2999353 ] 	 rotation	 quaternion(0.173673152923584, 0, -0.984803378582001, 0)
+action turn_right
+position	 [0.53292966 0.04453955 7.2999353 ] 	 rotation	 quaternion(0.0871810093522072, 0, -0.996192514896393, 0)
+action turn_left
+position	 [0.53292966 0.04453955 7.2999353 ] 	 rotation	 quaternion(0.173673152923584, 0, -0.984803378582001, 0)
+action move_forward
+position	 [0.6184466  0.05156544 7.534854  ] 	 rotation	 quaternion(0.173673152923584, 0, -0.984803378582001, 0)
+action move_forward
+position	 [0.7039635  0.05859134 7.7697725 ] 	 rotation	 quaternion(0.173673152923584, 0, -0.984803378582001, 0)
+action turn_right
+position	 [0.7039635  0.05859134 7.7697725 ] 	 rotation	 quaternion(0.0871810093522072, 0, -0.996192514896393, 0)
+action turn_right
+position	 [0.7039635  0.05859134 7.7697725 ] 	 rotation	 quaternion(2.53692269325256e-05, 0, -1, 0)
+action move_forward
+position	 [0.7039762  0.06618986 8.019773  ] 	 rotation	 quaternion(2.53692269325256e-05, 0, -1, 0)
+action turn_right
+position	 [0.7039762  0.06618986 8.019773  ] 	 rotation	 quaternion(-0.0871304646134377, 0, -0.996196925640106, 0)
+action move_forward
+position	 [0.66057664 0.07373101 8.265977  ] 	 rotation	 quaternion(-0.0871304646134377, 0, -0.996196925640106, 0)
+action turn_left
+position	 [0.66057664 0.07373101 8.265977  ] 	 rotation	 quaternion(2.53692269325256e-05, 0, -1, 0)
+action turn_right
+position	 [0.66057664 0.07373101 8.265977  ] 	 rotation	 quaternion(-0.0871304646134377, 0, -0.996196925640106, 0)
+action turn_right
+position	 [0.66057664 0.07373101 8.265977  ] 	 rotation	 quaternion(-0.17362317442894, 0, -0.984812200069427, 0)
+action turn_left
+position	 [0.66057664 0.07373101 8.265977  ] 	 rotation	 quaternion(-0.0871304571628571, 0, -0.996196985244751, 0)
+action turn_right
+position	 [0.66057664 0.07373101 8.265977  ] 	 rotation	 quaternion(-0.173623159527779, 0, -0.984812140464783, 0)
+action turn_left
+position	 [0.66057664 0.07373101 8.265977  ] 	 rotation	 quaternion(-0.0871304422616959, 0, -0.996196925640106, 0)
+action move_forward
+position	 [0.6171771  0.08127215 8.512181  ] 	 rotation	 quaternion(-0.0871304422616959, 0, -0.996196925640106, 0)
+action turn_right
+position	 [0.6171771  0.08127215 8.512181  ] 	 rotation	 quaternion(-0.173623159527779, 0, -0.984812200069427, 0)
+action move_forward
+position	 [0.53168404 0.08852677 8.747108  ] 	 rotation	 quaternion(-0.173623159527779, 0, -0.984812200069427, 0)
+action move_forward
+position	 [0.44619095 0.09578139 8.982036  ] 	 rotation	 quaternion(-0.173623159527779, 0, -0.984812200069427, 0)
+action turn_left
+position	 [0.44619095 0.09578139 8.982036  ] 	 rotation	 quaternion(-0.0871304422616959, 0, -0.996196985244751, 0)
+action turn_left
+position	 [0.44619095 0.09578139 8.982036  ] 	 rotation	 quaternion(2.53990256169345e-05, 0, -1, 0)
+action move_forward
+position	 [0.44620365 0.10337991 9.232036  ] 	 rotation	 quaternion(2.53990256169345e-05, 0, -1, 0)
+action move_forward
+position	 [0.44621634 0.11097843 9.482036  ] 	 rotation	 quaternion(2.53990256169345e-05, 0, -1, 0)
+action turn_right
+position	 [0.44621634 0.11097843 9.482036  ] 	 rotation	 quaternion(-0.0871304348111153, 0, -0.996196925640106, 0)
+action turn_right
+position	 [0.44621634 0.11097843 9.482036  ] 	 rotation	 quaternion(-0.173623144626617, 0, -0.984812200069427, 0)
+action turn_right
+position	 [0.44621634 0.11097843 9.482036  ] 	 rotation	 quaternion(-0.258794456720352, 0, -0.965932369232178, 0)
+action turn_left
+position	 [0.44621634 0.11097843 9.482036  ] 	 rotation	 quaternion(-0.173623129725456, 0, -0.984812200069427, 0)
+action turn_left
+position	 [0.44621634 0.11097843 9.482036  ] 	 rotation	 quaternion(-0.0871304124593735, 0, -0.996196985244751, 0)
+action turn_right
+position	 [0.44621634 0.11097843 9.482036  ] 	 rotation	 quaternion(-0.173623129725456, 0, -0.984812140464783, 0)
+action turn_right
+position	 [0.44621634 0.11097843 9.482036  ] 	 rotation	 quaternion(-0.258794486522675, 0, -0.965932428836823, 0)
+action turn_right
+position	 [0.44621634 0.11097843 9.482036  ] 	 rotation	 quaternion(-0.341996252536774, 0, -0.93970137834549, 0)
+action move_forward
+position	 [0.28552917 0.11701418 9.673555  ] 	 rotation	 quaternion(-0.341996252536774, 0, -0.93970137834549, 0)
+action move_forward
+position	 [0.12484199 0.12304993 9.865075  ] 	 rotation	 quaternion(-0.341996252536774, 0, -0.93970137834549, 0)
+action turn_left
+position	 [0.12484199 0.12304993 9.865075  ] 	 rotation	 quaternion(-0.258794486522675, 0, -0.965932369232178, 0)
+action turn_right
+position	 [0.12484199 0.12304993 9.865075  ] 	 rotation	 quaternion(-0.341996252536774, 0, -0.939701318740845, 0)
+action turn_right
+position	 [0.12484199 0.12304993 9.865075  ] 	 rotation	 quaternion(-0.422595232725143, 0, -0.906318604946136, 0)
+action turn_right
+position	 [0.12484199 0.12304993 9.865075  ] 	 rotation	 quaternion(-0.499977946281433, 0, -0.866038084030151, 0)
+action turn_right
+position	 [0.12484199 0.12304993 9.865075  ] 	 rotation	 quaternion(-0.573555648326874, 0, -0.819166660308838, 0)
+action turn_left
+position	 [0.12484199 0.12304993 9.865075  ] 	 rotation	 quaternion(-0.499977976083755, 0, -0.866038084030151, 0)
+action turn_left
+position	 [0.12484199 0.12304993 9.865075  ] 	 rotation	 quaternion(-0.422595262527466, 0, -0.906318545341492, 0)
+action turn_right
+position	 [0.12484199 0.12304993 9.865075  ] 	 rotation	 quaternion(-0.499978005886078, 0, -0.866038143634796, 0)
+action turn_right
+position	 [0.12484199 0.12304993 9.865075  ] 	 rotation	 quaternion(-0.573555648326874, 0, -0.819166660308838, 0)
+action move_forward
+position	 [-0.11007684  0.12588039  9.950592  ] 	 rotation	 quaternion(-0.573555648326874, 0, -0.819166660308838, 0)
+action turn_left
+position	 [-0.11007684  0.12588039  9.950592  ] 	 rotation	 quaternion(-0.499977976083755, 0, -0.866038084030151, 0)
+action turn_right
+position	 [-0.11007684  0.12588039  9.950592  ] 	 rotation	 quaternion(-0.573555648326874, 0, -0.819166660308838, 0)
+action turn_left
+position	 [-0.11007684  0.12588039  9.950592  ] 	 rotation	 quaternion(-0.499977976083755, 0, -0.866038084030151, 0)
+action move_forward
+position	 [-0.32657683  0.12962803 10.0756035 ] 	 rotation	 quaternion(-0.499977976083755, 0, -0.866038084030151, 0)
+action turn_left
+position	 [-0.32657683  0.12962803 10.0756035 ] 	 rotation	 quaternion(-0.422595262527466, 0, -0.906318545341492, 0)
+action turn_left
+position	 [-0.32657683  0.12962803 10.0756035 ] 	 rotation	 quaternion(-0.341996282339096, 0, -0.9397012591362, 0)
+action turn_right
+position	 [-0.32657683  0.12962803 10.0756035 ] 	 rotation	 quaternion(-0.422595262527466, 0, -0.906318545341492, 0)
+action turn_left
+position	 [-0.32657683  0.12962803 10.0756035 ] 	 rotation	 quaternion(-0.341996282339096, 0, -0.9397012591362, 0)
+action turn_right
+position	 [-0.32657683  0.12962803 10.0756035 ] 	 rotation	 quaternion(-0.422595262527466, 0, -0.906318545341492, 0)
+action move_forward
+position	 [-0.51807976  0.13405153 10.23631   ] 	 rotation	 quaternion(-0.422595262527466, 0, -0.906318545341492, 0)
+action turn_left
+position	 [-0.51807976  0.13405153 10.23631   ] 	 rotation	 quaternion(-0.341996282339096, 0, -0.9397012591362, 0)
+action turn_right
+position	 [-0.51807976  0.13405153 10.23631   ] 	 rotation	 quaternion(-0.422595262527466, 0, -0.906318545341492, 0)
+action turn_right
+position	 [-0.51807976  0.13405153 10.23631   ] 	 rotation	 quaternion(-0.499978005886078, 0, -0.866038143634796, 0)
+action move_forward
+position	 [-0.7345798   0.13778023 10.361321  ] 	 rotation	 quaternion(-0.499978005886078, 0, -0.866038143634796, 0)
+action turn_right
+position	 [-0.7345798   0.13778023 10.361321  ] 	 rotation	 quaternion(-0.573555648326874, 0, -0.819166660308838, 0)
+action move_forward
+position	 [-0.96949863  0.14024583 10.446838  ] 	 rotation	 quaternion(-0.573555648326874, 0, -0.819166660308838, 0)
+action turn_right
+position	 [-0.96949863  0.14024583 10.446838  ] 	 rotation	 quaternion(-0.642768144607544, 0, -0.766060709953308, 0)
+action turn_left
+position	 [-0.96949863  0.14024583 10.446838  ] 	 rotation	 quaternion(-0.573555707931519, 0, -0.819166600704193, 0)
+action turn_left
+position	 [-0.96949863  0.14024583 10.446838  ] 	 rotation	 quaternion(-0.499978095293045, 0, -0.866038143634796, 0)
+action turn_left
+position	 [-0.96949863  0.14024583 10.446838  ] 	 rotation	 quaternion(-0.422595351934433, 0, -0.906318545341492, 0)
+action move_forward
+position	 [-1.1610017   0.14449957 10.607545  ] 	 rotation	 quaternion(-0.422595351934433, 0, -0.906318545341492, 0)
+action turn_left
+position	 [-1.1610017   0.14449957 10.607545  ] 	 rotation	 quaternion(-0.341996341943741, 0, -0.9397012591362, 0)
+action move_forward
+position	 [-1.3216889   0.15028307 10.799064  ] 	 rotation	 quaternion(-0.341996341943741, 0, -0.9397012591362, 0)
+action move_forward
+position	 [-1.4823761   0.15491873 10.990582  ] 	 rotation	 quaternion(-0.341996341943741, 0, -0.9397012591362, 0)
+action turn_right
+position	 [-1.4823761   0.15491873 10.990582  ] 	 rotation	 quaternion(-0.422595322132111, 0, -0.906318485736847, 0)
+action turn_right
+position	 [-1.4823761   0.15491873 10.990582  ] 	 rotation	 quaternion(-0.499978065490723, 0, -0.866038084030151, 0)
+action move_forward
+position	 [-1.6988761   0.15434901 11.115593  ] 	 rotation	 quaternion(-0.499978065490723, 0, -0.866038084030151, 0)
+action turn_right
+position	 [-1.6988761   0.15434901 11.115593  ] 	 rotation	 quaternion(-0.573555707931519, 0, -0.819166600704193, 0)
+action turn_left
+position	 [-1.6988761   0.15434901 11.115593  ] 	 rotation	 quaternion(-0.499978095293045, 0, -0.866038143634796, 0)
+action turn_right
+position	 [-1.6988761   0.15434901 11.115593  ] 	 rotation	 quaternion(-0.573555648326874, 0, -0.819166541099548, 0)
+action turn_right
+position	 [-1.6988761   0.15434901 11.115593  ] 	 rotation	 quaternion(-0.642768204212189, 0, -0.766060769557953, 0)
+action move_forward
+position	 [-1.9450759   0.15346105 11.159018  ] 	 rotation	 quaternion(-0.642768204212189, 0, -0.766060769557953, 0)
+action turn_right
+position	 [-1.9450759   0.15346105 11.159018  ] 	 rotation	 quaternion(-0.707088828086853, 0, -0.707124769687653, 0)
+action turn_left
+position	 [-1.9450759   0.15346105 11.159018  ] 	 rotation	 quaternion(-0.642768144607544, 0, -0.766060829162598, 0)
+action turn_left
+position	 [-1.9450759   0.15346105 11.159018  ] 	 rotation	 quaternion(-0.573555588722229, 0, -0.819166660308838, 0)
+action turn_right
+position	 [-1.9450759   0.15346105 11.159018  ] 	 rotation	 quaternion(-0.642768144607544, 0, -0.766060829162598, 0)
+action move_forward
+position	 [-2.1912756  0.1531507 11.202442 ] 	 rotation	 quaternion(-0.642768144607544, 0, -0.766060829162598, 0)
+action move_forward
+position	 [-2.4374754   0.15426299 11.245867  ] 	 rotation	 quaternion(-0.642768144607544, 0, -0.766060829162598, 0)
+action move_forward
+position	 [-2.6836753   0.15537527 11.289291  ] 	 rotation	 quaternion(-0.642768144607544, 0, -0.766060829162598, 0)
+action turn_right
+position	 [-2.6836753   0.15537527 11.289291  ] 	 rotation	 quaternion(-0.707088828086853, 0, -0.707124829292297, 0)
+action turn_left
+position	 [-2.6836753   0.15537527 11.289291  ] 	 rotation	 quaternion(-0.642768144607544, 0, -0.766060888767242, 0)
+action turn_left
+position	 [-2.6836753   0.15537527 11.289291  ] 	 rotation	 quaternion(-0.573555588722229, 0, -0.819166719913483, 0)
+action turn_left
+position	 [-2.6836753   0.15537527 11.289291  ] 	 rotation	 quaternion(-0.499977916479111, 0, -0.866038143634796, 0)
+action turn_left
+position	 [-2.6836753   0.15537527 11.289291  ] 	 rotation	 quaternion(-0.422595202922821, 0, -0.906318604946136, 0)
+action move_forward
+position	 [-2.8751783   0.15971552 11.449998  ] 	 rotation	 quaternion(-0.422595202922821, 0, -0.906318604946136, 0)
+action move_forward
+position	 [-3.0666814   0.16405578 11.610704  ] 	 rotation	 quaternion(-0.422595202922821, 0, -0.906318604946136, 0)
+action turn_right
+position	 [-3.0666814   0.16405578 11.610704  ] 	 rotation	 quaternion(-0.499977976083755, 0, -0.866038203239441, 0)
+action move_forward
+position	 [-3.2831814  0.167411  11.735716 ] 	 rotation	 quaternion(-0.499977976083755, 0, -0.866038203239441, 0)
+action turn_right
+position	 [-3.2831814  0.167411  11.735716 ] 	 rotation	 quaternion(-0.573555588722229, 0, -0.819166600704193, 0)
+action turn_right
+position	 [-3.2831814  0.167411  11.735716 ] 	 rotation	 quaternion(-0.642768144607544, 0, -0.766060769557953, 0)
+action turn_left
+position	 [-3.2831814  0.167411  11.735716 ] 	 rotation	 quaternion(-0.573555648326874, 0, -0.819166660308838, 0)
+action move_forward
+position	 [-3.5181003  0.1696792 11.821233 ] 	 rotation	 quaternion(-0.573555648326874, 0, -0.819166660308838, 0)
+action move_forward
+position	 [-3.753019    0.17194739 11.90675   ] 	 rotation	 quaternion(-0.573555648326874, 0, -0.819166660308838, 0)
+action move_forward
+position	 [-3.987938   0.1742156 11.992267 ] 	 rotation	 quaternion(-0.573555648326874, 0, -0.819166660308838, 0)
+action turn_left
+position	 [-3.987938   0.1742156 11.992267 ] 	 rotation	 quaternion(-0.499977976083755, 0, -0.866038084030151, 0)
+action turn_left
+position	 [-3.987938   0.1742156 11.992267 ] 	 rotation	 quaternion(-0.422595262527466, 0, -0.906318545341492, 0)
+action turn_left
+position	 [-3.987938   0.1742156 11.992267 ] 	 rotation	 quaternion(-0.341996282339096, 0, -0.9397012591362, 0)
+action move_forward
+position	 [-4.148625    0.17940903 12.183785  ] 	 rotation	 quaternion(-0.341996282339096, 0, -0.9397012591362, 0)
+action move_forward
+position	 [-4.309312    0.18460245 12.375304  ] 	 rotation	 quaternion(-0.341996282339096, 0, -0.9397012591362, 0)
+action move_forward
+position	 [-4.469999    0.18979588 12.566823  ] 	 rotation	 quaternion(-0.341996282339096, 0, -0.9397012591362, 0)
+action move_forward
+position	 [-4.630686    0.19498931 12.758342  ] 	 rotation	 quaternion(-0.341996282339096, 0, -0.9397012591362, 0)
+action turn_right
+position	 [-4.630686    0.19498931 12.758342  ] 	 rotation	 quaternion(-0.422595262527466, 0, -0.906318545341492, 0)
+action move_forward
+position	 [-4.822189    0.19932956 12.919048  ] 	 rotation	 quaternion(-0.422595262527466, 0, -0.906318545341492, 0)
+action move_forward
+position	 [-5.013692    0.20366982 13.079755  ] 	 rotation	 quaternion(-0.422595262527466, 0, -0.906318545341492, 0)
+action turn_right
+position	 [-5.013692    0.20366982 13.079755  ] 	 rotation	 quaternion(-0.499978005886078, 0, -0.866038143634796, 0)
+action move_forward
+position	 [-5.2301917   0.20702504 13.204766  ] 	 rotation	 quaternion(-0.499978005886078, 0, -0.866038143634796, 0)
+action turn_left
+position	 [-5.2301917   0.20702504 13.204766  ] 	 rotation	 quaternion(-0.422595262527466, 0, -0.906318545341492, 0)
+action turn_right
+position	 [-5.2301917   0.20702504 13.204766  ] 	 rotation	 quaternion(-0.499978005886078, 0, -0.866038143634796, 0)
+action turn_right
+position	 [-5.2301917   0.20702504 13.204766  ] 	 rotation	 quaternion(-0.573555648326874, 0, -0.819166660308838, 0)
+action turn_right
+position	 [-5.2301917   0.20702504 13.204766  ] 	 rotation	 quaternion(-0.642768144607544, 0, -0.766060709953308, 0)
+action turn_right
+position	 [-5.2301917   0.20702504 13.204766  ] 	 rotation	 quaternion(-0.707088828086853, 0, -0.707124769687653, 0)
+action turn_left
+position	 [-5.2301917   0.20702504 13.204766  ] 	 rotation	 quaternion(-0.642768144607544, 0, -0.766060829162598, 0)
+action turn_left
+position	 [-5.2301917   0.20702504 13.204766  ] 	 rotation	 quaternion(-0.573555588722229, 0, -0.819166660308838, 0)
+action turn_right
+position	 [-5.2301917   0.20702504 13.204766  ] 	 rotation	 quaternion(-0.642768144607544, 0, -0.766060829162598, 0)
+action turn_left
+position	 [-5.2301917   0.20702504 13.204766  ] 	 rotation	 quaternion(-0.573555588722229, 0, -0.819166660308838, 0)
+action move_forward
+position	 [-5.4651103   0.20929323 13.290283  ] 	 rotation	 quaternion(-0.573555588722229, 0, -0.819166660308838, 0)
+action turn_right
+position	 [-5.4651103   0.20929323 13.290283  ] 	 rotation	 quaternion(-0.642768144607544, 0, -0.766060829162598, 0)
+action turn_right
+position	 [-5.4651103   0.20929323 13.290283  ] 	 rotation	 quaternion(-0.707088828086853, 0, -0.707124829292297, 0)
+action move_forward
+position	 [-5.7151103  0.2092158 13.290296 ] 	 rotation	 quaternion(-0.707088828086853, 0, -0.707124829292297, 0)
+action move_forward
+position	 [-5.9651103   0.20913836 13.290308  ] 	 rotation	 quaternion(-0.707088828086853, 0, -0.707124829292297, 0)
+action move_forward
+position	 [-6.2151103   0.20906092 13.29032   ] 	 rotation	 quaternion(-0.707088828086853, 0, -0.707124829292297, 0)
+action turn_left
+position	 [-6.2151103   0.20906092 13.29032   ] 	 rotation	 quaternion(-0.642768144607544, 0, -0.766060888767242, 0)
+action move_forward
+position	 [-6.4173446   0.20991862 13.3484    ] 	 rotation	 quaternion(-0.642768144607544, 0, -0.766060888767242, 0)
+action turn_left
+position	 [-6.4173446   0.20991862 13.3484    ] 	 rotation	 quaternion(-0.573555588722229, 0, -0.819166719913483, 0)
+action turn_left
+position	 [-6.4173446   0.20991862 13.3484    ] 	 rotation	 quaternion(-0.499977916479111, 0, -0.866038143634796, 0)
+action turn_left
+position	 [-6.4173446   0.20991862 13.3484    ] 	 rotation	 quaternion(-0.422595202922821, 0, -0.906318604946136, 0)
+action move_forward
+position	 [-6.6088476   0.20991862 13.509107  ] 	 rotation	 quaternion(-0.422595202922821, 0, -0.906318604946136, 0)
+action move_forward
+position	 [-6.8003507   0.20991862 13.623854  ] 	 rotation	 quaternion(-0.422595202922821, 0, -0.906318604946136, 0)
+action move_forward
+position	 [-7.0333858   0.20991862 13.64612   ] 	 rotation	 quaternion(-0.422595202922821, 0, -0.906318604946136, 0)
+action turn_left
+position	 [-7.0333858   0.20991862 13.64612   ] 	 rotation	 quaternion(-0.341996192932129, 0, -0.939701318740845, 0)
+action turn_left
+position	 [-7.0333858   0.20991862 13.64612   ] 	 rotation	 quaternion(-0.258794456720352, 0, -0.965932428836823, 0)
+action turn_right
+position	 [-7.0333858   0.20991862 13.64612   ] 	 rotation	 quaternion(-0.341996222734451, 0, -0.93970137834549, 0)
+action turn_right
+position	 [-7.0333858   0.20991862 13.64612   ] 	 rotation	 quaternion(-0.422595143318176, 0, -0.906318545341492, 0)
+action turn_left
+position	 [-7.0333858   0.20991862 13.64612   ] 	 rotation	 quaternion(-0.341996192932129, 0, -0.93970137834549, 0)
+action move_forward
+position	 [-7.2335167   0.20991862 13.70616   ] 	 rotation	 quaternion(-0.341996192932129, 0, -0.93970137834549, 0)
+action turn_left
+position	 [-7.2335167   0.20991862 13.70616   ] 	 rotation	 quaternion(-0.258794456720352, 0, -0.965932488441467, 0)
+action turn_right
+position	 [-7.2335167   0.20991862 13.70616   ] 	 rotation	 quaternion(-0.341996192932129, 0, -0.939701318740845, 0)
+action turn_left
+position	 [-7.2335167   0.20991862 13.70616   ] 	 rotation	 quaternion(-0.258794456720352, 0, -0.965932428836823, 0)
+action turn_left
+position	 [-7.2335167   0.20991862 13.70616   ] 	 rotation	 quaternion(-0.173623114824295, 0, -0.984812200069427, 0)
+action turn_left
+position	 [-7.2335167   0.20991862 13.70616   ] 	 rotation	 quaternion(-0.0871303975582123, 0, -0.996196985244751, 0)
+action turn_right
+position	 [-7.2335167   0.20991862 13.70616   ] 	 rotation	 quaternion(-0.173623114824295, 0, -0.984812259674072, 0)
+action move_forward
+position	 [-7.3766093   0.20991862 13.749087  ] 	 rotation	 quaternion(-0.173623114824295, 0, -0.984812259674072, 0)
+action move_forward
+position	 [-7.4591627   0.20991862 13.773853  ] 	 rotation	 quaternion(-0.173623114824295, 0, -0.984812259674072, 0)
+action move_forward
+position	 [-7.4591627   0.20991862 13.773853  ] 	 rotation	 quaternion(-0.173623114824295, 0, -0.984812259674072, 0)
+action move_forward
+position	 [-7.4591627   0.20991862 13.773853  ] 	 rotation	 quaternion(-0.173623114824295, 0, -0.984812259674072, 0)
+action move_forward
+position	 [-7.4591627   0.20991862 13.773853  ] 	 rotation	 quaternion(-0.173623114824295, 0, -0.984812259674072, 0)
+action move_forward
+position	 [-7.4591627   0.20991862 13.773853  ] 	 rotation	 quaternion(-0.173623114824295, 0, -0.984812259674072, 0)
+action turn_left
+position	 [-7.4591627   0.20991862 13.773853  ] 	 rotation	 quaternion(-0.0871303826570511, 0, -0.996196925640106, 0)
+action turn_left
+position	 [-7.4591627   0.20991862 13.773853  ] 	 rotation	 quaternion(2.54511833190918e-05, 0, -1, 0)
+action turn_left
+position	 [-7.4591627   0.20991862 13.773853  ] 	 rotation	 quaternion(0.0871810913085938, 0, -0.996192514896393, 0)
+action turn_right
+position	 [-7.4591627   0.20991862 13.773853  ] 	 rotation	 quaternion(2.54437327384949e-05, 0, -1, 0)
+action turn_left
+position	 [-7.4591627   0.20991862 13.773853  ] 	 rotation	 quaternion(0.0871810838580132, 0, -0.996192514896393, 0)
+action move_forward
+position	 [-7.4591627   0.20991862 13.773853  ] 	 rotation	 quaternion(0.0871810838580132, 0, -0.996192514896393, 0)
+action turn_left
+position	 [-7.4591627   0.20991862 13.773853  ] 	 rotation	 quaternion(0.17367322742939, 0, -0.984803378582001, 0)
+action move_forward
+position	 [-7.445363    0.20991862 13.769713  ] 	 rotation	 quaternion(0.17367322742939, 0, -0.984803378582001, 0)
+action turn_right
+position	 [-7.445363    0.20991862 13.769713  ] 	 rotation	 quaternion(0.0871810838580132, 0, -0.996192514896393, 0)
+action move_forward
+position	 [-7.4591627   0.20991862 13.773853  ] 	 rotation	 quaternion(0.0871810838580132, 0, -0.996192514896393, 0)
+action move_forward
+position	 [-7.4591627   0.20991862 13.773853  ] 	 rotation	 quaternion(0.0871810838580132, 0, -0.996192514896393, 0)
+action move_forward
+position	 [-7.4591627   0.20991862 13.773853  ] 	 rotation	 quaternion(0.0871810838580132, 0, -0.996192514896393, 0)
+action turn_left
+position	 [-7.4591627   0.20991862 13.773853  ] 	 rotation	 quaternion(0.17367322742939, 0, -0.984803378582001, 0)
+action move_forward
+position	 [-7.445363    0.20991862 13.769713  ] 	 rotation	 quaternion(0.17367322742939, 0, -0.984803378582001, 0)
+action turn_right
+position	 [-7.445363    0.20991862 13.769713  ] 	 rotation	 quaternion(0.0871810838580132, 0, -0.996192514896393, 0)
+action turn_right
+position	 [-7.445363    0.20991862 13.769713  ] 	 rotation	 quaternion(2.54362821578979e-05, 0, -1, 0)
+ ========================= Performance ======================== 
+ 640 x 480, total time 0.90 s, frame time 0.905 ms (1105.4 FPS)
+ ============================================================== 
