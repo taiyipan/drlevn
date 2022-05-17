@@ -1,9 +1,12 @@
 [submodule "splitnet"]
 	path = splitnet
 	url = https://github.com/facebookresearch/splitnet.git
+	ignore = dirty
 [submodule "habitat-sim"]
 	path = habitat-sim
 	url = https://github.com/facebookresearch/habitat-sim.git
+	ignore = dirty
 [submodule "habitat-lab"]
 	path = habitat-lab
 	url = https://github.com/facebookresearch/habitat-lab.git
+	ignore = dirty
