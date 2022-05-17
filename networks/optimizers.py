@@ -95,8 +95,8 @@ class Optimizer(object):
 
 class VisualPPO(Optimizer):
     def update(self, rollouts, shell_args):
-        advantages = rollouts.returns[:-1] - rollouts.value_preds[:-1]
-        advantages = (advantages - advantages.mean()) / (advantages.std() + 1e-5)
+        advantage = rollouts.returns[:-1] - rollouts.value_preds[:-1]
+        advantage = (advantage - advantage.mean()) / (advantage.std() + 1e-5)
 
         value_loss_epoch = 0
         action_loss_epoch = 0
@@ -112,11 +112,11 @@ class VisualPPO(Optimizer):
         ):
 
             if shell_args.freeze_encoder_features:
-                visual_features = pt_util.remove_dim(
+                visual_feature = pt_util.remove_dim(
                     rollouts.additional_observations_dict["visual_encoder_features"][:-1], 1
                 )
             else:
-                visual_features, decoder_outputs, class_pred = self.actor_critic.base.visual_encoder(
+                visual_feature, decoder_outputs, class_pred = self.actor_critic.base.visual_encoder(
                     pt_util.remove_dim(rollouts.obs[:-1], 1), shell_args.use_visual_loss
                 )
 
@@ -133,21 +133,21 @@ class VisualPPO(Optimizer):
                 )
 
             if shell_args.use_motion_loss:
-                visual_features = self.actor_critic.base.visual_projection(visual_features)
+                visual_feature = self.actor_critic.base.visual_projection(visual_feature)
 
-                visual_features = visual_features.view(rollouts.obs.shape[0] - 1, rollouts.obs.shape[1], -1)
-                actions = rollouts.actions[:-1].view(-1)
-                egomotion_pred = self.actor_critic.base.predict_egomotion(visual_features[1:], visual_features[:-1])
+                visual_feature = visual_feature.view(rollouts.obs.shape[0] - 1, rollouts.obs.shape[1], -1)
+                action = rollouts.actions[:-1].view(-1)
+                egomotion_prediction = self.actor_critic.base.predict_egomotion(visual_feature[1:], visual_feature[:-1])
 
-                egomotion_loss = get_egomotion_loss(actions, egomotion_pred)
+                egomotion_loss = get_egomotion_loss(action, egomotion_prediction)
                 egomotion_loss = egomotion_loss * rollouts.masks[1:-1].view(-1)
                 egomotion_loss_total = 0.25 * torch.mean(egomotion_loss)
                 egomotion_loss_value = egomotion_loss_total.item()
 
-                action_one_hot = pt_util.get_one_hot(actions, self.actor_critic.num_actions)
-                next_feature_pred = self.actor_critic.base.predict_next_features(visual_features[:-1], action_one_hot)
+                action_one_hot = pt_util.get_one_hot(action, self.actor_critic.num_actions)
+                next_feature_pred = self.actor_critic.base.predict_next_features(visual_feature[:-1], action_one_hot)
                 feature_loss = get_feature_prediction_loss(
-                    visual_features[1:].detach(), next_feature_pred.view(visual_features[1:].shape)
+                    visual_feature[1:].detach(), next_feature_pred.view(visual_feature[1:].shape)
                 )
                 feature_loss = feature_loss.view(-1) * rollouts.masks[1:-1].view(-1)
                 feature_loss_total = torch.mean(feature_loss)
@@ -206,9 +206,9 @@ class VisualPPO(Optimizer):
         if shell_args.use_policy_loss:
             for _ in range(self.ppo_epoch):
                 if self.actor_critic.is_recurrent:
-                    data_generator = rollouts.recurrent_generator(advantages, self.num_mini_batch)
+                    data_generator = rollouts.recurrent_generator(advantage, self.num_mini_batch)
                 else:
-                    data_generator = rollouts.feed_forward_generator(advantages, self.num_mini_batch)
+                    data_generator = rollouts.feed_forward_generator(advantage, self.num_mini_batch)
 
                 for sample in data_generator:
                     (
@@ -313,15 +313,15 @@ class VisualPPO(Optimizer):
                     dist_entropy_epoch += dist_entropy.item()
                     loss_total_epoch += loss_total.item()
 
-        num_updates = self.ppo_epoch * self.num_mini_batch
+        num_update = self.ppo_epoch * self.num_mini_batch
 
         if decoder_enabled:
             self.actor_critic.base.enable_decoder()
 
-        value_loss_epoch /= num_updates
-        action_loss_epoch /= num_updates
-        dist_entropy_epoch /= num_updates
-        loss_total_epoch /= num_updates
+        value_loss_epoch /= num_update
+        action_loss_epoch /= num_update
+        dist_entropy_epoch /= num_update
+        loss_total_epoch /= num_update
 
         return (
             loss_total_epoch,
@@ -347,32 +347,32 @@ class BehavioralCloningOptimizer(Optimizer):
         egomotion_loss_value = 0
         feature_prediction_loss_value = 0
         visual_loss_total = 0
-        visual_losses = {}
+        visual_loss = {}
 
         T, N = rollouts.obs.shape[:2]
 
         if not self.actor_critic.base.aah_im_blind:
             if shell_args.update_encoder_features or self.actor_critic.base.end_to_end:
-                visual_features, decoder_outputs, class_pred = self.actor_critic.base.visual_encoder(
+                visual_feature, decoder_outputs, class_pred = self.actor_critic.base.visual_encoder(
                     pt_util.remove_dim(rollouts.obs[:-1], 1), shell_args.use_visual_loss
                 )
                 if shell_args.use_visual_loss:
-                    visual_loss_total, visual_loss_value, visual_losses = get_visual_loss_with_rollout(
+                    visual_loss_total, visual_loss_value, visual_loss = get_visual_loss_with_rollout(
                         rollouts, self.actor_critic.base.decoder_output_info, decoder_outputs
                     )
             else:
-                visual_features = pt_util.remove_dim(
+                visual_feature = pt_util.remove_dim(
                     rollouts.additional_observations_dict["visual_encoder_features"][:-1], 1
                 )
         else:
-            visual_features = None
+            visual_feature = None
 
-        rl_features = visual_features
+        rl_feature = visual_feature
         if not self.actor_critic.base.aah_im_blind and not self.actor_critic.base.end_to_end:
-            rl_features = rl_features.detach()
+            rl_feature = rl_feature.detach()
         value, actor_features, _ = self.actor_critic.base(
             {
-                "visual_encoder_features": rl_features,
+                "visual_encoder_features": rl_feature,
                 "target_vector": pt_util.remove_dim(rollouts.additional_observations_dict["pointgoal"][:-1], 1),
                 "prev_action_one_hot": pt_util.remove_dim(
                     rollouts.additional_observations_dict["prev_action_one_hot"][:-1], 1
@@ -381,14 +381,14 @@ class BehavioralCloningOptimizer(Optimizer):
             rollouts.recurrent_hidden_states[0].view(-1, self.actor_critic.recurrent_hidden_state_size),
             rollouts.masks[:-1].view(-1, 1),
         )
-        action_logits = self.actor_critic.dist(actor_features).logits
+        action_logit = self.actor_critic.dist(actor_features).logits
 
-        label_probs = rollouts.additional_observations_dict["best_next_action"][:-1]
-        label_probs /= torch.sum(label_probs, dim=2, keepdim=True) + 1e-10
+        label_prob = rollouts.additional_observations_dict["best_next_action"][:-1]
+        label_prob /= torch.sum(label_prob, dim=2, keepdim=True) + 1e-10
         action_loss = pt_util.weighted_loss(
             torch.sum(
                 pt_util.multi_class_cross_entropy_loss(
-                    action_logits, pt_util.remove_dim(label_probs, 1), reduction="none"
+                    action_logit, pt_util.remove_dim(label_prob, 1), reduction="none"
                 ),
                 dim=1,
             ),
@@ -399,20 +399,20 @@ class BehavioralCloningOptimizer(Optimizer):
         total_loss = action_loss + visual_loss_total
 
         if shell_args.use_motion_loss:
-            visual_features = self.actor_critic.base.visual_projection(visual_features).view(T - 1, N, -1)
+            visual_feature = self.actor_critic.base.visual_projection(visual_feature).view(T - 1, N, -1)
 
-            actions = rollouts.actions[:-1].view(-1)
-            egomotion_pred = self.actor_critic.base.predict_egomotion(visual_features[1:], visual_features[:-1])
+            action = rollouts.actions[:-1].view(-1)
+            egomotion_prediction = self.actor_critic.base.predict_egomotion(visual_feature[1:], visual_feature[:-1])
 
-            egomotion_loss = get_egomotion_loss(actions, egomotion_pred)
+            egomotion_loss = get_egomotion_loss(action, egomotion_prediction)
             egomotion_loss = egomotion_loss * rollouts.masks[1:-1].view(-1)
             egomotion_loss_total = 0.25 * torch.mean(egomotion_loss)
             egomotion_loss_value = egomotion_loss_total.item()
 
-            action_one_hot = pt_util.get_one_hot(actions, self.actor_critic.num_actions)
-            next_feature_pred = self.actor_critic.base.predict_next_features(visual_features[:-1], action_one_hot)
+            action_one_hot = pt_util.get_one_hot(action, self.actor_critic.num_actions)
+            next_feature_prediction = self.actor_critic.base.predict_next_features(visual_feature[:-1], action_one_hot)
             feature_loss = get_feature_prediction_loss(
-                visual_features[1:].detach(), next_feature_pred.view(visual_features[1:].shape)
+                visual_feature[1:].detach(), next_feature_prediction.view(visual_feature[1:].shape)
             )
             feature_loss = feature_loss.view(-1)
             feature_loss = feature_loss * rollouts.masks[1:-1].view(-1)
@@ -493,7 +493,7 @@ class BehavioralCloningOptimizer(Optimizer):
             total_loss.item(),
             action_loss_total,
             visual_loss_value,
-            visual_losses,
+            visual_loss,
             egomotion_loss_value,
             feature_prediction_loss_value,
         )

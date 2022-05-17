@@ -103,7 +103,7 @@ class HabitatRLTrainAndEvalRunner(HabitatRLEvalRunner):
 
         total_num_steps = self.start_iter
         fps_timer = [time.time(), total_num_steps]
-        timers = np.zeros(3)
+        timer = np.zeros(3)
         egomotion_loss = 0
 
         video_frames = []
@@ -119,10 +119,10 @@ class HabitatRLTrainAndEvalRunner(HabitatRLEvalRunner):
         self.roll_out.copy_obs(obs, 0)
         distances = pt_util.to_numpy(obs["goal_geodesic_distance"])
         self.train_stats["start_geodesic_distance"][:] = distances
-        previous_visual_features = None
-        egomotion_pred = None
+        previous_visual_feature = None
+        egomotion_prediction = None
         prev_action = None
-        prev_action_probs = None
+        prev_action_probability = None
         num_updates = (
             int(self.shell_args.num_env_steps) // self.shell_args.num_forward_rollout_steps
         ) // self.shell_args.num_processes
@@ -152,7 +152,7 @@ class HabitatRLTrainAndEvalRunner(HabitatRLEvalRunner):
 
                 for step in range(self.shell_args.num_forward_rollout_steps):
                     with torch.no_grad():
-                        start_t = time.time()
+                        start_time = time.time()
                         value, action, action_log_prob, recurrent_hidden_states = self.agent.act(
                             {
                                 "images": self.roll_out.obs[step],
@@ -173,13 +173,13 @@ class HabitatRLTrainAndEvalRunner(HabitatRLEvalRunner):
 
                         if self.shell_args.use_motion_loss:
                             if self.shell_args.record_video:
-                                if previous_visual_features is not None:
-                                    egomotion_pred = self.agent.base.predict_egomotion(
-                                        self.agent.base.visual_features, previous_visual_features
+                                if previous_visual_feature is not None:
+                                    egomotion_prediction = self.agent.base.predict_egomotion(
+                                        self.agent.base.visual_features, previous_visual_feature
                                     )
-                            previous_visual_features = self.agent.base.visual_features.detach()
+                            previous_visual_feature = self.agent.base.visual_features.detach()
 
-                        timers[1] += time.time() - start_t
+                        timer[1] += time.time() - start_time
 
                         if self.shell_args.record_video:
                             # Copy so we don't mess with obs itself
@@ -193,13 +193,13 @@ class HabitatRLTrainAndEvalRunner(HabitatRLEvalRunner):
                                 draw_obs["action_taken"][:] = 0
                                 draw_obs["action_taken"][np.arange(self.shell_args.num_processes), prev_action] = 1
                                 draw_obs["action_taken_name"] = SIM_ACTION_TO_NAME[draw_obs['prev_action'].item()]
-                                draw_obs["action_prob"] = pt_util.to_numpy(prev_action_probs).copy()
+                                draw_obs["action_prob"] = pt_util.to_numpy(prev_action_probability).copy()
                             else:
                                 draw_obs["action_taken"] = None
                                 draw_obs["action_taken_name"] = SIM_ACTION_TO_NAME[SimulatorActions.STOP]
                                 draw_obs["action_prob"] = None
                             prev_action = action_cpu
-                            prev_action_probs = self.agent.last_dist.probs.detach()
+                            prev_action_probability = self.agent.last_dist.probs.detach()
                             if (
                                 hasattr(self.agent.base, "decoder_outputs")
                                 and self.agent.base.decoder_outputs is not None
@@ -217,9 +217,9 @@ class HabitatRLTrainAndEvalRunner(HabitatRLEvalRunner):
                             if best_next_action is not None:
                                 draw_obs["best_next_action"] = best_next_action
                             if self.shell_args.use_motion_loss:
-                                if egomotion_pred is not None:
+                                if egomotion_prediction is not None:
                                     draw_obs["egomotion_pred"] = pt_util.to_numpy(
-                                        F.softmax(egomotion_pred, dim=1)
+                                        F.softmax(egomotion_prediction, dim=1)
                                     ).copy()
                                 else:
                                     draw_obs["egomotion_pred"] = None
@@ -244,9 +244,9 @@ class HabitatRLTrainAndEvalRunner(HabitatRLEvalRunner):
                         # save dists from previous step or else on reset they will be overwritten
                         distances = pt_util.to_numpy(obs["goal_geodesic_distance"])
 
-                        start_t = time.time()
+                        start_time = time.time()
                         obs, rewards, dones, infos = self.envs.step(translated_action_space)
-                        timers[0] += time.time() - start_t
+                        timer[0] += time.time() - start_time
                         obs["reward"] = rewards
                         if self.shell_args.algo == "supervised":
                             obs["best_next_action"] = pt_util.from_numpy(obs["best_next_action"][:, ACTION_SPACE]).to(
@@ -411,7 +411,7 @@ class HabitatRLTrainAndEvalRunner(HabitatRLEvalRunner):
                         )
 
                 with torch.no_grad():
-                    start_t = time.time()
+                    start_time = time.time()
                     next_value = self.agent.get_value(
                         {
                             "images": self.roll_out.obs[-1],
@@ -423,14 +423,14 @@ class HabitatRLTrainAndEvalRunner(HabitatRLEvalRunner):
                         self.roll_out.recurrent_hidden_states[-1],
                         self.roll_out.masks[-1],
                     ).detach()
-                    timers[1] += time.time() - start_t
+                    timer[1] += time.time() - start_time
 
                 self.roll_out.compute_returns(
                     next_value, self.shell_args.use_gae, self.shell_args.gamma, self.shell_args.tau
                 )
 
                 if not self.shell_args.no_weight_update:
-                    start_t = time.time()
+                    start_time = time.time()
                     if self.shell_args.algo == "supervised":
                         (
                             total_loss,
@@ -452,7 +452,7 @@ class HabitatRLTrainAndEvalRunner(HabitatRLEvalRunner):
                             forward_model_loss,
                         ) = self.optimizer.update(self.roll_out, self.shell_args)
 
-                    timers[2] += time.time() - start_t
+                    timer[2] += time.time() - start_time
 
                 self.roll_out.after_update()
 
@@ -466,12 +466,12 @@ class HabitatRLTrainAndEvalRunner(HabitatRLEvalRunner):
                     log_dict = {}
                     if len(episode_reward) > 1:
                         end = time.time()
-                        nsteps = total_num_steps - fps_timer[1]
+                        n_step = total_num_steps - fps_timer[1]
                         fps = int((total_num_steps - fps_timer[1]) / (end - fps_timer[0]))
-                        timers /= nsteps
-                        env_spf = timers[0]
-                        forward_spf = timers[1]
-                        backward_spf = timers[2]
+                        timer /= n_step
+                        env_spf = timer[0]
+                        forward_spf = timer[1]
+                        backward_spf = timer[2]
                         print(
                             (
                                 "{} Updates {}, num timesteps {}, FPS {}, Env FPS "
@@ -514,7 +514,7 @@ class HabitatRLTrainAndEvalRunner(HabitatRLEvalRunner):
                             )
                         fps_timer[0] = time.time()
                         fps_timer[1] = total_num_steps
-                        timers[:] = 0
+                        timer[:] = 0
                     if self.shell_args.tensorboard:
                         log_dict.update(
                             {
@@ -550,10 +550,10 @@ class HabitatRLTrainAndEvalRunner(HabitatRLEvalRunner):
                     self.roll_out.copy_obs(obs, 0)
                     distances = pt_util.to_numpy(obs["goal_geodesic_distance"])
                     self.train_stats["start_geodesic_distance"][:] = distances
-                    previous_visual_features = None
-                    egomotion_pred = None
+                    previous_visual_feature = None
+                    egomotion_prediction = None
                     prev_action = None
-                    prev_action_probs = None
+                    prev_action_probability = None
         except:
             # Catch all exceptions so a final save can be performed
             import traceback
