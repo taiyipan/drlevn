@@ -49,7 +49,7 @@ class EncoderDecoderInterface(nn.Module, ABC):
 
 class BaseEncoderDecoder(EncoderDecoderInterface, ABC):
     def __init__(self, decoder_output_info, create_decoder=True):
-        self.bridge = None
+        self.bridges = None
         self.out = None
         super(BaseEncoderDecoder, self).__init__(decoder_output_info, create_decoder)
         self.class_pred_layer = None
@@ -60,7 +60,7 @@ class BaseEncoderDecoder(EncoderDecoderInterface, ABC):
             )
 
     def construct_decoder(self):
-        self.bridge = Bridge(128, 128)
+        self.bridges = Bridge(128, 128)
         up_blocks = [
             ShallowUpBlockForHourglassNet(128, 128, upsampling_method="bilinear"),
             ShallowUpBlockForHourglassNet(128, 64, upsampling_method="bilinear"),
@@ -81,20 +81,20 @@ class BaseEncoderDecoder(EncoderDecoderInterface, ABC):
         deepest_visual_features = self.encoder(x)
 
         # decoder Part
-        decoder_outputs = None
-        class_pred = None
+        decoder_output = None
+        class_prediction = None
         if decoder_enabled:
-            x = self.bridge(deepest_visual_features)
+            x = self.bridges(deepest_visual_features)
 
             for i, block in enumerate(self.decoder, 1):
                 x = block(x)
-            decoder_outputs = self.out(x)
+            decoder_output = self.out(x)
 
             if self.class_pred_layer is not None:
-                class_pred_input = torch.mean(deepest_visual_features, dim=(2, 3))
-                class_pred = self.class_pred_layer(class_pred_input)
+                class_prediction_input = torch.mean(deepest_visual_features, dim=(2, 3))
+                class_prediction = self.class_pred_layer(class_prediction_input)
 
-        return deepest_visual_features, decoder_outputs, class_pred
+        return deepest_visual_features, decoder_output, class_prediction
 
 
 class ShallowVisualEncoder(BaseEncoderDecoder):
@@ -283,11 +283,11 @@ class RLBaseWithVisualEncoder(model.NNBase):
         return self.critic_linear(x), x, rnn_hxs
 
     def predict_egomotion(self, visual_features_curr, visual_features_prev):
-        feature_t_concat = torch.cat((visual_features_curr, visual_features_prev), dim=-1)
-        if len(feature_t_concat.shape) > 2:
-            feature_t_concat = feature_t_concat.view(-1, self.egomotion_layer[0].weight.shape[1])
-        egomotion_pred = self.egomotion_layer(feature_t_concat)
-        return egomotion_pred
+        feature_t_concate = torch.cat((visual_features_curr, visual_features_prev), dim=-1)
+        if len(feature_t_concate.shape) > 2:
+            feature_t_concate = feature_t_concate.view(-1, self.egomotion_layer[0].weight.shape[1])
+        egomotion_prediction = self.egomotion_layer(feature_t_concate)
+        return egomotion_prediction
 
     def predict_next_features(self, visual_features_curr, action):
         feature_shape = visual_features_curr.shape
@@ -297,10 +297,10 @@ class RLBaseWithVisualEncoder(model.NNBase):
             )
         if len(action.shape) > 2:
             action = action.view(-1, self.action_size)
-        next_features_delta = self.motion_model_layer(torch.cat((visual_features_curr, action), dim=1))
-        next_features = visual_features_curr + next_features_delta
-        next_features = next_features.view(feature_shape)
-        return next_features
+        next_feature_delta = self.motion_model_layer(torch.cat((visual_features_curr, action), dim=1))
+        next_feature = visual_features_curr + next_feature_delta
+        next_feature = next_feature.view(feature_shape)
+        return next_feature
 
 
 class VisualPolicy(model.Policy):
@@ -313,25 +313,25 @@ class VisualPolicy(model.Policy):
         self.last_dist = None
 
     def act(self, inputs, rnn_hxs, masks, deterministic=False):
-        value, actor_features, rnn_hxs = self.base(inputs, rnn_hxs, masks)
-        dist = self.dist(actor_features)
-        self.last_dist = dist
+        values, actor_feature, rnn_hx = self.base(inputs, rnn_hx, masks)
+        dista = self.dist(actor_feature)
+        self.last_dist = dista
 
         if deterministic:
-            action = dist.mode()
+            action = dista.mode()
         else:
-            action = dist.sample()
+            action = dista.sample()
 
-        action_log_probs = dist.log_probs(action)
+        action_log_probs = dista.log_probs(action)
 
-        return value, action, action_log_probs, rnn_hxs
+        return values, action, action_log_probs, rnn_hx
 
-    def evaluate_actions(self, inputs, rnn_hxs, masks, action):
-        value, actor_features, rnn_hxs = self.base(inputs, rnn_hxs, masks)
-        dist = self.dist(actor_features)
+    def evaluate_actions(self, inputs, rnn_hx, masks, action):
+        value, actor_feature, rnn_hx = self.base(inputs, rnn_hx, masks)
+        dist = self.dist(actor_feature)
         self.last_dist = dist
 
-        action_log_probs = dist.log_probs(action)
+        action_log_prob = dist.log_probs(action)
         dist_entropy = dist.entropy().mean()
 
-        return value, action_log_probs, dist_entropy, rnn_hxs
+        return value, action_log_prob, dist_entropy, rnn_hx

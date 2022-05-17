@@ -279,7 +279,7 @@ To reproduce the results and to run the experiment follow the instructions in th
 
 25. Train the agent using `train_splitnet.py`
     ```sh
-    python train_splitnet.py
+    python train_drlevn.py
     ```
  
 <p align="right">(<a href="#top">back to top</a>)</p>

@@ -23,8 +23,8 @@ from utils.storage import RolloutStorageWithMultipleObservations
 
 class HabitatRLTrainAndEvalRunner(HabitatRLEvalRunner):
     def __init__(self, create_decoder=True):
-        self.rollouts = None
-        self.logger = None
+        self.roll_out = None
+        self.loggers = None
         self.train_stats = None
         super(HabitatRLTrainAndEvalRunner, self).__init__(create_decoder)
 
@@ -34,48 +34,48 @@ class HabitatRLTrainAndEvalRunner(HabitatRLEvalRunner):
         self.shell_args.cuda = not self.shell_args.no_cuda and torch.cuda.is_available()
 
         print("Starting make dataset")
-        start_t = time.time()
-        config = self.configs[0]
-        dataset = make_dataset(config.DATASET.TYPE, config=config.DATASET)
-        observation_shape_chw = (3, config.SIMULATOR.RGB_SENSOR.HEIGHT, config.SIMULATOR.RGB_SENSOR.WIDTH)
+        start_time = time.time()
+        configs = self.configs[0]
+        datasets = make_dataset(configs.DATASET.TYPE, config=configs.DATASET)
+        observation_shape_chwd = (3, configs.SIMULATOR.RGB_SENSOR.HEIGHT, configs.SIMULATOR.RGB_SENSOR.WIDTH)
         print("made dataset")
 
-        assert len(dataset.episodes) > 0, "empty datasets"
+        assert len(datasets.episodes) > 0, "empty datasets"
         if self.shell_args.num_train_scenes > 0:
-            scene_ids = sorted(dataset.scene_ids)
+            scene_ids = sorted(datasets.scene_ids)
             random.seed(0)
             random.shuffle(scene_ids)
             used_scene_ids = set(scene_ids[: self.shell_args.num_train_scenes])
-            dataset.filter_episodes(lambda x: x.scene_id in used_scene_ids)
+            datasets.filter_episodes(lambda x: x.scene_id in used_scene_ids)
 
         if self.shell_args.record_video:
-            random.shuffle(dataset.episodes)
+            random.shuffle(datasets.episodes)
 
-        datasets = dataset.get_splits(
+        datasets = datasets.get_splits(
             self.shell_args.num_processes, remove_unused_episodes=True, collate_scene_ids=True
         )
 
-        print("Dataset creation time %.3f" % (time.time() - start_t))
+        print("Dataset creation time %.3f" % (time.time() - start_time))
 
-        self.rollouts = RolloutStorageWithMultipleObservations(
+        self.roll_out = RolloutStorageWithMultipleObservations(
             self.shell_args.num_forward_rollout_steps,
             self.shell_args.num_processes,
-            observation_shape_chw,
+            observation_shape_chwd,
             self.gym_action_space,
             self.agent.recurrent_hidden_state_size,
             self.observation_space,
             "rgb",
         )
-        self.rollouts.to(self.device)
+        self.roll_out.to(self.device)
 
         print("Feeding dummy batch")
-        dummy_start = time.time()
-        self.optimizer.update(self.rollouts, self.shell_args)
-        print("Done feeding dummy batch %.3f" % (time.time() - dummy_start))
+        dummy_starts = time.time()
+        self.optimizer.update(self.roll_out, self.shell_args)
+        print("Done feeding dummy batch %.3f" % (time.time() - dummy_starts))
 
-        self.logger = None
+        self.loggers = None
         if self.shell_args.tensorboard:
-            self.logger = tensorboard_logger.Logger(
+            self.loggers = tensorboard_logger.Logger(
                 os.path.join(self.shell_args.log_prefix, self.shell_args.tensorboard_dirname, self.time_str + "_train")
             )
 
@@ -95,11 +95,11 @@ class HabitatRLTrainAndEvalRunner(HabitatRLEvalRunner):
         )
 
     def train_model(self):
-        episode_rewards = deque(maxlen=10)
-        current_episode_rewards = np.zeros(self.shell_args.num_processes)
-        episode_lengths = deque(maxlen=10)
-        current_episode_lengths = np.zeros(self.shell_args.num_processes)
-        current_rewards = np.zeros(self.shell_args.num_processes)
+        episode_reward = deque(maxlen=10)
+        current_episode_reward = np.zeros(self.shell_args.num_processes)
+        episode_length = deque(maxlen=10)
+        current_episode_length = np.zeros(self.shell_args.num_processes)
+        current_reward = np.zeros(self.shell_args.num_processes)
 
         total_num_steps = self.start_iter
         fps_timer = [time.time(), total_num_steps]
@@ -116,7 +116,7 @@ class HabitatRLTrainAndEvalRunner(HabitatRLEvalRunner):
         obs["prev_action_one_hot"] = obs["prev_action_one_hot"][:, ACTION_SPACE].to(torch.float32)
         if self.shell_args.algo == "supervised":
             obs["best_next_action"] = pt_util.from_numpy(obs["best_next_action"][:, ACTION_SPACE])
-        self.rollouts.copy_obs(obs, 0)
+        self.roll_out.copy_obs(obs, 0)
         distances = pt_util.to_numpy(obs["goal_geodesic_distance"])
         self.train_stats["start_geodesic_distance"][:] = distances
         previous_visual_features = None
@@ -128,21 +128,21 @@ class HabitatRLTrainAndEvalRunner(HabitatRLEvalRunner):
         ) // self.shell_args.num_processes
 
         try:
-            for iter_count in range(num_updates):
+            for iteration_count in range(num_updates):
                 if self.shell_args.tensorboard:
-                    if iter_count % 500 == 0:
+                    if iteration_count % 500 == 0:
                         print("Logging conv summaries")
-                        self.logger.network_conv_summary(self.agent, total_num_steps)
-                    elif iter_count % 100 == 0:
+                        self.loggers.network_conv_summary(self.agent, total_num_steps)
+                    elif iteration_count % 100 == 0:
                         print("Logging variable summaries")
-                        self.logger.network_variable_summary(self.agent, total_num_steps)
+                        self.loggers.network_variable_summary(self.agent, total_num_steps)
 
                 if self.shell_args.use_linear_lr_decay:
                     # decrease learning rate linearly
-                    update_linear_schedule(self.optimizer.optimizer, iter_count, num_updates, self.shell_args.lr)
+                    update_linear_schedule(self.optimizer.optimizer, iteration_count, num_updates, self.shell_args.lr)
 
                 if self.shell_args.algo == "ppo" and self.shell_args.use_linear_clip_decay:
-                    self.optimizer.clip_param = self.shell_args.clip_param * (1 - iter_count / float(num_updates))
+                    self.optimizer.clip_param = self.shell_args.clip_param * (1 - iteration_count / float(num_updates))
 
                 if hasattr(self.agent.base, "enable_decoder"):
                     if self.shell_args.record_video:
@@ -155,20 +155,20 @@ class HabitatRLTrainAndEvalRunner(HabitatRLEvalRunner):
                         start_t = time.time()
                         value, action, action_log_prob, recurrent_hidden_states = self.agent.act(
                             {
-                                "images": self.rollouts.obs[step],
-                                "target_vector": self.rollouts.additional_observations_dict["pointgoal"][step],
-                                "prev_action_one_hot": self.rollouts.additional_observations_dict[
+                                "images": self.roll_out.obs[step],
+                                "target_vector": self.roll_out.additional_observations_dict["pointgoal"][step],
+                                "prev_action_one_hot": self.roll_out.additional_observations_dict[
                                     "prev_action_one_hot"
                                 ][step],
                             },
-                            self.rollouts.recurrent_hidden_states[step],
-                            self.rollouts.masks[step],
+                            self.roll_out.recurrent_hidden_states[step],
+                            self.roll_out.masks[step],
                         )
                         action_cpu = pt_util.to_numpy(action.squeeze(1))
                         translated_action_space = ACTION_SPACE[action_cpu]
                         if not self.shell_args.end_to_end:
-                            self.rollouts.additional_observations_dict["visual_encoder_features"][
-                                self.rollouts.step
+                            self.roll_out.additional_observations_dict["visual_encoder_features"][
+                                self.roll_out.step
                             ].copy_(self.agent.base.visual_encoder_features)
 
                         if self.shell_args.use_motion_loss:
@@ -211,8 +211,8 @@ class HabitatRLTrainAndEvalRunner(HabitatRLEvalRunner):
                                     ]
                                     draw_obs["output_" + key] = pt_util.to_numpy(outputs).copy()
                                     min_channel += num_channels
-                            draw_obs["rewards"] = current_rewards.copy()
-                            draw_obs["step"] = current_episode_lengths.copy()
+                            draw_obs["rewards"] = current_reward.copy()
+                            draw_obs["step"] = current_episode_length.copy()
                             draw_obs["method"] = self.shell_args.method_name
                             if best_next_action is not None:
                                 draw_obs["best_next_action"] = best_next_action
@@ -262,9 +262,9 @@ class HabitatRLTrainAndEvalRunner(HabitatRLEvalRunner):
                         if self.compute_surface_normals:
                             obs["surface_normals"] = pt_util.depth_to_surface_normals(obs["depth"].to(self.device))
 
-                        current_rewards = pt_util.to_numpy(rewards)
-                        current_episode_rewards += pt_util.to_numpy(rewards).squeeze()
-                        current_episode_lengths += 1
+                        current_reward = pt_util.to_numpy(rewards)
+                        current_episode_reward += pt_util.to_numpy(rewards).squeeze()
+                        current_episode_length += 1
                         for ii, done_e in enumerate(dones):
                             if done_e:
                                 num_episodes += 1
@@ -332,8 +332,8 @@ class HabitatRLTrainAndEvalRunner(HabitatRLEvalRunner):
                                         "FINISHED EPISODE %d Length %d Reward %.3f SPL %.4f"
                                         % (
                                             num_episodes,
-                                            current_episode_lengths[ii],
-                                            current_episode_rewards[ii],
+                                            current_episode_length[ii],
+                                            current_episode_reward[ii],
                                             infos[ii]["spl"],
                                         )
                                     )
@@ -346,22 +346,22 @@ class HabitatRLTrainAndEvalRunner(HabitatRLEvalRunner):
                                         self.train_stats["start_geodesic_distance"][ii]
                                         - self.train_stats["end_geodesic_distance"][ii]
                                     )
-                                    self.train_stats["num_steps"][ii] = current_episode_lengths[ii]
+                                    self.train_stats["num_steps"][ii] = current_episode_length[ii]
                                 elif self.shell_args.task == "exploration":
                                     print(
                                         "FINISHED EPISODE %d Reward %.3f States Visited %d"
-                                        % (num_episodes, current_episode_rewards[ii], infos[ii]["visited_states"])
+                                        % (num_episodes, current_episode_reward[ii], infos[ii]["visited_states"])
                                     )
                                     self.train_stats["visited_states"][ii] = infos[ii]["visited_states"]
                                 elif self.shell_args.task == "flee":
                                     print(
                                         "FINISHED EPISODE %d Reward %.3f Distance from start %.4f"
-                                        % (num_episodes, current_episode_rewards[ii], infos[ii]["distance_from_start"])
+                                        % (num_episodes, current_episode_reward[ii], infos[ii]["distance_from_start"])
                                     )
                                     self.train_stats["distance_from_start"][ii] = infos[ii]["distance_from_start"]
 
                                 self.train_stats["num_episodes"][ii] += 1
-                                self.train_stats["reward"][ii] = current_episode_rewards[ii]
+                                self.train_stats["reward"][ii] = current_episode_reward[ii]
 
                                 if self.shell_args.tensorboard:
                                     log_dict = {"single_episode/reward": self.train_stats["reward"][ii]}
@@ -390,14 +390,14 @@ class HabitatRLTrainAndEvalRunner(HabitatRLEvalRunner):
                                         log_dict["single_episode/distance_from_start"] = self.train_stats[
                                             "distance_from_start"
                                         ][ii]
-                                    self.logger.dict_log(
+                                    self.loggers.dict_log(
                                         log_dict, step=(total_num_steps + self.shell_args.num_processes * step + ii)
                                     )
 
-                                episode_rewards.append(current_episode_rewards[ii])
-                                current_episode_rewards[ii] = 0
-                                episode_lengths.append(current_episode_lengths[ii])
-                                current_episode_lengths[ii] = 0
+                                episode_reward.append(current_episode_reward[ii])
+                                current_episode_reward[ii] = 0
+                                episode_length.append(current_episode_length[ii])
+                                current_episode_length[ii] = 0
                                 self.train_stats["start_geodesic_distance"][ii] = obs["goal_geodesic_distance"][ii]
 
                         # If done then clean the history of observations.
@@ -406,7 +406,7 @@ class HabitatRLTrainAndEvalRunner(HabitatRLEvalRunner):
                             [[0.0] if "bad_transition" in info.keys() else [1.0] for info in infos]
                         )
 
-                        self.rollouts.insert(
+                        self.roll_out.insert(
                             obs, recurrent_hidden_states, action, action_log_prob, value, rewards, masks, bad_masks
                         )
 
@@ -414,18 +414,18 @@ class HabitatRLTrainAndEvalRunner(HabitatRLEvalRunner):
                     start_t = time.time()
                     next_value = self.agent.get_value(
                         {
-                            "images": self.rollouts.obs[-1],
-                            "target_vector": self.rollouts.additional_observations_dict["pointgoal"][-1],
-                            "prev_action_one_hot": self.rollouts.additional_observations_dict["prev_action_one_hot"][
+                            "images": self.roll_out.obs[-1],
+                            "target_vector": self.roll_out.additional_observations_dict["pointgoal"][-1],
+                            "prev_action_one_hot": self.roll_out.additional_observations_dict["prev_action_one_hot"][
                                 -1
                             ],
                         },
-                        self.rollouts.recurrent_hidden_states[-1],
-                        self.rollouts.masks[-1],
+                        self.roll_out.recurrent_hidden_states[-1],
+                        self.roll_out.masks[-1],
                     ).detach()
                     timers[1] += time.time() - start_t
 
-                self.rollouts.compute_returns(
+                self.roll_out.compute_returns(
                     next_value, self.shell_args.use_gae, self.shell_args.gamma, self.shell_args.tau
                 )
 
@@ -439,7 +439,7 @@ class HabitatRLTrainAndEvalRunner(HabitatRLEvalRunner):
                             visual_loss_dict,
                             egomotion_loss,
                             forward_model_loss,
-                        ) = self.optimizer.update(self.rollouts, self.shell_args)
+                        ) = self.optimizer.update(self.roll_out, self.shell_args)
                     else:
                         (
                             total_loss,
@@ -450,21 +450,21 @@ class HabitatRLTrainAndEvalRunner(HabitatRLEvalRunner):
                             visual_loss_dict,
                             egomotion_loss,
                             forward_model_loss,
-                        ) = self.optimizer.update(self.rollouts, self.shell_args)
+                        ) = self.optimizer.update(self.roll_out, self.shell_args)
 
                     timers[2] += time.time() - start_t
 
-                self.rollouts.after_update()
+                self.roll_out.after_update()
 
                 # save for every interval-th episode or for the last epoch
-                if iter_count % self.shell_args.save_interval == 0 or iter_count == num_updates - 1:
+                if iteration_count % self.shell_args.save_interval == 0 or iteration_count == num_updates - 1:
                     self.save_checkpoint(5, total_num_steps)
 
                 total_num_steps += self.shell_args.num_processes * self.shell_args.num_forward_rollout_steps
 
-                if not self.shell_args.no_weight_update and iter_count % self.shell_args.log_interval == 0:
+                if not self.shell_args.no_weight_update and iteration_count % self.shell_args.log_interval == 0:
                     log_dict = {}
-                    if len(episode_rewards) > 1:
+                    if len(episode_reward) > 1:
                         end = time.time()
                         nsteps = total_num_steps - fps_timer[1]
                         fps = int((total_num_steps - fps_timer[1]) / (end - fps_timer[0]))
@@ -479,15 +479,15 @@ class HabitatRLTrainAndEvalRunner(HabitatRLEvalRunner):
                                 "{:.3f}/{:.3f}, min/max reward {:.3f}/{:.3f}\n"
                             ).format(
                                 datetime.datetime.now(),
-                                iter_count,
+                                iteration_count,
                                 total_num_steps,
                                 fps,
                                 int(1.0 / env_spf),
-                                len(episode_rewards),
-                                np.mean(episode_rewards),
-                                np.median(episode_rewards),
-                                np.min(episode_rewards),
-                                np.max(episode_rewards),
+                                len(episode_reward),
+                                np.mean(episode_reward),
+                                np.median(episode_reward),
+                                np.min(episode_reward),
+                                np.max(episode_reward),
                             )
                         )
 
@@ -502,14 +502,14 @@ class HabitatRLTrainAndEvalRunner(HabitatRLEvalRunner):
                                     "stats/env_fps": 1.0 / (env_spf + 1e-10),
                                     "stats/forward_fps": 1.0 / (forward_spf + 1e-10),
                                     "stats/backward_fps": 1.0 / (backward_spf + 1e-10),
-                                    "episode/mean_rewards": np.mean(episode_rewards),
-                                    "episode/median_rewards": np.median(episode_rewards),
-                                    "episode/min_rewards": np.min(episode_rewards),
-                                    "episode/max_rewards": np.max(episode_rewards),
-                                    "episode/mean_lengths": np.mean(episode_lengths),
-                                    "episode/median_lengths": np.median(episode_lengths),
-                                    "episode/min_lengths": np.min(episode_lengths),
-                                    "episode/max_lengths": np.max(episode_lengths),
+                                    "episode/mean_rewards": np.mean(episode_reward),
+                                    "episode/median_rewards": np.median(episode_reward),
+                                    "episode/min_rewards": np.min(episode_reward),
+                                    "episode/max_rewards": np.max(episode_reward),
+                                    "episode/mean_lengths": np.mean(episode_length),
+                                    "episode/median_lengths": np.median(episode_length),
+                                    "episode/min_lengths": np.min(episode_length),
+                                    "episode/max_lengths": np.max(episode_length),
                                 }
                             )
                         fps_timer[0] = time.time()
@@ -529,7 +529,7 @@ class HabitatRLTrainAndEvalRunner(HabitatRLEvalRunner):
                             log_dict.update({"loss/entropy": dist_entropy, "loss/value": value_loss})
                         for key, val in visual_loss_dict.items():
                             log_dict["loss/visual/" + key] = val
-                        self.logger.dict_log(log_dict, step=total_num_steps)
+                        self.loggers.dict_log(log_dict, step=total_num_steps)
 
                 if self.shell_args.eval_interval is not None and total_num_steps % self.shell_args.eval_interval < (
                     self.shell_args.num_processes * self.shell_args.num_forward_rollout_steps
@@ -547,7 +547,7 @@ class HabitatRLTrainAndEvalRunner(HabitatRLEvalRunner):
                     obs["prev_action_one_hot"] = obs["prev_action_one_hot"][:, ACTION_SPACE].to(torch.float32)
                     if self.shell_args.algo == "supervised":
                         obs["best_next_action"] = pt_util.from_numpy(obs["best_next_action"][:, ACTION_SPACE])
-                    self.rollouts.copy_obs(obs, 0)
+                    self.roll_out.copy_obs(obs, 0)
                     distances = pt_util.to_numpy(obs["goal_geodesic_distance"])
                     self.train_stats["start_geodesic_distance"][:] = distances
                     previous_visual_features = None

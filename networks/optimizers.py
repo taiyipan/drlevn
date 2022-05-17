@@ -52,13 +52,13 @@ def get_visual_loss_with_rollout(rollouts, decoder_output_info, decoder_outputs)
 
 
 def get_egomotion_loss(actions, egomotion_pred):
-    loss = F.cross_entropy(egomotion_pred, actions, reduction="none")
-    return loss
+    losses = F.cross_entropy(egomotion_pred, actions, reduction="none")
+    return losses
 
 
 def get_feature_prediction_loss(features, features_pred):
-    loss = 1 - F.cosine_similarity(features, features_pred, dim=2)
-    return loss
+    losses = 1 - F.cosine_similarity(features, features_pred, dim=2)
+    return losses
 
 
 class Optimizer(object):
@@ -236,9 +236,10 @@ class VisualPPO(Optimizer):
                                 inputs["visual_encoder_features"] = additional_obs_batch["visual_encoder_features"]
                             else:
                                 inputs["images"] = obs_batch
-                            values, action_log_probs, dist_entropy, _ = self.actor_critic.evaluate_actions(
-                                inputs, recurrent_hidden_states_batch, masks_batch, actions_batch
-                            )
+                            values, action_log_probs, dist_entropy, _ = self.actor_critic.evaluate_actions(inputs,
+                                                                                                           recurrent_hidden_states_batch,
+                                                                                                           masks_batch,
+                                                                                                           actions_batch)
 
                             ratio = torch.exp(action_log_probs - old_action_log_probs_batch)
                             surr1 = ratio * adv_targ

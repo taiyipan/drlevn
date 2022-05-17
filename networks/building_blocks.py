@@ -110,9 +110,9 @@ class ShallowUpBlockForHourglassNet(nn.Module):
             up_conv_out_channels = out_channels
 
         if upsampling_method == "conv_transpose":
-            self.upsample = nn.ConvTranspose2d(up_conv_in_channels, up_conv_out_channels, kernel_size=2, stride=2)
+            self.up_sample = nn.ConvTranspose2d(up_conv_in_channels, up_conv_out_channels, kernel_size=2, stride=2)
         elif upsampling_method == "bilinear":
-            self.upsample = Interpolate(scale_factor=2, mode="bilinear", align_corners=False)
+            self.up_sample = Interpolate(scale_factor=2, mode="bilinear", align_corners=False)
         self.conv_block = ConvBlock(in_channels, out_channels)
 
     def forward(self, up_x):
@@ -120,6 +120,6 @@ class ShallowUpBlockForHourglassNet(nn.Module):
         :param up_x: this is the output from the previous up block
         :return: upsampled feature map
         """
-        x = self.upsample(up_x)
+        x = self.up_sample(up_x)
         x = self.conv_block(x)
         return x
