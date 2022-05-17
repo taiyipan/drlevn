@@ -13,20 +13,21 @@ New York University
       <a href="#About-the-project">About This Project</a>
       <ul>
         <li><a href="#Built-with">Built With</a></li>
-        <li><a href="#References">References</a></li>
-        <li><a href="#Tools-used">Tools used</a></li>
+        <li><a href="#Paper Reference">Paper Reference</a></li>
+        <li><a href="#Tools used">Tools used</a></li>
       </ul>
     </li>
+    <li><a href="#Tiny Experiments">Tiny Experiments</a></li>
     <li><a href="#prerequisites">Prerequisites</a></li>
-    <li><a href="#step-by-step-installation-for-native-ubuntu-2004lts">Step-by-Step Installation</a></li>
+    <li><a href="#Step-by-Step Installation">Step-by-Step Installation</a></li>
       <ul>       
-          <li><a href="#1-install-anaconda">Install Anaconda</a></li>
-          <li><a href="#Create-conda-environment">Create conda environment</a></li>
-          <li><a href="#Install-basic-packages-in-environment">Install basic packages in environment</a></li>
-          <li><a href="#Install-Habitat-sim-and-test">Install Habitat-sim and test</a></li>
-          <li><a href="#Install-Habitat-Lab-and-Test">Install Habitat Lab and Test</a></li>
-          <li><a href="#Clone-SplitNet-repo">Clone SplitNet repo</a></li>
-          <li><a href="#Run-Test">Run Test</a></li>
+          <li><a href="#Install Anaconda and pip">Install Anaconda</a></li>
+          <li><a href="#Create conda environment">Create conda environment</a></li>
+          <li><a href="#Install basic packages in environment">Install basic packages in environment</a></li>
+          <li><a href="#Install Habitat-sim and test">Install Habitat-sim and test</a></li>
+          <li><a href="#Install Habitat Lab and Test">Install Habitat Lab and Test</a></li>
+          <li><a href="#Clone SplitNet repo">Clone SplitNet repo</a></li>
+          <li><a href="#Run Test">Run Test</a></li>
       </ul>
     </li>
     <li><a href="#experiments">Experiments</a></li>
@@ -55,6 +56,8 @@ The main goal of the embodied navigation task is to allow an agent to find a tar
 
 This Project showed interesting results and we think would help community understand Reinforcement learning models better. This research is built on top of Facebook: SplitNet model architecture. 
 
+This research will lead the way into cutting edge visual reinforcement learning agents for the problem of navigation of indoor robots. For easy visual understanding of this project, please navigate to tiny experiments section and follow the section to recreate a agent training to navigate using reinforcement learning.  
+
 Use the `README.md` to get started.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -74,7 +77,7 @@ This project is built with the below given major frameworks and libraries. Some 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-### References
+### Paper Reference
 
 This project is based on the paper `SplitNet: Sim2Sim and Task2Task Transfer for Embodied Visual Navigation`. Which was published on 18 May 2019. This paper shows a method for decoupling visual perception and policy learning. By incorporating auxiliary tasks and selective learning of portions of the model, we explicitly decompose the learning objectives for visual navigation into perceiving the world and acting on that perception.  Additionally, SplitNet generalizes better to unseen environments from the same simulator and transfers faster and more effectively to novel embodied navigation tasks. Further, given only a small sample from a target domain, SplitNet can match the performance of traditional end-to-end pipelines which receive the entire dataset.
 
@@ -123,6 +126,118 @@ We also have a dev slack channel, please follow this [link](https://join.slack.c
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+## <b><u>Tiny Experiments</u></b>
+
+The project started with a reinforcement learning snake game, and then a 2D agent navigating in a indoor map was created as a starting ground for out project. Both environment was developed in pygame, the agents use Deep-Q-Learning to train and navigate. This can be easily recreated by following the steps below. The snake agent takes around 1 hour to completely train and by using a deeper and much complex model it can navigate better. But to make this section easily reproduceble a faster and much efficient model is used. The car agent which is much complex uses a deeper model and has few glitches, this repo will be continously updated to fix issues since this is a on going research. Also note that this experiments run in Windows, Mac and Ubuntu.
+
+## The snake game with Navigation RL Agent
+
+<!--  Add Gif of Snake game-->
+![untrained snake agent](assets/untrained_snake.gif)
+![trained snake agent](assets/trained_snake.gif)
+This game is the starting point from which the project was developed, this gives a easy representation of the problem we are solving. This part of the code is easy to recreate and gives result real time, since we will be working on a much smaller model and simpler environment. You will be able to see the agent training and getting better in minuites. 
+
+### Reproduce this section
+
+
+Simply clone the repo cd into the right directory and run agent using the below commands. Step-by-Step instructions given below
+
+1. Clone the repository using 
+   ```sh
+   git clone https://github.com/taiyipan/drlevn
+   ```
+
+2. cd into the directory rl_snake_game 
+   ```sh
+   cd rl_snake_game
+   ```
+
+3. Recommended: create a conda environment 
+    ```sh
+    # We require python>=3.7 and cmake>=3.10
+    conda create -n rl_visual_agents python=3.7 numpy matplotlib
+    conda activate rl_visual_agents
+    ```
+
+4. Install opencv-python version 4.5.5
+   ```sh
+   conda install -c conda-forge opencv
+   ```
+
+5. Install opencv-python version 2.1.2
+   ```sh
+   conda install -c cogsci pygame
+   ```
+
+6. Install pyTorch (CPU verison). Please refer pytorch website to get right version for GPU. 
+    ```sh
+    # https://pytorch.org/get-started/locally/
+    conda install pytorch torchvision torchaudio cpuonly -c pytorch
+    ```
+
+7. Run `agent.py` from this directory and from inside this environment
+   ```sh 
+   python agent.py
+   ```
+
+8. To run the environment without Reinforcement Agent and the agent controllable by WASD keys
+    ```sh 
+    python snake_game.py
+    ```
+
+## The Car indoor agent with  RL Agent
+<!-- Add Gif of Car game-->
+![untrained car agent](assets/car_agent.gif)
+This game gives much better understanding of how complex the project becomes as soon as we start adding elements. This agent is why we pivoted to habitat sim, and their tools for futer continuation of the project. In this environment the agent can see only a small section around the agent. The agent will learn and remember the environment. Note this is still a Experimental Version and might not run with certain hardware and configurations. 
+
+### Reproduce this section(agent)
+
+Simply clone the repo cd into the right directory and run agent using the below commands. Step-by-Step instructions given below. Most of the steps are similar to the previous agent above, simply change the directory and run `agent.py` from the directory `RL_car_game`. Skip step 1 and 3 if the previous snake agent was reproduced. 
+
+1. Clone the repository using 
+   ```sh
+   git clone https://github.com/taiyipan/drlevn
+   ```
+
+2. cd into the directory rl_snake_game 
+   ```sh
+   cd RL_car_game
+   ```
+
+3. Recommended: create a conda environment 
+    ```sh
+    # We require python>=3.7 and cmake>=3.10
+    conda create -n rl_visual_agents python=3.7 numpy matplotlib
+    conda activate rl_visual_agents
+    ```
+
+4. Install opencv-python version 4.5.5
+   ```sh
+   conda install -c conda-forge opencv
+   ```
+
+5. Install opencv-python version 2.1.2
+   ```sh
+   conda install -c cogsci pygame
+   ```
+
+6. Install pyTorch (CPU verison). Please refer pytorch website to get right version for GPU. 
+    ```sh
+    # https://pytorch.org/get-started/locally/
+    conda install pytorch torchvision torchaudio cpuonly -c pytorch
+    ```
+
+7. Run `agent.py` from this directory and from inside this environment
+   ```sh 
+   python agent.py
+   ```
+
+8. To run the environment without Reinforcement Agent and the agent controllable by WASD keys
+    ```sh 
+    python baseline_game.py
+    ```
+
+
 <!-- Prerequisites -->
 ## Prerequisites
 
@@ -131,7 +246,6 @@ This project is not supported in windows. Habitat sim is not available for Windo
 
 Also please note that these results cannot be performed in a virtual machine. The dependencies and the path conflicts and will not work in a virtual machine with any verison of Ubuntu or Linux distributions. 
 
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Step-by-Step Installation (for native Ubuntu 20.04LTS)
 
@@ -279,9 +393,16 @@ To reproduce the results and to run the experiment follow the instructions in th
 
 25. Train the agent using `train_splitnet.py`
     ```sh
-    python train_drlevn.py
+    python train_splitnet.py
     ```
- 
+
+
+<!--
+To Reproduce the accuracy of TPSNet(model), run `test.py` and ensure the model is on the right folder. This script will normalise the images to right value.
+   ```sh
+   python3 test.py
+   ```
+-->
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Methodology
@@ -349,7 +470,6 @@ The proposed framework is validated by utilizing the Habitat scene renderer on s
 
 The above table illustrates the performance on unseen environments and comparision of our method to the baseline method. While the performance of our proposed framework is considerably lower than that of the baseline, we hope to improve its performance in the next phase of the project.
 
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- LICENSE -->
 ## License
