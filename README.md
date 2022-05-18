@@ -146,7 +146,7 @@ Simply clone the repo, cd into the right directory, and run agent using the belo
 
 3. Recommended: create a conda environment 
     ```sh
-    # We require python>=3.7 and cmake>=3.10
+    # We require python>=3.7
     conda create -n rl_visual_agents python=3.7 numpy matplotlib
     conda activate rl_visual_agents
     ```
@@ -198,7 +198,7 @@ Simply clone the repo cd into the right directory and run agent using the below 
 
 3. Recommended: create a conda environment 
     ```sh
-    # We require python>=3.7 and cmake>=3.10
+    # We require python>=3.7
     conda create -n rl_visual_agents python=3.7 numpy matplotlib
     conda activate rl_visual_agents
     ```
