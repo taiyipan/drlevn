@@ -44,7 +44,7 @@ New York University
 -->
 A longstanding goal of computer vision is to enable robots to understand their surroundings, navigate efficiently and safely, and perform a large variety of tasks in complex environments. It serves many applications in service robotics, search and rescues robots, etc. The agent must be able to perceive, map, plan, explore, and reason. Recent advancements in deep learning has empowered agents to accomplish embodied navigation tasks.
 
-However, it is extremely challenging to achieve state-of-the-art performance. Some of the challenges included are
+However, it is extremely challenging to achieve state-of-the-art performance. Some of the challenges include are
 * perceiving partially observed input.
 * exploring unseen environment.
 * modeling seen scenarios.
@@ -132,7 +132,7 @@ This game is the starting point from which the project was developed, this gives
 ### Reproduce this section
 
 
-Simply clone the repo, cd into the right directory, and run agent using the below commands. Step-by-Step instructions given below.
+Simply clone the repo cd into the right directory and run agent using the below commands. Step-by-Step instructions given below
 
 1. Clone the repository using 
    ```sh
@@ -156,9 +156,9 @@ Simply clone the repo, cd into the right directory, and run agent using the belo
    conda install -c conda-forge opencv
    ```
 
-5. Install opencv-python version 2.1.2
+5. Install pygame
    ```sh
-   conda install -c cogsci pygame
+   pip install pygame
    ```
 
 6. Install pyTorch (CPU verison). Please refer pytorch website to get right version for GPU. 
@@ -208,9 +208,10 @@ Simply clone the repo cd into the right directory and run agent using the below 
    conda install -c conda-forge opencv
    ```
 
-5. Install opencv-python version 2.1.2
+5. Install pygame
    ```sh
-   conda install -c cogsci pygame
+   pip install pygame
+   pip install IPython
    ```
 
 6. Install pyTorch (CPU verison). Please refer pytorch website to get right version for GPU. 
