@@ -47,12 +47,6 @@ The main goal of the embodied navigation task is to allow an agent to find a tar
 
 ![final_architecture](assets/final_architecture.png)
 
-This Project showed interesting results and we think would help community understand Reinforcement learning models better. This research is built on top of Facebook: SplitNet model architecture. 
-
-This research will lead the way into cutting edge visual reinforcement learning agents for the problem of navigation of indoor robots. For easy visual understanding of this project, please navigate to tiny experiments section and follow the section to recreate a agent training to navigate using reinforcement learning.  
-
-Use the `README.md` to get started.
-
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
@@ -381,7 +375,7 @@ To reproduce the results and to run the experiment follow the instructions in th
 
 27. Train the agent using `train_drlevn.py`
     ```sh
-    python train_splitnet.py
+    python train_drlevn.py
     ```
 
 <!--
