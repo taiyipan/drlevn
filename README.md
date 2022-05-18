@@ -105,7 +105,7 @@ The project started with a reinforcement learning snake game, and then a 2D agen
 ![untrained snake agent](assets/untrained_snake.gif)
 ![trained snake agent](assets/trained_snake.gif)
 
-This game is the starting point from which the project was developed, this gives a easy representation of the problem we are solving. This part of the code is easy to recreate and gives result real time, since we will be working on a much smaller model and simpler environment. You will be able to see the agent training and getting better in minuites. 
+This game is the starting point from which the project was developed, this gives a easy representation of the problem we are solving. This part of the code is easy to recreate and gives result real time, since we will be working on a much smaller model and simpler environment. You will be able to see the agent training and getting better in minutes. 
 
 ### Reproduce this section
 
