@@ -182,7 +182,7 @@ Simply clone the repo cd into the right directory and run agent using the below 
 ![untrained car agent](assets/car_agent.gif)
 This game gives much better understanding of how complex the project becomes as soon as we start adding elements. This agent is why we pivoted to habitat sim, and their tools for futer continuation of the project. In this environment the agent can see only a small section around the agent. The agent will learn and remember the environment. Note this is still a Experimental Version and might not run with certain hardware and configurations. 
 
-### Reproduce this section (agent)
+### Reproduce this section(agent)
 
 Simply clone the repo cd into the right directory and run agent using the below commands. Step-by-Step instructions given below. Most of the steps are similar to the previous agent above, simply change the directory and run `agent.py` from the directory `RL_car_game`. Skip step 1 and 3 if the previous snake agent was reproduced. 
 
@@ -426,7 +426,7 @@ The navigation task is decoupled into two parts - a) visual perception, where th
 
 The proposed framework is validated by utilizing the Habitat scene renderer on scenes from the near photo-realistic 3D room datasets, Matterport 3D and Gibson.
 
-Results indicate that the SplitNet framework outperforms all other baselines when validated for both the datasets (refer Table 1). It achieved a SPL of 0.72 and a success rate of 0.84 in the MP3D setup, and a SPL of 0.70 and a success rate of 0.85 in the Gibson environment.  It is not surprising to find that the SPL and success rate of the Random baseline are very low because the agent was unable to anticipate the position of the target and relies on chance.  The Blind Goal Follower baseline is better than Random, as the agent can anticipate the position of the target since it is provided with an update goal vector. The blind methods are not provided with visual inputs.
+Results indicate that the SplitNet framework outperforms all other baselines when validated for both the datasets (refer Table 1). It achieved a SPL of $0.72$ and a success rate of $0.84$ in the MP3D setup, and a SPL of $0.70$ and a success rate of $0.85$ in the Gibson environment.  It is not surprising to find that the SPL and success rate of the Random baseline are very low because the agent was unable to anticipate the position of the target and relies on chance.  The Blind Goal Follower baseline is better than Random, as the agent can anticipate the position of the target since it is provided with an update goal vector. The blind methods are not provided with visual inputs.
 
 <table class="blueTable">
 <thead>
@@ -476,28 +476,12 @@ Results indicate that the SplitNet framework outperforms all other baselines whe
 </tbody>
 </table>
 
-The above table illustrates the performance on unseen environments and comparision of our method to the baseline method. While the performance of our proposed framework is considerably lower than that of the baseline, we hope to improve its performance in the next phase of the project.
-
-To validate the performance of our framework, we utilize the Success Weighted by Path Length (SPL) metric proposed in [9] - 
-
-<!-- $$
-    SPL = \dfrac{1}{N} \displaystyle\sum_{i=1}^{N}S_{i}\dfrac{l_{i}}{max(p_{i}, l_{i})}
-$$ --> 
-
-<div align="center"><img style="background: white;" src="svg\YsJb5aAGPO.svg"></div>
-
-
-where <!-- $S_{i}$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\57iIrUKKBY.svg"> is a success indicator for episode <!-- $i$, $p_{i}$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\0dmREOZRqe.svg"> is the path length, and <!-- $l_{i}$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\FD1HLWyfnI.svg"> is the shortest path length.
-
-![Graphical representation of result](assets/graph_result.jpg)
-
-We analyze the performance of the baselines as a function of the geodesic distance between the starting location and the target position (refer Fig. 5). As illustrated in the figure, the distance is correlated with the complication of an episode. As expected, all baselines tend to degrade as the starting position is moved away from the target location. 
+ 
 
 ## References
 
-This project is based on the paper `SplitNet: Sim2Sim and Task2Task Transfer for Embodied Visual Navigation`. Which was published on 18 May 2019. This paper shows a method for decoupling visual perception and policy learning. By incorporating auxiliary tasks and selective learning of portions of the model, we explicitly decompose the learning objectives for visual navigation into perceiving the world and acting on that perception.  Additionally, SplitNet generalizes better to unseen environments from the same simulator and transfers faster and more effectively to novel embodied navigation tasks. Further, given only a small sample from a target domain, SplitNet can match the performance of traditional end-to-end pipelines which receive the entire dataset.
 
-You can find the paper here: [SplitNet: Sim2Sim and Task2Task Transfer for Embodied Visual Navigation](https://arxiv.org/abs/1905.07512)
+[2] Kim, Juyong, et al. "Splitnet: Learning to semantically split deep networks for parameter reduction and model parallelization." *International Conference on Machine Learning*. PMLR, 2017. [SplitNet: Sim2Sim and Task2Task Transfer for Embodied Visual Navigation](https://arxiv.org/abs/1905.07512)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
