@@ -78,11 +78,6 @@ A high-performance physics-enabled 3D simulator with support for:
 - Robots described via URDF (mobile manipulators like [Fetch](http://docs.fetchrobotics.com/), fixed-base arms like [Franka](https://www.franka.de/),quadrupeds like [AlienGo](https://www.unitree.com/products/aliengo/)),
 - Rigid-body mechanics (via [Bullet](https://github.com/bulletphysics/bullet3)).
 
-The design philosophy of Habitat is to prioritize simulation speed over the breadth of simulation capabilities. When rendering a scene from the Matterport3D dataset, Habitat-Sim achieves several thousand frames per second (FPS) running single-threaded and reaches over 10,000 FPS multi-process on a single GPU. Habitat-Sim simulates a Fetch robot interacting in ReplicaCAD scenes at over 8,000 steps per second (SPS), where each ‘step’ involves rendering 1 RGBD observation (128×128 pixels) and rigid-body dynamics for 1/30sec.
-
-
-Habitat-Sim is typically used with
-[Habitat-Lab](https://github.com/facebookresearch/habitat-lab), a modular high-level library for end-to-end experiments in embodied AI -- defining embodied AI tasks (e.g. navigation, instruction following, question answering), training agents (via imitation or reinforcement learning, or no learning at all as in classical SensePlanAct pipelines), and benchmarking their performance on the defined tasks using standard metrics.
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/facebookresearch/habitat-sim/)
 
@@ -94,12 +89,9 @@ https://user-images.githubusercontent.com/2941091/126080914-36dc8045-01d4-4a68-8
 
 
 #### [<b>Habitat Lab</b>](https://github.com/facebookresearch/habitat-lab)
-Habitat Lab is a modular high-level library for end-to-end development in embodied AI –
-defining embodied AI tasks (e.g. navigation, instruction following, question answering), configuring embodied agents (physical form, sensors, capabilities), training these agents (via imitation or reinforcement learning, or no learning at all as in classical SLAM), and benchmarking their performance on the defined tasks using standard metrics.
 
 Habitat Lab currently uses [`Habitat-Sim`](https://github.com/facebookresearch/habitat-sim) as the core simulator, but is designed with a modular abstraction for the simulator backend to maintain compatibility over multiple simulators. For documentation refer [here](https://aihabitat.org/docs/habitat-lab/).
 
-We also have a dev slack channel, please follow this [link](https://join.slack.com/t/ai-habitat/shared_invite/enQtNjY1MzM1NDE4MTk2LTZhMzdmYWMwODZlNjg5MjZiZjExOTBjOTg5MmRiZTVhOWQyNzk0OTMyN2E1ZTEzZTNjMWM0MjBkN2VhMjQxMDI) to get added to the channel. If you want to contribute PRs or face issues with habitat please reach out to us either through github issues or slack channel.
 
 [![Habitat Demo](https://img.shields.io/static/v1?label=WebGL&message=Try%20AI%20Habitat%20In%20Your%20Browser%20&color=blue&logo=webgl&labelColor=%23990000&style=for-the-badge&link=https://aihabitat.org/demo)](https://aihabitat.org/demo)
 <p align="center">
@@ -460,9 +452,9 @@ Results indicate that the SplitNet framework outperforms all other baselines whe
 ## References
 
 
-[1] [Kim, Juyong, et al. "Splitnet: Learning to semantically split deep networks for parameter reduction and model parallelization." *International Conference on Machine Learning*. PMLR, 2017.](https://arxiv.org/abs/1905.07512)
+[1] [Kim, Juyong, et al. "Splitnet: Learning to semantically split deep networks for parameter reduction and model parallelization." *International Conference on Machine Learning*. PMLR, 2017.](https://arxiv.org/abs/1905.07512)
 
-[2] [Savva, Manolis, et al. "Habitat: A platform for embodied ai research." *Proceedings of the IEEE/CVF International Conference on Computer Vision* 2019.](https://arxiv.org/abs/1904.01201)
+[2] [Savva, Manolis, et al. "Habitat: A platform for embodied ai research." *Proceedings of the IEEE/CVF International Conference on Computer Vision* 2019.](https://arxiv.org/abs/1904.01201)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -502,4 +494,3 @@ We would like to express our thanks to the people who's discussion helped us thr
 [Ezgi Ozyilkan](https://github.com/ezgimez?msclkid=7ab30b9dabed11ecbc97e757df7aeb95)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
