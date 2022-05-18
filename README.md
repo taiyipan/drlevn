@@ -304,7 +304,7 @@ To reproduce the results and to run the experiment follow the instructions in th
     cd drlevn_prj
     ```
 
-### 3. Insalling Habitat-sim
+### 3. Installing Habitat-sim
 
 11. To install habitat-sim with bullet physics (Needed). Should be inside the Environment.
     ```sh
