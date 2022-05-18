@@ -9,17 +9,15 @@ New York University
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li>
-      <a href="#About-the-project">About This Project</a>
-      <ul>
-        <li><a href="#Built-with">Built With</a></li>
-        <li><a href="#Paper Reference">Paper Reference</a></li>
-        <li><a href="#Tools used">Tools used</a></li>
-      </ul>
-    </li>
-    <li><a href="#Tiny Experiments">Tiny Experiments</a></li>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#dependencies">Dependencies</a></li>
+    <li><a href="#experiments in 2d environment">Experiments in 2d Environment</a></li>
+        <ul>
+            <li><a href="#the snake game with Navigation RL Agent">The snake game with Navigation RL Agent</a></li>
+            <li><a href="#the Car indoor agent with RL Agent">The Car indoor agent with RL Agent</a></li>
+        </ul>
     <li><a href="#prerequisites">Prerequisites</a></li>
-    <li><a href="#Step-by-Step Installation">Step-by-Step Installation</a></li>
+    <li><a href="#step-by-Step Installation">Step-by-Step Installation</a></li>
       <ul>       
           <li><a href="#Install Anaconda and pip">Install Anaconda</a></li>
           <li><a href="#Create conda environment">Create conda environment</a></li>
@@ -32,6 +30,7 @@ New York University
     </li>
     <li><a href="#experiments">Experiments</a></li>
     <li><a href="#results">Results</a></li>
+    <li><a href="#references">References</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
@@ -39,7 +38,7 @@ New York University
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## Introduction
 <!--
 ![Product Name Screen Shot](/images/Final_ResNet_model_architecture.png)
 -->
@@ -54,6 +53,8 @@ However, it is extremely challenging to achieve state-of-the-art performance. So
 
 The main goal of the embodied navigation task is to allow an agent to find a target location by perceiving embodied visual inputs. In this project, we hope to tackle some of the challenges discussed above using an end-to-end deep reinforcement learning framework. Our framework will include feature extraction for understanding the perceived visual cue and a reinforcement learning policy for taking necessary actions. Our proposed framework allows for the sharing and reuse of information between different visual environments. Rather than learning the task of visual perception and policy learning independently or completely tied, we build on the work of Kim et al.  for learning these embodied visual tasks which benefits both from the scalability and strong in-domain, on-task performance of an end-to-end system and from the generalization and fast adaptability of modular systems.
 
+![final_architecture](assets/final_architecture.png)
+
 This Project showed interesting results and we think would help community understand Reinforcement learning models better. This research is built on top of Facebook: SplitNet model architecture. 
 
 This research will lead the way into cutting edge visual reinforcement learning agents for the problem of navigation of indoor robots. For easy visual understanding of this project, please navigate to tiny experiments section and follow the section to recreate a agent training to navigate using reinforcement learning.  
@@ -63,7 +64,7 @@ Use the `README.md` to get started.
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-### Built With
+## Dependencies
 
 This project is built with the below given major frameworks and libraries. Some of the libraries and tools support are supported only for Linux and Mac OS. The code is primarily based on python. And the environment is created using Anaconda. All the program is tested in Ubuntu 20.04 LTS with python version 3.7.11 and cmake version 3.14.0. Some of the libraries used are habitat, pytorch, matplotlib, opencv and many libraries are found in `requirements.txt`.
 
@@ -76,16 +77,6 @@ This project is built with the below given major frameworks and libraries. Some 
 * [matplotlib](https://matplotlib.org/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-### Paper Reference
-
-This project is based on the paper `SplitNet: Sim2Sim and Task2Task Transfer for Embodied Visual Navigation`. Which was published on 18 May 2019. This paper shows a method for decoupling visual perception and policy learning. By incorporating auxiliary tasks and selective learning of portions of the model, we explicitly decompose the learning objectives for visual navigation into perceiving the world and acting on that perception.  Additionally, SplitNet generalizes better to unseen environments from the same simulator and transfers faster and more effectively to novel embodied navigation tasks. Further, given only a small sample from a target domain, SplitNet can match the performance of traditional end-to-end pipelines which receive the entire dataset.
-
-You can find the paper here: [SplitNet: Sim2Sim and Task2Task Transfer for Embodied Visual Navigation](https://arxiv.org/abs/1905.07512)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-### Tools used
 
 #### [<b>Habitat Sim</b>](https://github.com/facebookresearch/habitat-sim)
 A high-performance physics-enabled 3D simulator with support for:
@@ -126,7 +117,7 @@ We also have a dev slack channel, please follow this [link](https://join.slack.c
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-## <b><u>Tiny Experiments</u></b>
+## <b><u>Experiments in 2d Environment</u></b>
 
 The project started with a reinforcement learning snake game, and then a 2D agent navigating in a indoor map was created as a starting ground for out project. Both environment was developed in pygame, the agents use Deep-Q-Learning to train and navigate. This can be easily recreated by following the steps below. The snake agent takes around 1 hour to completely train and by using a deeper and much complex model it can navigate better. But to make this section easily reproduceble a faster and much efficient model is used. The car agent which is much complex uses a deeper model and has few glitches, this repo will be continously updated to fix issues since this is a on going research. Also note that this experiments run in Windows, Mac and Ubuntu.
 
@@ -135,6 +126,7 @@ The project started with a reinforcement learning snake game, and then a 2D agen
 <!--  Add Gif of Snake game-->
 ![untrained snake agent](assets/untrained_snake.gif)
 ![trained snake agent](assets/trained_snake.gif)
+
 This game is the starting point from which the project was developed, this gives a easy representation of the problem we are solving. This part of the code is easy to recreate and gives result real time, since we will be working on a much smaller model and simpler environment. You will be able to see the agent training and getting better in minuites. 
 
 ### Reproduce this section
@@ -185,7 +177,7 @@ Simply clone the repo cd into the right directory and run agent using the below 
     python snake_game.py
     ```
 
-## The Car indoor agent with  RL Agent
+## The Car indoor agent with RL Agent
 <!-- Add Gif of Car game-->
 ![untrained car agent](assets/car_agent.gif)
 This game gives much better understanding of how complex the project becomes as soon as we start adding elements. This agent is why we pivoted to habitat sim, and their tools for futer continuation of the project. In this environment the agent can see only a small section around the agent. The agent will learn and remember the environment. Note this is still a Experimental Version and might not run with certain hardware and configurations. 
@@ -246,6 +238,11 @@ This project is not supported in windows. Habitat sim is not available for Windo
 
 Also please note that these results cannot be performed in a virtual machine. The dependencies and the path conflicts and will not work in a virtual machine with any verison of Ubuntu or Linux distributions. 
 
+## To reproduce the Experiment in Super Computer (NYU HPC)
+
+To reproduce the experiment and to facilitate faster training the use of super computer cluster with good graphics card is required. We have trained our model in NYU's HPC (High Performance Computing) platform. follow the PDF instructions given below to run experiments remotely in a super computer cluster. 
+
+[HPC Instructions PDF](/assets/HPC_instructions.pdf)
 
 ## Step-by-Step Installation (for native Ubuntu 20.04LTS)
 
@@ -386,16 +383,21 @@ To reproduce the results and to run the experiment follow the instructions in th
 
 ### 7. Recreating New DRLEVN results (experimentation version)
 
-24. Clone the repo inside the `drlevn_prj` directory
+24. Clone the repo inside(skip if all the above steps are followed)
     ```sh
     git clone https://github.com/taiyipan/drlevn.git
     ```
+25. Follow steps to install habitat sim, habitat lab, and requirements.txt from above.
 
-25. Train the agent using `train_splitnet.py`
+26. Clone the repo inside the `drlevn_prj` directory
+    ```sh
+    cd drlevn
+    ```
+
+27. Train the agent using `train_drlevn.py`
     ```sh
     python train_splitnet.py
     ```
-
 
 <!--
 To Reproduce the accuracy of TPSNet(model), run `test.py` and ensure the model is on the right folder. This script will normalise the images to right value.
@@ -423,6 +425,8 @@ The navigation task is decoupled into two parts - a) visual perception, where th
 
 The proposed framework is validated by utilizing the Habitat scene renderer on scenes from the near photo-realistic 3D room datasets, Matterport 3D and Gibson.
 
+Results indicate that the SplitNet framework outperforms all other baselines when validated for both the datasets (refer Table 1). It achieved a SPL of $0.72$ and a success rate of $0.84$ in the MP3D setup, and a SPL of $0.70$ and a success rate of $0.85$ in the Gibson environment.  It is not surprising to find that the SPL and success rate of the Random baseline are very low because the agent was unable to anticipate the position of the target and relies on chance.  The Blind Goal Follower baseline is better than Random, as the agent can anticipate the position of the target since it is provided with an update goal vector. The blind methods are not provided with visual inputs.
+
 <table class="blueTable">
 <thead>
 <tr>
@@ -445,31 +449,54 @@ The proposed framework is validated by utilizing the Habitat scene renderer on s
 </tfoot>
 <tbody>
 <tr>
-<td>SplitNet [7] BC</td>
-<td>0.51</td>
-<td>0.80</td>
-<td>0.58</td>
-<td>0.86</td>
+<td>Random</td>
+<td>0.011</td><td>0.016</td><td>0.046</td><td>0.028</td>
 </tr>
 <tr>
-<td>SplitNet [7] BC, PPO</td>
-<td>0.72</td>
-<td>0.84</td>
-<td>0.70</td>
-<td>0.85</td>
+<td>Blind Goal Follower</td>
+<td>0.199</td><td>0.203</td><td>0.155</td><td>0.158</td>
 </tr>
 <tr>
-<td><b>Ours</b></td>
-<td>0.31</td>
-<td>0.43</td>
-<td>0.41</td>
-<td>0.48</td>
+<td>E2E PPO</td>
+<td>0.322</td><td>0.477</td><td>0.634</td><td>0.831</td>
+</tr>
+<tr>
+<td>E2E BC, PPO</td>
+<td>0.521</td><td>0.733</td><td>0.606</td><td>0.769</td>
+</tr>
+<tr>
+<td><b>SplitNet + BC</b></td><b></b>
+<td><b>0.45</b></td><td><b>0.73</b></td><td><b>0.44</b></td><td><b>0.66</b></td>
+</tr>
+<tr>
+<td>SplitNet BC + PPO</td>
+<td>0.72</td><td>0.84</td><td>0.70</td><td>0.85</td>
 </tr>
 </tbody>
 </table>
 
 The above table illustrates the performance on unseen environments and comparision of our method to the baseline method. While the performance of our proposed framework is considerably lower than that of the baseline, we hope to improve its performance in the next phase of the project.
 
+To validate the performance of our framework, we utilize the Success Weighted by Path Length (SPL) metric proposed in [9] - 
+
+$$
+    SPL = \dfrac{1}{N} \displaystyle\sum_{i=1}^{N}S_{i}\dfrac{l_{i}}{max(p_{i}, l_{i})}
+$$
+
+
+where $S_{i}$ is a success indicator for episode $i$, $p_{i}$ is the path length, and $l_{i}$ is the shortest path length.
+
+![Graphical representation of result](assets/graph_result.jpg)
+
+We analyze the performance of the baselines as a function of the geodesic distance between the starting location and the target position (refer Fig. 5). As illustrated in the figure, the distance is correlated with the complication of an episode. As expected, all baselines tend to degrade as the starting position is moved away from the target location. 
+
+## References
+
+This project is based on the paper `SplitNet: Sim2Sim and Task2Task Transfer for Embodied Visual Navigation`. Which was published on 18 May 2019. This paper shows a method for decoupling visual perception and policy learning. By incorporating auxiliary tasks and selective learning of portions of the model, we explicitly decompose the learning objectives for visual navigation into perceiving the world and acting on that perception.  Additionally, SplitNet generalizes better to unseen environments from the same simulator and transfers faster and more effectively to novel embodied navigation tasks. Further, given only a small sample from a target domain, SplitNet can match the performance of traditional end-to-end pipelines which receive the entire dataset.
+
+You can find the paper here: [SplitNet: Sim2Sim and Task2Task Transfer for Embodied Visual Navigation](https://arxiv.org/abs/1905.07512)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- LICENSE -->
 ## License
