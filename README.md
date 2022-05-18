@@ -174,7 +174,7 @@ Simply clone the repo cd into the right directory and run agent using the below 
 ![untrained car agent](assets/car_agent.gif)
 This game gives much better understanding of how complex the project becomes as soon as we start adding elements. This agent is why we pivoted to habitat sim, and their tools for futer continuation of the project. In this environment the agent can see only a small section around the agent. The agent will learn and remember the environment. Note this is still a Experimental Version and might not run with certain hardware and configurations. 
 
-### Reproduce this section(agent)
+### Reproduce this section (agent)
 
 Simply clone the repo cd into the right directory and run agent using the below commands. Step-by-Step instructions given below. Most of the steps are similar to the previous agent above, simply change the directory and run `agent.py` from the directory `RL_car_game`. Skip step 1 and 3 if the previous snake agent was reproduced. 
 
