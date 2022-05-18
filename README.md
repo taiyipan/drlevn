@@ -42,14 +42,6 @@ New York University
 <!--
 ![Product Name Screen Shot](/images/Final_ResNet_model_architecture.png)
 -->
-A longstanding goal of computer vision is to enable robots to understand their surroundings, navigate efficiently and safely, and perform a large variety of tasks in complex environments. It serves many applications in service robotics, search and rescues robots, etc. The agent must be able to perceive, map, plan, explore, and reason. Recent advancements in deep learning has empowered agents to accomplish embodied navigation tasks.
-
-However, it is extremely challenging to achieve state-of-the-art performance. Some of the challenges include are
-* perceiving partially observed input.
-* exploring unseen environment.
-* modeling seen scenarios.
-* generalization.
-* adapting to dynamic environment.
 
 The main goal of the embodied navigation task is to allow an agent to find a target location by perceiving embodied visual inputs. In this project, we hope to tackle some of the challenges discussed above using an end-to-end deep reinforcement learning framework. Our framework will include feature extraction for understanding the perceived visual cue and a reinforcement learning policy for taking necessary actions. Our proposed framework allows for the sharing and reuse of information between different visual environments. Rather than learning the task of visual perception and policy learning independently or completely tied, we build on the work of Kim et al.  for learning these embodied visual tasks which benefits both from the scalability and strong in-domain, on-task performance of an end-to-end system and from the generalization and fast adaptability of modular systems.
 
@@ -182,7 +174,7 @@ Simply clone the repo cd into the right directory and run agent using the below 
 ![untrained car agent](assets/car_agent.gif)
 This game gives much better understanding of how complex the project becomes as soon as we start adding elements. This agent is why we pivoted to habitat sim, and their tools for futer continuation of the project. In this environment the agent can see only a small section around the agent. The agent will learn and remember the environment. Note this is still a Experimental Version and might not run with certain hardware and configurations. 
 
-### Reproduce this section (agent)
+### Reproduce this section(agent)
 
 Simply clone the repo cd into the right directory and run agent using the below commands. Step-by-Step instructions given below. Most of the steps are similar to the previous agent above, simply change the directory and run `agent.py` from the directory `RL_car_game`. Skip step 1 and 3 if the previous snake agent was reproduced. 
 
