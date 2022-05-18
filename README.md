@@ -417,7 +417,7 @@ Solving the embodied visual navigation problem requires different types of high-
 <!-- ROADMAP -->
 ## Experiment
 
-The navigation task is decoupled into two parts - a) visual perception, where the agent must understand what it sees, and b) action policy, where the agent must take a decision from its perceived visual input. At each time instant $t$ the agent perceives an egocentric image $I_{t}$ from its environment and the goal is to output an action $a_{t}$ such that the distance to goal is minimized. The first step is to model a function $F$ to obtain a feature embedding from the image $I_{t}$ such that $\phi_{t} = F(I_{t})$. The next step is to decode these features into an action $a_{t} = G_{\phi_{t}}$. The training procedure is independent of each other and we optimize portions of the network with distinct objectives to produce representations which are highly semantically meaningful and transferable. Fig. 1 illustrates our proposed methodology. For visual encoding we model $F$ as a Transformer, since the temporal feature matching problem is analogous to the sequence-to-sequence problem that inspired its development, other than their use of positional embeddings to describe where words are in a sentence.  
+The navigation task is decoupled into two parts - a) visual perception, where the agent must understand what it sees, and b) action policy, where the agent must take a decision from its perceived visual input. At each time instant $t$ the agent perceives an egocentric image <!-- $I_{t}$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\VGI2vjaxvV.svg"> from its environment and the goal is to output an action <!-- $a_{t}$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\clunQSUL5R.svg"> such that the distance to goal is minimized. The first step is to model a function <!-- $F$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\DG5vPxf40y.svg"> to obtain a feature embedding from the image <!-- $I_{t}$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\bToLemNixN.svg"> such that <!-- $\phi_{t} = F(I_{t})$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\mDh2PRti83.svg">. The next step is to decode these features into an action <!-- $a_{t} = G_{\phi_{t}}$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\Wgm3JF8i1X.svg">. The training procedure is independent of each other and we optimize portions of the network with distinct objectives to produce representations which are highly semantically meaningful and transferable. Fig. 1 illustrates our proposed methodology. For visual encoding we model $F$ as a Transformer, since the temporal feature matching problem is analogous to the sequence-to-sequence problem that inspired its development, other than their use of positional embeddings to describe where words are in a sentence.  
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -479,12 +479,14 @@ The above table illustrates the performance on unseen environments and comparisi
 
 To validate the performance of our framework, we utilize the Success Weighted by Path Length (SPL) metric proposed in [9] - 
 
-$$
+<!-- $$
     SPL = \dfrac{1}{N} \displaystyle\sum_{i=1}^{N}S_{i}\dfrac{l_{i}}{max(p_{i}, l_{i})}
-$$
+$$ --> 
+
+<div align="center"><img style="background: white;" src="svg\YsJb5aAGPO.svg"></div>
 
 
-where $S_{i}$ is a success indicator for episode $i$, $p_{i}$ is the path length, and $l_{i}$ is the shortest path length.
+where <!-- $S_{i}$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\57iIrUKKBY.svg"> is a success indicator for episode <!-- $i$, $p_{i}$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\0dmREOZRqe.svg"> is the path length, and <!-- $l_{i}$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\FD1HLWyfnI.svg"> is the shortest path length.
 
 ![Graphical representation of result](assets/graph_result.jpg)
 
