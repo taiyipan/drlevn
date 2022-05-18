@@ -132,7 +132,7 @@ This game is the starting point from which the project was developed, this gives
 ### Reproduce this section
 
 
-Simply clone the repo cd into the right directory and run agent using the below commands. Step-by-Step instructions given below
+Simply clone the repo, cd into the right directory, and run agent using the below commands. Step-by-Step instructions given below.
 
 1. Clone the repository using 
    ```sh
