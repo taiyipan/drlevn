@@ -44,7 +44,7 @@ New York University
 -->
 A longstanding goal of computer vision is to enable robots to understand their surroundings, navigate efficiently and safely, and perform a large variety of tasks in complex environments. It serves many applications in service robotics, search and rescues robots, etc. The agent must be able to perceive, map, plan, explore, and reason. Recent advancements in deep learning has empowered agents to accomplish embodied navigation tasks.
 
-However, it is extremely challenging to achieve state-of-the-art performance. Some of the challenges include are
+However, it is extremely challenging to achieve state-of-the-art performance. Some of the challenges included are
 * perceiving partially observed input.
 * exploring unseen environment.
 * modeling seen scenarios.
