@@ -406,19 +406,6 @@ To Reproduce the accuracy of TPSNet(model), run `test.py` and ensure the model i
    python3 test.py
    ```
 -->
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-## Methodology
-
-Solving the embodied visual navigation problem requires different types of high-level understanding and reasoning based on the visual inputs. In order to learn robust representations and action policies, one may have to think beyond the end-to-end training paradigm. In this project, our main focus is on the Point-to-Point Navigation task. In the experiments, the action space is discretized - forward, and rotation (left and right). The Point-to-Point navigation task involves an agent which is directed to navigate towards a point via a constantly updating tuple of angle to goal, distance to goal. The navigation instance is successful if the agent ends the episode within a fixed radius of the goal.
-
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- ROADMAP -->
-## Experiment
-
-The navigation task is decoupled into two parts - a) visual perception, where the agent must understand what it sees, and b) action policy, where the agent must take a decision from its perceived visual input. At each time instant $t$ the agent perceives an egocentric image <!-- $I_{t}$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\VGI2vjaxvV.svg"> from its environment and the goal is to output an action <!-- $a_{t}$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\clunQSUL5R.svg"> such that the distance to goal is minimized. The first step is to model a function <!-- $F$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\DG5vPxf40y.svg"> to obtain a feature embedding from the image <!-- $I_{t}$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\bToLemNixN.svg"> such that <!-- $\phi_{t} = F(I_{t})$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\mDh2PRti83.svg">. The next step is to decode these features into an action <!-- $a_{t} = G_{\phi_{t}}$ --> <img style="transform: translateY(0.1em); background: white;" src="svg\Wgm3JF8i1X.svg">. The training procedure is independent of each other and we optimize portions of the network with distinct objectives to produce representations which are highly semantically meaningful and transferable. Fig. 1 illustrates our proposed methodology. For visual encoding we model $F$ as a Transformer, since the temporal feature matching problem is analogous to the sequence-to-sequence problem that inspired its development, other than their use of positional embeddings to describe where words are in a sentence.  
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -426,7 +413,7 @@ The navigation task is decoupled into two parts - a) visual perception, where th
 
 The proposed framework is validated by utilizing the Habitat scene renderer on scenes from the near photo-realistic 3D room datasets, Matterport 3D and Gibson.
 
-Results indicate that the SplitNet framework outperforms all other baselines when validated for both the datasets (refer Table 1). It achieved a SPL of $0.72$ and a success rate of $0.84$ in the MP3D setup, and a SPL of $0.70$ and a success rate of $0.85$ in the Gibson environment.  It is not surprising to find that the SPL and success rate of the Random baseline are very low because the agent was unable to anticipate the position of the target and relies on chance.  The Blind Goal Follower baseline is better than Random, as the agent can anticipate the position of the target since it is provided with an update goal vector. The blind methods are not provided with visual inputs.
+Results indicate that the SplitNet framework outperforms all other baselines when validated for both the datasets (refer Table 1). It achieved a SPL of 0.72 and a success rate of 0.84 in the MP3D setup, and a SPL of 0.70 and a success rate of 0.85 in the Gibson environment.  It is not surprising to find that the SPL and success rate of the Random baseline are very low because the agent was unable to anticipate the position of the target and relies on chance.  The Blind Goal Follower baseline is better than Random, as the agent can anticipate the position of the target since it is provided with an update goal vector. The blind methods are not provided with visual inputs.
 
 <table class="blueTable">
 <thead>
@@ -481,7 +468,9 @@ Results indicate that the SplitNet framework outperforms all other baselines whe
 ## References
 
 
-[2] Kim, Juyong, et al. "Splitnet: Learning to semantically split deep networks for parameter reduction and model parallelization." *International Conference on Machine Learning*. PMLR, 2017. [SplitNet: Sim2Sim and Task2Task Transfer for Embodied Visual Navigation](https://arxiv.org/abs/1905.07512)
+[1] [Kim, Juyong, et al. "Splitnet: Learning to semantically split deep networks for parameter reduction and model parallelization." *International Conference on Machine Learning*. PMLR, 2017.](https://arxiv.org/abs/1905.07512)
+
+[2] [Savva, Manolis, et al. "Habitat: A platform for embodied ai research." *Proceedings of the IEEE/CVF International Conference on Computer Vision* 2019.](https://arxiv.org/abs/1904.01201)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
