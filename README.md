@@ -426,7 +426,7 @@ The navigation task is decoupled into two parts - a) visual perception, where th
 
 The proposed framework is validated by utilizing the Habitat scene renderer on scenes from the near photo-realistic 3D room datasets, Matterport 3D and Gibson.
 
-Results indicate that the SplitNet framework outperforms all other baselines when validated for both the datasets (refer Table 1). It achieved a SPL of $0.72$ and a success rate of $0.84$ in the MP3D setup, and a SPL of $0.70$ and a success rate of $0.85$ in the Gibson environment.  It is not surprising to find that the SPL and success rate of the Random baseline are very low because the agent was unable to anticipate the position of the target and relies on chance.  The Blind Goal Follower baseline is better than Random, as the agent can anticipate the position of the target since it is provided with an update goal vector. The blind methods are not provided with visual inputs.
+Results indicate that the SplitNet framework outperforms all other baselines when validated for both the datasets (refer Table 1). It achieved a SPL of 0.72 and a success rate of 0.84 in the MP3D setup, and a SPL of 0.70 and a success rate of 0.85 in the Gibson environment.  It is not surprising to find that the SPL and success rate of the Random baseline are very low because the agent was unable to anticipate the position of the target and relies on chance.  The Blind Goal Follower baseline is better than Random, as the agent can anticipate the position of the target since it is provided with an update goal vector. The blind methods are not provided with visual inputs.
 
 <table class="blueTable">
 <thead>
